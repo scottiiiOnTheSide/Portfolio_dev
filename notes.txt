@@ -1,0 +1,6 @@
+Production Log !!!
+
+08. 13. 2022
+@1124 Will need to reimplement the loader upon selecting a gallery!
+	  Remember to implement check for whether gallery or album has 
+	  been previously opened

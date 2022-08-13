@@ -137,17 +137,11 @@ albumNext.addEventListener('click', ()=> {
 	if (allImages.classList.contains('return')) {
 		displayToggle(allImages);
 	}
+
 	allImages.firstElementChild.innerHTML = null;
-	albumDivs = document.querySelectorAll("section#gallery div#albums div.entry");
-	albumDivs.forEach((element)=> { 
-		element.style.opacity = 0;
-		albumCurrent.style.opacity = 0;
-	});
-	setTimeout(()=> {
-		albumDivs.forEach((element)=> { 
-			element.remove();
-		});
-	}, 350);
+	entryWrapper.innerHTML = null;
+
+	
 
 	setTimeout(()=> {
 		let next;
@@ -159,29 +153,16 @@ albumNext.addEventListener('click', ()=> {
 			albumCurrent.style.opacity = 1;
 		}
 		albumCurrent.style.opacity = 1;
+
+		setTimeout(()=> {
+			renderGallery(galleriesTwo[next]);
+		}, 400); 
 	}, 400)
 
-	setTimeout(()=> {
-		renderGallery(galleriesTwo[currentGalleries.galleryIndex]);
-	}, 800); //keep
+	
 })
 
-// albumCurrent.addEventListener('click', ()=> {
-// 	let albumEntries = document.querySelectorAll("section#gallery div#albums div.entry");
 
-// 	if (allImages.classList.contains('return')) {
-// 		displayToggle(allImages);
-// 		setTimeout(() => {
-// 			albumEntries.forEach((element) => displayToggle(element));
-// 		}, 550);
-// 	}
-// 	else {
-// 		albumEntries.forEach((element) => displayToggle(element));
-// 		setTimeout(() => {
-// 			displayToggle(allImages);
-// 		}, 550);
-// 	} //keep
-// })
 
 //A Stateful object
 let currentGalleries = {
