@@ -83,6 +83,13 @@ mainMenuOptions.forEach((element, index) => {
 		setTimeout(()=> {
 			displayToggle(mainMenu);
 			entryWrapper.style = null;
+
+			setTimeout(() => {
+				loader.style.display = 'block';
+				setTimeout(() => {
+					loader.style.opacity = 0.3;
+				}, 100)
+			}, 200)
 		}, 750);
 
 		currentGalleries.galleryIndex = index;
@@ -90,10 +97,15 @@ mainMenuOptions.forEach((element, index) => {
 
 		renderGallery(galleriesTwo[index])
 		.then(() => {
-
+			setTimeout(() => {
+				loader.style.opacity = 0;
+				setTimeout(() => {
+					loader.style = null;
+				}, 325)
+			}, 200)
 			setTimeout(()=> {
 				displayToggle(albums);
-			}, 1000);
+			}, 600);
 		})	
 	})
 })
@@ -157,19 +169,71 @@ albumNext.addEventListener('click', ()=> {
 		setTimeout(()=> {
 			renderGallery(galleriesTwo[next]);
 		}, 400); 
-	}, 400)
-
-	
+	}, 400)	
 })
 
+albumNav[1].addEventListener('click', async () => {
 
+	if(allOpen == false) {
 
+		entryWrapper.style.opacity = 0;
+		setTimeout(() => {
+			entryWrapper.style.display = 'none';
+			// allImages.style.display = 'block';
+		}, 100)
+		setTimeout(() => {
+			loader.style.display = 'block';
+			setTimeout(() => {
+				loader.style.opacity = 0.3;
+			}, 100)	
+		}, 200)
+
+		let theImages = await preloadImages_all(currentGalleries.all);
+
+		theImages.forEach((img, index) => {
+
+			img.addEventListener('click', ()=> {
+				openAlbum(theImages, index);
+				controls_UI[0].firstElementChild.innerHTML = index;
+			})
+
+			allImages_wrapper.appendChild(img);
+		})
+
+		setTimeout(() => {
+			loader.style.opacity = 0;
+			displayToggle(allImages)
+			setTimeout(() => {
+				loader.style.display = null;
+			}, 100)
+		}, 325)
+
+		allOpen = true;
+
+	} else {
+
+		allImages.style.opacity = 0;
+		setTimeout(() => {
+			// allImages.style.display = 'none';
+			displayToggle(allImages)
+			entryWrapper.style.display = 'block';
+		}, 325)
+		setTimeout(() => {
+			entryWrapper.style.opacity = 1;
+		}, 525)
+
+		allOpen = false;
+	}
+})
+
+let allOpen = false;
 //A Stateful object
 let currentGalleries = {
 	album: [],
 	all: [],
 	index: 0,
 	galleryIndex: NaN,
+	previouslyOpen: [],
 }
 
 const preloadImages = (src) => new Promise((resolve,reject) => {
@@ -325,50 +389,7 @@ async function renderGallery(oneOfFour) { // gallery[x]
 		
 }
 
-let allOpen = false;
-albumNav[1].addEventListener('click', async () => {
 
-	if(allOpen == false) {
-		let theImages = currentGalleries.all;
-
-		theImages.forEach((img, index) => {
-			let htmlImg = document.createElement('img');
-			htmlImg.src = img;
-			
-			htmlImg.addEventListener('click', ()=> {
-				openAlbum(theImages, index);
-				controls_UI[0].firstElementChild.innerHTML = index;
-			})
-
-			allImages_wrapper.appendChild(htmlImg);
-		})
-
-		allOpen = true;
-
-		entryWrapper.style.opacity = 0;
-		setTimeout(() => {
-			entryWrapper.style.display = 'none';
-			allImages.style.display = 'block';
-		}, 325)
-		setTimeout(() => {
-			allImages.style.opacity = 1;
-		}, 525)
-	} else {
-
-		allImages.style.opacity = 0;
-		setTimeout(() => {
-			allImages.style.display = 'none';
-			entryWrapper.style.display = 'block';
-		}, 325)
-		setTimeout(() => {
-			entryWrapper.style.opacity = 1;
-		}, 525)
-
-		allOpen = false;
-	}
-
-	
-})
 
 /*
 	08. 06. 2022
