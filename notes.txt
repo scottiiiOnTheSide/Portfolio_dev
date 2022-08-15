@@ -1,6 +1,11 @@
 Production Log !!!
 
 08. 14. 2022
+@2258 emailJS added and functional.
+      A few more tweaks to add, but initial release impending.
+      I'll start a new section in the dev ver notes for the release,
+      And then just copy that over, I think...
+
 @1330 keeping track of most changes on dev version still
 
 08. 13. 2022
