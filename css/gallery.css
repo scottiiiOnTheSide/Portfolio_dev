@@ -663,6 +663,7 @@ section#gallery div#loader {
 	section#gallery div#imageview div#controlsMenu {
 			width: 100%;
 			background-color: rgba(205, 205, 205, 0.7);
+			left: 0;
 		}
 }
 
@@ -732,10 +733,6 @@ section#gallery div#loader {
 
 	section#gallery div#albums div#allImages div#wrapper img {
     max-height: 210px;
-	}
-
-	section#gallery div#imageview ul#controlsWrapper {
-		left: 0;
 	}
 
 	section#gallery div#imageview ul#imageSlidesWrapper {
