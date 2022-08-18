@@ -83,13 +83,6 @@ mainMenuOptions.forEach((element, index) => {
 		setTimeout(()=> {
 			displayToggle(mainMenu);
 			entryWrapper.style = null;
-
-			setTimeout(() => {
-				loader.style.display = 'block';
-				setTimeout(() => {
-					loader.style.opacity = 0.3;
-				}, 100)
-			}, 200)
 		}, 750);
 
 		currentGalleries.galleryIndex = index;
@@ -97,15 +90,10 @@ mainMenuOptions.forEach((element, index) => {
 
 		renderGallery(galleriesTwo[index])
 		.then(() => {
-			setTimeout(() => {
-				loader.style.opacity = 0;
-				setTimeout(() => {
-					loader.style = null;
-				}, 325)
-			}, 200)
+
 			setTimeout(()=> {
 				displayToggle(albums);
-			}, 600);
+			}, 1000);
 		})	
 	})
 })
@@ -642,7 +630,7 @@ let scale = () => {
 		setTimeout(() => {
 			displayToggle(header);
 			displayToggle(albums);
-			if(window.innerWidth < 1024) {
+			if(window.innerWidth < 1023) {
 				setTimeout(exitMenu, 100);
 			}
 			displayToggleNav();
@@ -653,7 +641,7 @@ let scale = () => {
 
 controls_UI[1].addEventListener('click', () => {
 	scale()
-	if(window.innerWidth < 1024) {
+	if(window.innerWidth < 1023) {
 		setTimeout(exitMenu, 100);
 	}
 });
@@ -674,10 +662,10 @@ window.onresize = () => {
 	// 	window.resizeTo(size[0], size[1]);
 	// 	console.log('yep');
 	// }	
-	if(window.innerWidth >= 1024) {
+	if(window.innerWidth >= 1023) {
 		controls.style.display = 'block';
 		controls.style.opacity = 1;
-	} else if (window.innerWidth < 1024) {
+	} else if (window.innerWidth < 1023) {
 		controls.style.display = 'none';
 		controls.style.opacity = 0;
 	}
