@@ -736,7 +736,6 @@ section#gallery div#loader {
 
 	section#gallery div#imageview ul#imageSlidesWrapper {
 		width: 100%;
-		height: 100vh;
 		margin: 0;
 	}
 }
