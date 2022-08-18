@@ -91,7 +91,7 @@ section#gallery div#mainMenu div span {
 	color: var(--text-gray);
 	text-align: center;
 
-	width:  100%;
+	width:  102%;
 	padding: 120px 0;
 	border-bottom:  2px solid transparent;
 	transition: all 0.5s ease-out;
@@ -802,7 +802,7 @@ section#gallery div#loader {
 	}
 }
 
-@media screen and (min-width: 1024px) and (min-height: 768px) {	
+@media screen and (min-width: 1023px) and (min-height: 767px) {	
 
 	section#gallery div#imageview {
 		justify-content: flex-end;
