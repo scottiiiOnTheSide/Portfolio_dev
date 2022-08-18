@@ -734,6 +734,10 @@ section#gallery div#loader {
     max-height: 210px;
 	}
 
+	section#gallery div#imageview ul#controlsWrapper {
+		left: 0;
+	}
+
 	section#gallery div#imageview ul#imageSlidesWrapper {
 		width: 100%;
 		margin: 0;
