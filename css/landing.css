@@ -95,6 +95,28 @@ div#landing div#logoWrapper p#tagline {
 }
 
 
+button#sectionSwitch {
+	background-color: transparent;
+	border: none;
+
+	font-family: 'Avenir';
+	font-weight: 500;    
+	font-size: 1em;
+	color: white;
+	letter-spacing: 10px;
+
+	position: absolute;
+	bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  transition: all ease 0.5s;
+}
+
+	button#sectionSwitch:hover {
+		letter-spacing: 20px;
+	}
+
 
 
 /* End of Section - Section Media Queries */

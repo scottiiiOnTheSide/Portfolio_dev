@@ -3,6 +3,9 @@
 
 
 #01. 25. 2023
+
+@0850 added code / modules for simple, self reloading server
+
 @0825 Reorganized the landing page
 	-div#header
 		-div#titleWrapper

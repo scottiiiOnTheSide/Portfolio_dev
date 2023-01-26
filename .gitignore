@@ -1,3 +1,7 @@
 .ds_store
 Notes.md
 imageNames.txt
+node_modules
+package.json
+package-lock.json
+index.js
