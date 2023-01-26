@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>BEAM ME UP | Contact </title>
+	<meta name="description"content="Professional Photographer specializing in events, music videos and model work">>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- For Overall Site Styles and Page Specific -->
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/contact.css">
+<head>
+
+<body>
+		
+	<!-- Fade in on arrival, 
+		 fade out on page leave -->
+	<script type="text/javascript">
+		window.onload = () => {
+			let section = document.querySelector('section');
+			section.style.opacity = 1;
+		}
+		let delay = (URL) => {
+
+	    	setTimeout(()=> { 
+	    		//determine whether this can all go inside the window.onLoad, as to only be written once
+	    		let section = document.querySelector('section');
+				section.style.opacity = 0;
+
+				setTimeout(()=> {
+					window.open(URL, "_blank");
+				}, 50)
+	    		
+	    	}, 500 );
+		}
+	</script>
+
+
+
+
+<!-- Beginning of Page Body -->
+<section id="transmissions" >
+	
+	<div id="optionsWrapper">
+	<!-- <div id="optionsWrapper" style="display: none"> -->
+
+
+		<div class="opt">
+			<h2>Regards from <br>Previous Clients</h2>
+			<span>( Testimonials )</span>
+		</div>
+
+		<div class="opt">
+			<h2>Personal Perceptions & <br>Visual Exploits</h2>
+			<span>( Social Media )</span>
+		</div>
+
+		<div class="opt">
+			<h2>Inquire and or <br>Request Services</h2>
+			<span>( Contact Form )</span>
+		</div>
+
+		<span id='successfulSubmit'>
+			Message<br>Delivered
+		</span>
+
+		<button id="goToOptions">Back to Options</button>
+		<button id="nextSlide">See Next Slide</button>
+	</div>
+
+	<div id="testimonials">
+		<ul>
+			<li>
+				<h1>Abeola</h1>
+				<h2>@aby_wabby</h2>
+				<p>
+					Jelique has patience and an energy that sets him apart from other creatives. Not only have I chosen to work with him numerous times due to this, yet also due to his turn around time and ability to adapt while shooting! I always jump at the opportunity to work with him and I guarantee you would too! 
+				</p>
+			</li>
+			<li>
+				<h1>Abeola #2</h1>
+				<h2>@aby_wabby</h2>
+				<p>
+					Jelique has patience and an energy that sets him apart from other creatives. Not only have I chosen to work with him numerous times due to this, yet also due to his turn around time and ability to adapt while shooting! I always jump at the opportunity to work with him and I guarantee you would too! 
+				</p>
+			</li>
+			<li>
+				<h1>Abeola #3</h1>
+				<h2>@aby_wabby</h2>
+				<p>
+					Jelique has patience and an energy that sets him apart from other creatives. Not only have I chosen to work with him numerous times due to this, yet also due to his turn around time and ability to adapt while shooting! I always jump at the opportunity to work with him and I guarantee you would too! 
+				</p>
+			</li>
+		</ul>
+	</div>
+
+	<div id="socials" style="display: none">
+		<ul>
+			<li>
+				<a href="javascript:delay('https://www.instagram.com/beammeupscottiii/')">Instagram</a>
+			</li>
+			<li>
+				<a href="javascript:delay('https://twitter.com/beammeupscotti7')">Twitter</a>
+			</li>
+		</ul>
+	</div>
+
+	<div id="emailScotty">
+		<form >
+			<fieldset>
+				<input type="text" name="name" placeholder="(fullname)">
+				<input type="text" name="emailAddr" placeholder="(email address)">
+				<input type="text" name="subject" placeholder="(subject)">
+				<textarea name="message" rows="5" cols="5" placeholder="(your intent?)"></textarea>
+			</fieldset>
+		</form>
+
+		<button id="submitForm">SENDMESSAGE</button>
+	</div>
+
+</section>
+
+
+
+<script>
+	
+	(function () {
+		emailjs.init('ndYyHqewf0kLoDuxh');
+	})();
+
+</script>
+<script type="text/javascript" src="js/contact.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+</body>
+</html>

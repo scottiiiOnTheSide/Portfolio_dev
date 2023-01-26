@@ -1,10 +1,123 @@
-section#arrival {
+
+
+section#landing,
+section#menu {
 	position: relative;
 	width: 100vw;
 	height: 100vh;
 	background-color: black;
 	overflow: hidden;
 }
+
+
+/* 
+		Initial, Landing Section
+		div#landing + Carousel + CTA button
+*/
+
+
+div#landing {
+	display: block;
+	position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation-name: load;
+  animation-duration: 2s;
+	animation-timing-function: ease-in;
+	z-index: 2;
+}
+
+		@keyframes load {
+			from {opacity: 0;}
+			to {opacity: 1;}
+		}
+
+
+div#landing div#titleWrapper {
+	display: flex;
+/*	display: none;*/
+	flex-direction: column;
+	justify-content: center;
+	margin: -30px auto 0;
+}
+
+div#landing h1 {
+	font-family: 'Avenir';
+	font-weight: 500;    
+	font-size: 2em;
+	color: white;
+	letter-spacing: 20px;
+ 	text-align: center;
+
+ 	margin: 0;
+  margin-bottom: 10px;
+}		
+
+div#landing h3 {
+	font-family: "Open Sans";
+	font-weight: 300;
+	letter-spacing: 1em;
+	text-align: center;
+	color: var(--text-gray);
+
+	margin: 0;
+}
+
+div#landing div#logoWrapper {
+/*		display: flex;*/
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	flex-wrap: wrap;
+ 	align-content: center;
+
+	margin: -50px auto 0;
+}
+
+div#landing div#logoWrapper img {
+	width: 90px;
+	margin: 0 auto;
+}
+
+div#landing div#logoWrapper p#tagline {
+	font-family: "Open Sans";
+	font-size: 0.6em;
+	font-weight: 300;
+	text-align: center;
+	letter-spacing: 6px;
+	line-height: 22px;
+	color: white;
+
+	/*width: 20%;*/
+	max-width: 325px;
+	margin: 20px 0 0;
+}
+
+
+
+
+/* End of Section - Section Media Queries */
+@media only screen and (max-width: 480px) {
+
+	div#landing h1 {
+		font-size: 1.5em;
+		letter-spacing: 8px;
+	}
+
+	div#landing h3 {
+		font-size: 0.8em;
+		letter-spacing: 12px;
+	}
+
+	div#div#landing div#logoWrapper p#tagline {
+	}
+
+
+}
+
+
+
 
 
 div#menu {
@@ -130,10 +243,7 @@ div#menu {
 
 
 
-@keyframes load {
-	from {opacity: 0;}
-	to {opacity: 1;}
-}
+
 
 @keyframes switchOut {
 	0% {opacity: 1;}
@@ -159,46 +269,9 @@ div#menu {
 	animation-fill-mode: forwards;
 }
 
-div#title {
-	position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    animation-name: load;
-    animation-duration: 2s;
-	animation-timing-function: ease-in;
-}
 
-	div#title h1 {
-		font-family: 'Avenir';
-		font-weight: 500;    
-		font-size: 2em;
-		color: white;
-		letter-spacing: 20px;
-    	text-align: center;
-    	margin: 0;
-    	margin-bottom: 10px;
-	}		
 
-	div#title h3 {
-		font-family: "Open Sans";
-		font-weight: 300;
-		letter-spacing: 1em;
-		text-align: center;
-		color: var(--text-gray);
-		margin: 0;
-	}
 
-	div#title span {
-		display: none;
-		/*margin-left: 30px;*/
-		position:  relative;
-	}
-
-	div#title span svg {
-		width: 90px;
-		fill: white;
-	}
 
 
 div#showcaseWrapper {
@@ -257,9 +330,9 @@ div#showcaseWrapper {
 
 			div.loadUp_In {
 				animation-name: loadUp_In; 
-				animation-duration: 1.5s;
+				animation-duration: 1s;
 				animation-timing-function: ease-out;
-				transition: opacity 2s ease-out;
+				transition: opacity 1s ease-out;
 			}
 			
 
@@ -275,7 +348,7 @@ div#showcaseWrapper {
 
 			div.loadUp_Out {
 				animation-name: loadUp_Out; 
-				animation-duration: 1.5s;
+				animation-duration: 1s;
 				animation-timing-function: ease-out;
 				opacity: 0;
 			}
@@ -293,7 +366,7 @@ div#showcaseWrapper {
 
 			div.loadDown_In {
 				animation-name: loadDown_In; 
-				animation-duration: 1.5s;
+				animation-duration: 1s;
 				animation-timing-function: ease-out;
 			}
 
@@ -308,7 +381,7 @@ div#showcaseWrapper {
 
 			div.loadDown_Out {
 				animation-name: loadDown_Out;
-				animation-duration: 1.5s;
+				animation-duration: 1s;
 				animation-timing-function: ease-out;
 				opacity: 0;
 			}
@@ -479,15 +552,7 @@ span#crnr4-active { border-color: #3BDACA; right: 5px; bottom: 5px;}
 
 @media only screen and (max-width: 480px) {
 
-	div#title h1 {
-		font-size: 1.5em;
-		letter-spacing: 8px;
-	}
 
-	div#title h3 {
-		font-size: 0.8em;
-		letter-spacing: 12px;
-	}
 
 	div#title span#logo {
 		transform: scale(0.75);

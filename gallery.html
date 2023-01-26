@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>BEAM ME UP | Gallery </title>
+	<meta name="description"content="Professional Photographer specializing in events, music videos and model work">>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- For Overall Site Styles and Page Specific -->
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/gallery.css">
+<head>
+
+<body>
+		
+	<!-- Fade in on arrival, 
+		 fade out on page leave -->
+	<script type="text/javascript">
+		window.onload = () => {
+			let section = document.querySelector('section');
+			section.style.opacity = 1;
+		}
+		let delay = (URL) => {
+
+	    	setTimeout(()=> { 
+	    		//determine whether this can all go inside the window.onLoad, as to only be written once
+	    		let section = document.querySelector('section');
+				section.style.opacity = 0;
+
+				setTimeout(()=> {
+					window.open(URL, "_blank");
+				}, 50)
+	    		
+	    	}, 500 );
+		}
+	</script>
+
+
+
+
+<!-- Beginning of Page Body -->
+<section id="gallery">
+
+	<div id="mainMenu" style="display: block;"> <!-- during dev -->
+		<!-- <div id="mainMenu" style="display: block;"> -->
+		<div><span>Model Work</span></div>
+		<div><span>Life & Events</spam></div>
+		<div><span>Cars. Tech. Toys</span></div>
+		<div><span>Arch. & Travel</span></div>
+	</div>
+
+	<div id="albums" style="display: none;">
+
+			<nav>
+				<span>Return</span>
+				<span id="currentGalleryName"></span>
+				<span id="inner">View All</span>
+				<span>Next</span>
+			</nav>
+
+			<div id="allImages" style="display: none">
+				<!-- use a flexbox layout for the images -->
+				<div id="wrapper">
+				</div>
+			</div>
+
+			<div id="entryWrapper">
+			</div>		
+	</div>
+
+		<!-- new viewer goes here. Only need to make one -->
+	<div id="imageview">
+			<ul id="imageSlidesWrapper">
+			</ul>
+
+			<div id="controlsMenu">
+				<ul id="controlsWrapper">
+					<li id="imagecount">
+						<span>1</span> <!-- current image number --> 
+						<span>10</span> <!-- full amount of images in gallery -->
+					</li>
+					<li>
+						<button>Scale Up</button> <!-- previous -->
+					</li>
+					<li>
+						<button>Exit Viewer</button> <!-- exit -->
+					</li>
+					<li id="desktopAlert">
+						<p>Click and drag images <br> from left to right</p>
+					</li>
+				</ul>
+			</div>
+
+			<button id="controlsToggle">MENU</button>
+
+			<div id="scrollerWrapper">
+				<div id="scrollLine"></div>
+				<div id="scrollIndexWrapper">
+					<span id="scrollIndex"></span>
+					<span id="tooltip"></span>
+				</div>
+			</div>
+	</div>
+
+	<div id="loader">
+		<img src="resources/Beammeupscottiii-LogoSolo-white.svg" alt="beammeupscottiii logo">
+	</div>
+</section>
+
+
+
+<script type="text/javascript" src="js/gallery.js"></script>
+</body>

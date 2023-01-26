@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>BEAM ME UP | Work With Me </title>
+	<meta name="description"content="Professional Photographer specializing in events, music videos and model work">>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- For Overall Site Styles and Page Specific -->
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/services.css">
+<head>
+
+<body>
+		
+	<!-- Fade in on arrival, 
+		 fade out on page leave -->
+	<script type="text/javascript">
+		window.onload = () => {
+			let section = document.querySelector('section');
+			section.style.opacity = 1;
+		}
+		let delay = (URL) => {
+
+	    	setTimeout(()=> { 
+	    		//determine whether this can all go inside the window.onLoad, as to only be written once
+	    		let section = document.querySelector('section');
+				section.style.opacity = 0;
+
+				setTimeout(()=> {
+					window.open(URL, "_blank");
+				}, 50)
+	    		
+	    	}, 500 );
+		}
+	</script>
+	
+
+
+
+
+<!-- Beginning of Page Body -->
+
+
+</body>
