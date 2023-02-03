@@ -3,13 +3,13 @@
 	A S   V A R I A B L E S 
 */
 
-let title = document.getElementById('titleWrapper'),
-	logo = document.getElementById('logoWrapper'),
+let titleWrapper = document.getElementById('titleWrapper'),
+	logoWrapper = document.getElementById('logoWrapper'),
 	imgWrappers = Array.from(document.querySelectorAll('.imgWrapper')),
 	showcaseWrapper = document.getElementById('showcaseWrapper'),
-	homeMenu = document.getElementById('menu'),
-	menuOptions = Array.from(document.querySelectorAll('.option')),
-	CTAs = Array.from(document.querySelectorAll('div#menu div.option span'));
+	menuLinks = Array.from(document.querySelectorAll('ul#menu li a')),
+	sectionSwitch = document.getElementById('sectionSwitch');
+	
 
 
 //split this in the future to create arrays for other image groups
@@ -210,38 +210,13 @@ let runTheCarousel = {
 
 // f u n c t i o n  t o  s w i t c h  t i t l e 
 function switchTitle() {
-		if (titleH1.classList.contains('switchOut') == true) {
-			titleLogo.classList.remove('switchIn');
-			titleLogo.classList.add('switchOut');
-			setTimeout(() => {
-				titleLogo.style.display = "none"; 
+	const titleState = window.getComputedStyle(titleWrapper).getPropertyValue('display'),
+			logoState = window.getComputedStyle(titleWrapper).getPropertyValue('display');
 
-				setTimeout(() => {
-					titleH1.style.display = "block";
-					titleH3.style.display = "block";
-
-					titleH1.classList.add('switchIn');
-					titleH3.classList.add('switchIn');
-				}, 300)
-			}, 1100);
-		}
-
-		else if(titleH1.classList.contains('') == false || titleH1.classList.contains('switchIn')) {
-			titleH1.classList.add('switchOut');
-			titleH3.classList.add('switchOut');
-			setTimeout(() => {
-				titleH1.style.display = "none";
-				titleH3.style.display = "none";
-			}, 1100);
-
-			setTimeout(() => {
-				titleLogo.style.display = "block";
-				titleLogo.classList.add('switchIn');
-			}, 1300);
-		}  
-} /* 05.05.2022
-	It's probably due to some sort of overload,
-	yet after two runs of this function, it ceases . . . entirely?
+	if(titleState != 'none') {
+		
+	}
+}
 
 /*
 	f u n c t i o n  t o  s w i t c h  

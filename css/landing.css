@@ -1,8 +1,8 @@
 
 
-section#landing,
+section#initial,
 section#menu {
-	position: relative;
+	position: absolute;
 	width: 100vw;
 	height: 100vh;
 	background-color: black;
@@ -12,11 +12,11 @@ section#menu {
 
 /* 
 		Initial, Landing Section
-		div#landing + Carousel + CTA button
+		div#landingHeader + Carousel
 */
 
 
-div#landing {
+div#landingHeader {
 	display: block;
 	position: fixed;
   top: 10%;
@@ -34,7 +34,7 @@ div#landing {
 		}
 
 
-div#landing div#titleWrapper {
+div#landingHeader div#titleWrapper {
 	display: flex;
 /*	display: none;*/
 	flex-direction: column;
@@ -42,7 +42,7 @@ div#landing div#titleWrapper {
 	margin: -30px auto 0;
 }
 
-div#landing h1 {
+div#landingHeader h1 {
 	font-family: 'Avenir';
 	font-weight: 500;    
 	font-size: 2em;
@@ -54,7 +54,7 @@ div#landing h1 {
   margin-bottom: 10px;
 }		
 
-div#landing h3 {
+div#landingHeader h3 {
 	font-family: "Open Sans";
 	font-weight: 300;
 	letter-spacing: 1em;
@@ -64,7 +64,7 @@ div#landing h3 {
 	margin: 0;
 }
 
-div#landing div#logoWrapper {
+div#landingHeader div#logoWrapper {
 /*		display: flex;*/
 	display: none;
 	flex-direction: column;
@@ -75,12 +75,12 @@ div#landing div#logoWrapper {
 	margin: -50px auto 0;
 }
 
-div#landing div#logoWrapper img {
+div#landingHeader div#logoWrapper img {
 	width: 90px;
 	margin: 0 auto;
 }
 
-div#landing div#logoWrapper p#tagline {
+div#landingHeader div#logoWrapper p#tagline {
 	font-family: "Open Sans";
 	font-size: 0.6em;
 	font-weight: 300;
@@ -93,6 +93,31 @@ div#landing div#logoWrapper p#tagline {
 	max-width: 325px;
 	margin: 20px 0 0;
 }
+
+
+
+
+/* End of Section - Section Media Queries */
+@media only screen and (max-width: 480px) {
+
+	div#landingHeader h1 {
+		font-size: 1.5em;
+		letter-spacing: 8px;
+	}
+
+	div#landingHeader h3 {
+		font-size: 0.8em;
+		letter-spacing: 12px;
+	}
+
+	div#div#landingHeader div#logoWrapper p#tagline {
+	}
+
+
+}
+
+
+
 
 
 button#sectionSwitch {
@@ -111,32 +136,14 @@ button#sectionSwitch {
   transform: translateX(-50%);
 
   transition: all ease 0.5s;
+  animation-name: load;
+  animation-duration: 2s;
+	animation-timing-function: ease-in;
 }
 
 	button#sectionSwitch:hover {
 		letter-spacing: 20px;
 	}
-
-
-
-/* End of Section - Section Media Queries */
-@media only screen and (max-width: 480px) {
-
-	div#landing h1 {
-		font-size: 1.5em;
-		letter-spacing: 8px;
-	}
-
-	div#landing h3 {
-		font-size: 0.8em;
-		letter-spacing: 12px;
-	}
-
-	div#div#landing div#logoWrapper p#tagline {
-	}
-
-
-}
 
 
 

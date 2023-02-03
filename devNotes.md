@@ -2,9 +2,18 @@
 ## Portfolio Site - Development Version
 
 
+#02. 03. 2023
+@0635 cleaned up landing.js further.
+	  Working on sectionTitle funtion, and then sectionSwitch
+
+	  should be able to combine them both into a function then run
+	  by the button
+
+
 #01. 25. 2023
 
 @0850 added code / modules for simple, self reloading server
+	 Menu button css also added
 
 @0825 Reorganized the landing page
 	-div#header
