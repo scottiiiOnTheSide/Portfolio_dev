@@ -7,6 +7,7 @@ let titleWrapper = document.getElementById('titleWrapper'),
 	logoWrapper = document.getElementById('logoWrapper'),
 	imgWrappers = Array.from(document.querySelectorAll('.imgWrapper')),
 	showcaseWrapper = document.getElementById('showcaseWrapper'),
+	menu = document.querySelector('ul#menu'),
 	menuLinks = Array.from(document.querySelectorAll('ul#menu li a')),
 	sectionSwitch = document.getElementById('sectionSwitch');
 	
@@ -56,6 +57,13 @@ function toggleMobile(tog) {
 	}
 }
 
+
+/* 	
+
+	S I M P L I F Y   T H I S
+	rather verbose code, 
+	yet it's simply a switch between styles depending on window width 
+*/
 function mediaQuery1024() {
 	if(window.innerWidth <= 480) {
 		return 480
@@ -67,8 +75,6 @@ function mediaQuery1024() {
 		return null;
 	}
 }
-
-/* rather verbose code, yet it's simply a switch between styles depending on window width */
 (mediaQuery1024() == 480 || mediaQuery1024() == 1024) ? toggleDefaults(false) : toggleDefaults(true);
 (mediaQuery1024() == 480 || mediaQuery1024() == 1024) ? toggleMobile(true) : toggleMobile(false);
 
@@ -113,8 +119,6 @@ carouselQueried(mediaQuery1024);
 	C a r o u s e l  
 	F u n c t i o n a l i t y
 */
-	
-//01.25.2023 @ 1255 | replace these functions with web animation equivalent
 function addIntro () {
 	imgWrappers[0].classList.add('loadUp_In');
 		imgWrappers[1].classList.add('loadDown_In');
@@ -144,7 +148,7 @@ function removeOutro () {
 }
 
 
-	function runCarousel() {
+function runCarousel() {
 
 		if (imgWrappers[0].classList.contains('loadUp_In')) { /*Their default state*/
 			toggleDefaults(false);
@@ -208,59 +212,59 @@ let runTheCarousel = {
 }
  
 
-// f u n c t i o n  t o  s w i t c h  t i t l e 
-function switchTitle() {
-	const titleState = window.getComputedStyle(titleWrapper).getPropertyValue('display'),
-			logoState = window.getComputedStyle(titleWrapper).getPropertyValue('display');
+/* 
+	f u n c t i o n s   t o   S w i t c h   
+	C a r o u s e l  t o  M e n u
+*/
+function switchElements(elOne, elTwo) {
+	const firstElementState = window.getComputedStyle(elOne).getPropertyValue('opacity'),
+		  secondElementState = window.getComputedStyle(elTwo).getPropertyValue('opacity');
 
-	if(titleState != 'none') {
+	if(firstElementState == 0) {
+			
+		elTwo.style.opacity = 0;
+		sectionSwitch.style.opacity = 0;
+		setTimeout(()=> {
+			elOne.style.opacity = 1;
+			sectionSwitch.innerHTML = 'MENU';
+
+			setTimeout(() => {
+				// logoWrapper.style.display = 'none';
+				sectionSwitch.style.opacity = 1;
+			}, 100)
+		}, 300);
+
+
 		
+	} else if (firstElementState == 1) {
+
+		elOne.style.opacity = 0;
+		sectionSwitch.style.opacity = 0;
+		setTimeout(()=> {
+			elTwo.style.opacity = 1;
+			sectionSwitch.innerHTML = 'RETURN';
+
+			setTimeout(() => {
+				sectionSwitch.style.opacity = 1;
+			}, 100)
+		}, 300);
 	}
 }
 
-/*
-	f u n c t i o n  t o  s w i t c h  
-	c a r o u s e l  t o  m e n u
-*/
-function carouselToMenu() {
-		if (showcaseWrapper.classList.contains('switchOut')) {
-			switchTitle();
-			homeMenu.classList.remove('switchIn');
-			homeMenu.classList.add('switchOut');
+sectionSwitch.addEventListener('click', ()=> {
 
-			setTimeout(() => {
-				homeMenu.style.display = "none";
-			}, 1100);
+	let carouselState = window.getComputedStyle(showcaseWrapper).getPropertyValue('opacity');
 
-			setTimeout(() => {
-				showcaseWrapper.style.display = "block";
-				showcaseWrapper.classList.add('switchIn');
-				showcaseWrapper.classList.remove('switchOut');
-			}, 1300)
-		}
+	if(carouselState == 0) {
 
-		else if (!showcaseWrapper.classList.contains('') || showcaseWrapper.classList.contains('switchIn')) {
+		switchElements(showcaseWrapper, menu);
+		runTheCarousel.repeat();
 
-			showcaseWrapper.classList.add('switchOut');
-			switchTitle();
+	} else if (carouselState == 1) {
 
-			setTimeout(() => {
-				showcaseWrapper.style.display = "none";
-			}, 1100)
+		runTheCarousel.cease();
+		switchElements(showcaseWrapper, menu);
+	}
 
-			setTimeout(() => {
-				homeMenu.style.display = "block";
-				homeMenu.classList.remove('switchOut');
-				homeMenu.classList.add('switchIn');
-			}, 1300)
-			setTimeout(() => {
-				CTAs.forEach(element => {
-					element.style.opacity = 1;
-				})
-			}, 2700)
-		}
-}
-
-  
-
-
+	switchElements(titleWrapper, logoWrapper);
+});

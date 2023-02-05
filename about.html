@@ -17,26 +17,19 @@
 		 fade out on page leave -->
 	<script type="text/javascript">
 		window.onload = () => {
-			let section = document.querySelector('section');
-			section.style.opacity = 1;
-		}
-		let delay = (URL) => {
+			let overlay = document.getElementById("overlay");
+			let overlayState = window.getComputedStyle(overlay).getPropertyValue('opacity');
 
-	    	setTimeout(()=> { 
-	    		//determine whether this can all go inside the window.onLoad, as to only be written once
-	    		let section = document.querySelector('section');
-				section.style.opacity = 0;
+			if(overlayState == 1) {
+				overlay.style.opacity = 0;
 
 				setTimeout(()=> {
-					window.open(URL, "_blank");
-				}, 50)
-	    		
-	    	}, 500 );
+					overlay.style.zIndex = 0;
+				}, 250)
+			}
 		}
 	</script>
-
-
-
+<div id="overlay"></div>
 
 <!-- Beginning of Page Body -->
 

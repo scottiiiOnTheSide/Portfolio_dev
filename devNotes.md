@@ -1,6 +1,21 @@
 
 ## Portfolio Site - Development Version
 
+#02. 05. 2023
+
+@1055 Currently satisfied with the landing page :D 
+	  - just need to implement the glitch effect properly
+
+@1045 Landing page transition fully implemented - and significantly cleaner T-T
+
+@1015 At this point, css for the landing page menu developed.
+	  (I have to go watch the glitch tut to add the full effect)
+
+	  cleaned up the "fade on link click" JS as well,
+	  seems to work as intended across all pages...
+
+	  Would need to know where / what the links are on each page
+	  before I can implement the "fade on link click" per page...
 
 #02. 03. 2023
 @0635 cleaned up landing.js further.

@@ -1,24 +1,16 @@
 
-
-section#initial,
-section#menu {
-	position: absolute;
-	width: 100vw;
-	height: 100vh;
+body {
 	background-color: black;
-	overflow: hidden;
 }
 
 
 /* 
-		Initial, Landing Section
-		div#landingHeader + Carousel
+		C S S  f o r  H e a d e r 
 */
-
 
 div#landingHeader {
 	display: block;
-	position: fixed;
+	position: absolute;
   top: 10%;
   left: 50%;
   transform: translateX(-50%);
@@ -40,6 +32,8 @@ div#landingHeader div#titleWrapper {
 	flex-direction: column;
 	justify-content: center;
 	margin: -30px auto 0;
+
+	transition: all ease 0.2s;
 }
 
 div#landingHeader h1 {
@@ -65,14 +59,16 @@ div#landingHeader h3 {
 }
 
 div#landingHeader div#logoWrapper {
-/*		display: flex;*/
-	display: none;
+	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	flex-wrap: wrap;
  	align-content: center;
 
-	margin: -50px auto 0;
+	margin: -80px auto 0;
+
+	opacity: 0;
+	transition: all ease 0.2s;
 }
 
 div#landingHeader div#logoWrapper img {
@@ -95,10 +91,14 @@ div#landingHeader div#logoWrapper p#tagline {
 }
 
 
-
-
 /* End of Section - Section Media Queries */
 @media only screen and (max-width: 480px) {
+
+	div#landingHeader div#logoWrapper {
+		flex-direction: row-reverse;
+		flex-wrap: nowrap;
+		margin: -50px auto 0;
+	}
 
 	div#landingHeader h1 {
 		font-size: 1.5em;
@@ -113,196 +113,13 @@ div#landingHeader div#logoWrapper p#tagline {
 	div#div#landingHeader div#logoWrapper p#tagline {
 	}
 
-
 }
 
 
 
-
-
-button#sectionSwitch {
-	background-color: transparent;
-	border: none;
-
-	font-family: 'Avenir';
-	font-weight: 500;    
-	font-size: 1em;
-	color: white;
-	letter-spacing: 10px;
-
-	position: absolute;
-	bottom: 5%;
-  left: 50%;
-  transform: translateX(-50%);
-
-  transition: all ease 0.5s;
-  animation-name: load;
-  animation-duration: 2s;
-	animation-timing-function: ease-in;
-}
-
-	button#sectionSwitch:hover {
-		letter-spacing: 20px;
-	}
-
-
-
-
-
-div#menu {
-	display: none;
-	position: absolute;
-	width: 95%;
-	/*height: 50%;*/
-	margin: 0;
-	/*margin-left: 10px;*/
-	top: 52%;
-	left: 48%;
-	transform: translate(-50%, -50%);
-}
-
-	div#menu div.option {
-		display: inline-block;
-		position: relative;
-		float: left;
-		width: 33%;
-		height: 99.8%;
-		margin: 0;
-		cursor: pointer;
-		text-align: center;
-
-	-webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none;
-	}
-
-	div#menu div.option h1 {
-		font-family: 'Avenir';
-		font-weight: 500;    
-		font-size: 1.5em;
-		color: white;
-		letter-spacing: 20px;
-    	margin: 0;
-    	margin-bottom: 20px;
-	}
-
-		/*
-			Glitch effect, courtesy of Kevin Powell
-		*/
-
-		div#menu div.option:hover > h1.glitch {
-			text-shadow: 0.05em 0 0 rgba(255, 0, 0, .75),
-						 -0.025em -.05em 0 rgba(0, 255, 0, .75),
-						 0.025em .05em 0 rgba(0, 0, 255, .75);
-			animation: glitch 750ms infinite;
-		}
-
-		div#menu div.option:hover > h3.glitch {
-			text-shadow: 0.05em 0 0 rgba(255, 0, 0, .75),
-						 -0.025em -.05em 0 rgba(0, 255, 0, .75),
-						 0.025em .05em 0 rgba(0, 0, 255, .75);
-			animation: glitch 750ms infinite;
-		}
-
-
-		@keyframes glitch {
-			0% {text-shadow: 0.05em 0 0 rgba(255, 0, 0, .75),
-						 -0.025em -.05em 0 rgba(0, 255, 0, .75),
-						 0.025em .05em 0 rgba(0, 0, 255, .75)}
-
-			24% {text-shadow: 0.05em 0 0 rgba(255, 0, 0, .75),
-						 -0.025em -.05em 0 rgba(0, 255, 0, .75),
-						 0.025em .05em 0 rgba(0, 0, 255, .75)}
-
-			25% {text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, .75),
-						 0.025em .025em 0 rgba(0, 255, 0, .75),
-						 -0.05em -.05em 0 rgba(0, 0, 255, .75)}
-
-			75% {text-shadow: 0.05em 0.05em 0 rgba(255, 0, 0, .75),
-						 0.05em .0em 0 rgba(0, 255, 0, .75),
-						 0.025em -.05em 0 rgba(0, 0, 255, .75)}
-
-			76% {text-shadow: 0.05em 0.05em 0 rgba(255, 0, 0, .75),
-						 0.05em .0em 0 rgba(0, 255, 0, .75),
-						 0.025em -.05em 0 rgba(0, 0, 255, .75)}
-
-			99% {text-shadow: -0.025em 0 0 rgba(255, 0, 0, .75),
-						 -0.025em -0.025em 0 rgba(0, 255, 0, .75),
-						 -0.025em -0.05em 0 rgba(0, 0, 255, .75)}
-			100% {text-shadow: -0.025em 0 0 rgba(255, 0, 0, .75),
-						 -0.025em -0.025em 0 rgba(0, 255, 0, .75),
-						 -0.025em -0.05em 0 rgba(0, 0, 255, .75)}
-		}
-
-
-
-	div#menu div.option h3 {
-		font-family: "Open Sans";
-		font-weight: 300;
-		font-size: 16px;
-		letter-spacing: 3px;
-		line-height: 32px;
-		color: var(--text-gray);
-		margin: 0 0 0 25px;
-		width: 90%;
-	}
-
-	div#menu div.option span{
-		display: inline-block;
-		font-family: "Open Sans";
-		font-weight: 300;
-		font-size: 0.85rem;
-		letter-spacing: 3px;
-		line-height: 32px;
-		margin: 20px auto;
-
-		transition: all 1s ease-out;
-		font-weight: 500;
-		color: var(--text-gray);
-		opacity: 0;
-	}
-
-
-
-
-
-
-
-
-
-
-@keyframes switchOut {
-	0% {opacity: 1;}
-	100% {opacity: 0;}
-}
-
-@keyframes switchIn {
-	0% { opacity: 0;}
-	100% {opacity: 1}
-}
-
-.switchOut {
-	animation-name: switchOut;
-	animation-duration: 1s;	
-	animation-timing-function: ease-in;
-	animation-fill-mode: forwards;
-}
-
-.switchIn {
-	animation-name: switchIn;
-	animation-duration: 1s;
-	animation-timing-function: ease-in;
-	animation-fill-mode: forwards;
-}
-
-
-
-
-
-
+/*
+		C S S  f o r  C a r o u s e l
+*/
 div#showcaseWrapper {
 	display: block;
 	position: absolute;
@@ -313,20 +130,15 @@ div#showcaseWrapper {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	white-space: nowrap;
-	/*for dev'ing purposes*/
-	/*border: 1px solid var(--main-color-green);*/
 }
 
 	div.showcaseSlides {
 		display: inline-block;
 		position: relative;
 		float: left;
-		width: calc(25% - 2px); /*can make this regular 25% after removing border*/
+		width: calc(25% - 2px);
 		height: 99.8%;
 		margin: 0;
-		/*margin-left: -2px; /*fixes issue of having all divs on single line
-		/*for dev'ing purposes*/
-		/*border: 1px solid white;*/
 	}
 
 		div.imgWrapper {
@@ -342,11 +154,6 @@ div#showcaseWrapper {
 			background-color: lightgray;
 		}
 
-/*		div.imgWrapper:nth-of-type(1) { top: 45%;}
-		div.imgWrapper:nth-of-type(2) { top: 45%;}
-		div.imgWrapper:nth-of-type(3) { top: 55%; }
-		div.imgWrapper:nth-of-type(4) { top: 55%; }
-*/
 			@keyframes loadUp_In { 
 				from{ top: 60%; opacity: 0; } 
 				to{ top: 45%; opacity: 1;} 
@@ -424,232 +231,164 @@ div#showcaseWrapper {
 		}
 
 
-div#UIEwrapper {
-	display: none;
-	position:  absolute;
-	width: 120px;
-	height: 120px;
-	top: 85%;
-	padding:  0;
-	right:  50%;
-	left:  50%;
-	transition: transform 3s ease-out;
-    animation-duration: 2s;
-	animation-timing-function: ease-in-out;
-	animation-fill-mode: forwards;
-	animation-delay: 1.5s;
-	opacity: 0;
-
-	top: 92%;
-    width: 64px;
-    height: 64px;
-}
-
-	.UIELoad {
-		animation-name: UIELoad;
-	}
-
-@keyframes UIELoad {
-	from{
-		opacity: 0;
-		transform: scale(0.8) translate(-50%, -50%) rotate(45deg);
-	}
-	to {
-		opacity: 1;
-		transform: scale(1.0) translate(-50%, -50%) rotate(45deg);
-	}
-}
-
-div.UIE_nonActive {
-	/*transition: transform 2s ease-out !important;*/
-	transform: translate(-50%, -50%) rotate(45deg); /* rotated clock wise*/
-}
-
-div.UIE_active {
-	/*transition: transform 2s ease-out !important;*/
-	transform: translate(-50%, -50%) rotate(225deg) !important;
-}
 
 
-	div#UIEwrapper:hover > span.crnr {
-		border-color: #3BDACA;
-	}
-
-	div#UIEwrapper:hover > span.secondCorner_hovered 
-	{ right: 10px; top: 9px; }
-
-	div#UIEwrapper:hover > span.thirdCorner_hovered 
-	{ left: 10px; bottom: 10px; }
-
-	div#UIEwrapper:hover > span.fourthCorner_hovered 
-	{ right: 10px; bottom: 10px;  }
-	/*	
-		It may actually matter that these style instructions
-		be placed directly under the div#wrapper, instead of
-		being next to the span.corner styling
-	*/
 
 
-span#exclaimer {
+/*
+		S e c t i o n  S w i t c h  B u t t o n 
+*/
+
+button#sectionSwitch {
+	background-color: transparent;
+	border: none;
+
+	font-family: 'Avenir';
+	font-weight: 500;    
+	font-size: 1em;
 	color: white;
-	font-family: 'Open Sans';
-	font-weight: 300;
-	font-size: 0.7em;
-	letter-spacing: 6px;
-	text-align: center;
+	letter-spacing: 10px;
+
 	position: absolute;
-	top: 86%;
+	bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  transition: all ease 0.5s;
+  animation-name: load;
+  animation-duration: 2s;
+	animation-timing-function: ease-in;
+}
+
+	button#sectionSwitch:hover {
+		letter-spacing: 20px;
+	}
+
+
+/*
+	N a v  M e n u
+*/
+
+ul#menu {
+	display: flex;
+	justify-content: center;
 	width: 100%;
-	transition: all 0.5s ease-out;
-	opacity: 0;
-}
-
-span.crnr {
-	display: inline-block;
-	position: absolute;
 	margin: 0;
-	width:  30%;
-	height:  30%;
-	border: 3px solid white;
-	transition: border-color 0.4s linear, 
-				top 1s ease-out,
-				right 1s ease-out,
-				left 1s ease-out,
-				bottom 1s ease-out,
-				transform 2s ease-out,
-				opacity 0.5s ease-out;
+	padding: 0;
+	list-style-type: none;
+	position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+
+  transition: all ease 0.2s;
 }
 
+ul#menu li {
+		display: inline-block;
+		text-align: center;
 
-span.crnr:first-child {
-	border: 0;
-	display: none;
-} /*first from left*/
+		margin: 0 36px;
+}
 
-
-span.crnr:nth-child(2) { 
-	right: 0; 
-	border-top: 0; 
-	transform: scale(0.98);
-}	/*span#crnr2-active { border-color: #3BDACA; right: 8px; top: 25px;}*/
-
-span.crnr:nth-child(3) {
-	bottom: 0;
-	border-left: 0;
-}	/*span#crnr3-active { border-color: #3BDACA; left: 29px; bottom: 10px;}*/
-
-span.crnr:last-child {
-	right: 0;
-	bottom: 0;
-	border-right: 0;
-}	/*span#crnr4-active { border-color: #3BDACA; right: 10px; bottom: 10px;}*/
-
-
-span#crnr2-active { border-color: #3BDACA; right: 3px; top: 8px; }
-span#crnr3-active { border-color: #3BDACA; left: 11px; bottom: 4px;}
-span#crnr4-active { border-color: #3BDACA; right: 5px; bottom: 5px;}
-
-
-
-@media only screen and (max-width: 1439px) {
-	div#title span#logo {
-		/*transform: scale(1.25);*/
-		bottom: 60px;
-	}
-
-	div#menu div.option {
-		display:  block;
-		width: 50%;
-		float: none;
-		margin: 75px auto;
-	}
-
-	div#menu div.option h1 {
-		font-size: 1.5em;
-		margin-bottom: 10px;
-	}
-
-	div#menu div.option h3 {
-		font-size: 1em;
-		line-height: 28px;
-	}
-/*	span#crnr2-active { border-color: #3BDACA; right: 7px; top: 10px; }
-	span#crnr3-active { border-color: #3BDACA; left: 12px; bottom: 8px;}
-	span#crnr4-active { border-color: #3BDACA; right: 7px; bottom: 7px;}*/
-
+ul#menu li a {
+	font-family: 'Avenir';
+	font-weight: 500;    
+	font-size: 2em;
+	color: white;
+	letter-spacing: 10px;
+	color: white;
+	text-decoration: none;
 }
 
 @media only screen and (max-width: 480px) {
 
+	ul#menu {
+		flex-direction: column;
+	}	
 
-
-	div#title span#logo {
-		transform: scale(0.75);
-	}
-
-	span#exclaimer {
-		font-size: 0.7em;
-	}
-
-	div#UIEwrapper {
-		width: 52px;
-		height: 52px;
-	}
-
-	div#UIEwrapper span.crnr {
-		border-width: 2px;
-	}
-
-	span#crnr2-active { border-color: #3BDACA; right: 3px; top: 8px; }
-	span#crnr3-active { border-color: #3BDACA; left: 11px; bottom: 4px;}
-	span#crnr4-active { border-color: #3BDACA; right: 5px; bottom: 5px;}
-
-	div#menu div.option {
-		display:  block;
+	ul#menu li {
 		width: 100%;
-		float: none;
-		margin: 40px auto;
+		margin: 20px auto;
 	}
 
-	div#menu div.option h1 {
-		letter-spacing: 10px;
-		font-size: 1.25rem;
-		margin-bottom: 10px;
-	}
-
-	div#menu div.option h3 {
-		font-size: 0.8rem;
-		line-height: 22px;
-		margin: 0 0 0 30px;
-	}
-	
-}
-
-@media only screen and (min-width: 1024px) {
-	span#exclaimer {
-	    top: 86%;
-	    font-size: 1em;
+	ul#menu li a {
+		font-size: 1.25em;
 	}
 
 }
+
+
+		/*
+			Glitch effect, courtesy of Kevin Powell
+		*/
+
+		@keyframes glitch {
+			0% {text-shadow: 0.05em 0 0 rgba(255, 0, 0, .75),
+						 -0.025em -.05em 0 rgba(0, 255, 0, .75),
+						 0.025em .05em 0 rgba(0, 0, 255, .75)}
+
+			24% {text-shadow: 0.05em 0 0 rgba(255, 0, 0, .75),
+						 -0.025em -.05em 0 rgba(0, 255, 0, .75),
+						 0.025em .05em 0 rgba(0, 0, 255, .75)}
+
+			25% {text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, .75),
+						 0.025em .025em 0 rgba(0, 255, 0, .75),
+						 -0.05em -.05em 0 rgba(0, 0, 255, .75)}
+
+			75% {text-shadow: 0.05em 0.05em 0 rgba(255, 0, 0, .75),
+						 0.05em .0em 0 rgba(0, 255, 0, .75),
+						 0.025em -.05em 0 rgba(0, 0, 255, .75)}
+
+			76% {text-shadow: 0.05em 0.05em 0 rgba(255, 0, 0, .75),
+						 0.05em .0em 0 rgba(0, 255, 0, .75),
+						 0.025em -.05em 0 rgba(0, 0, 255, .75)}
+
+			99% {text-shadow: -0.025em 0 0 rgba(255, 0, 0, .75),
+						 -0.025em -0.025em 0 rgba(0, 255, 0, .75),
+						 -0.025em -0.05em 0 rgba(0, 0, 255, .75)}
+			100% {text-shadow: -0.025em 0 0 rgba(255, 0, 0, .75),
+						 -0.025em -0.025em 0 rgba(0, 255, 0, .75),
+						 -0.025em -0.05em 0 rgba(0, 0, 255, .75)}
+		}
+
+
+
+
+
+
+
+
+
+
+
+@keyframes switchOut {
+	0% {opacity: 1;}
+	100% {opacity: 0;}
+}
+
+@keyframes switchIn {
+	0% { opacity: 0;}
+	100% {opacity: 1}
+}
+
+.switchOut {
+	animation-name: switchOut;
+	animation-duration: 1s;	
+	animation-timing-function: ease-in;
+	animation-fill-mode: forwards;
+}
+
+.switchIn {
+	animation-name: switchIn;
+	animation-duration: 1s;
+	animation-timing-function: ease-in;
+	animation-fill-mode: forwards;
+}
+
 
 @media only screen and (max-width: 1023px) {
-
-	span#exclaimer {
-		top: 88%;
-	}
-
-	div#UIEwrapper {
-		top: 93%;
-	}
-
-	div#title {
-		top:  7%;
-	}
-
-	div#title span#logo {
-		margin-top: 30px;
-	}
 
 	div#showcaseWrapper {
 		top: 52%;

@@ -13,29 +13,17 @@
 	</head>
 
 <body>
-
 <!-- Fade in on arrival, 
 	 fade out on page leave -->
-<script type="text/javascript">
+	<script type="text/javascript">
 		window.onload = () => {
-			let section = document.querySelector('section');
-			section.style.opacity = 1;
+			let overlay = document.getElementById("overlay");
+			
+			overlay.style.opacity = 0;
+			overlay.style.zIndex = 0;
 		}
-		let delay = (URL) => {
-
-	    	setTimeout(()=> { 
-	    		//determine whether this can all go inside the window.onLoad, as to only be written once
-	    		let section = document.querySelector('section');
-				section.style.opacity = 0;
-
-				setTimeout(()=> {
-					window.open(URL, "_blank");
-				}, 50)
-	    		
-	    	}, 500 );
-		}
-</script>
-
+	</script>
+<div id="overlay"></div>
 
 <div id="landingHeader">
 	<div id="titleWrapper">
@@ -50,9 +38,8 @@
 </div>
 
 
-<section id="initial">	
 
-		<div id="showcaseWrapper"> 							<!-- General wrapper -->
+<div id="showcaseWrapper" > 							<!-- General wrapper -->
 			<div class="showcaseSlides">						<!-- relative space for images to move witin -->
 				<div class="imgWrapper loadUp_In">				<!-- wrapper for img, to easier control dimensions -->
 					<img src="resources/arrival/001.jpg"> 								<!-- Image itself -->
@@ -73,17 +60,13 @@
 					<img src="resources/arrival/004.jpg">
 				</div>
 			</div>
-		</div>
+</div>
 
-</section>
+<ul id="menu" >
 
-<section id="menu">
-
-	<ul id="menu">
-
-		<li>
-			<a href="./about.html">About</a>
-		</li>
+	<li>
+		<a href="./about.html">About</a>
+	</li>
 
 		<li>
 			<a href="./gallery.html">Gallery</a>
@@ -97,9 +80,8 @@
 			<a href="./contact.html">Contact</a>
 		</li>
 
-	</ul>
+</ul>
 
-</section>
 
 
 <!-- Section Switching Button -->
@@ -108,7 +90,29 @@
 
 <script type="text/javascript" src="js/landing.js"></script>
 <script>
-	runTheCarousel.repeat();
+	// runTheCarousel.repeat();
+
+	let overlay = document.getElementById('overlay');
+	let links = Array.from(document.querySelectorAll('ul#menu li a'));
+	for(let link of links) {
+
+		link.addEventListener('click', (e)=> {
+			e.preventDefault();
+			overlay.style.zIndex = 10;
+			overlay.style.opacity = 1;
+
+			let dest = link.getAttribute("href");
+			setTimeout(()=> {
+				window.location.href = dest;
+
+				setTimeout(() => {
+					overlay.style.zIndex = 0;
+					overlay.style.opacity = 0;
+				}, 400)
+			}, 300)
+		})
+
+	}
 </script>
 
 
