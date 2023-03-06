@@ -1,6 +1,28 @@
 
 ## Portfolio Site - Development Version
 
+#03. 05. 2023
+
+@2240 HTML skeleton created for gallery sections
+	  - create agnostic addSection, removeSection functions
+	  	to be used for sections
+	  - #mainMenu options should have glitch effect
+
+@2210 Loading should occur after genre or allImages selection
+	  should be able to place loaded images from inital galleryView
+	  into imageView slider . . .
+
+@2140 updated the createImagesObjects.js script - result is images.js
+	  which houses object organizing images by genre, and then allImages.
+	  0 ModelWork
+	  1 LifeandEvents
+	  2 CarsToys
+	  3 Arch.Travel
+	  4 allImages
+
+	  Would like to have images (at least allImages) randomized...
+
+
 #02. 05. 2023
 
 @1055 Currently satisfied with the landing page :D 

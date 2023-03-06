@@ -16,6 +16,12 @@
 	font-weight: 500;
 }
 
+@font-face {
+	font-family: "Avenir";
+	src: url("../resources/fonts/AvenirLTStd-Italic.ttf");
+	font-style: italic;
+}
+
 /*
 	S I T E  T H E M E  C O L O R S
 */
@@ -38,6 +44,11 @@ body {
 	height: 100vh;
 }
 
+body#landing, body#gallery {
+	background-color: black;
+}
+
+
 div#overlay {
 	display: block;
 	position: absolute;
@@ -56,47 +67,66 @@ div#overlay {
 /*
 	H E A D E R
 */
-header {
-	display: none; 
-	opacity: 0;
-	/* At site launch, is not present*/
 
-	position: absolute;
-	top: 0;
-	width: 100%;
-	overflow: hidden;
-	z-index: 10;
-	transition: all 1s ease;
+header#gallery  {
+	color: white;
 }
 
-	header h1 {
+	header span {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+
 		font-family: 'Avenir';
-		font-weight: 500;    
+		font-style: italic;    
 		font-size: 1.5em;
 		text-align: center;
-		letter-spacing: 10px;
-		color:  rgba(0, 0, 0, .5);
+		letter-spacing: 8px;
+		text-transform: uppercase;
 		text-shadow: 0.05em 0 0 rgba(255, 0, 0, .75),
 					 -0.025em -.05em 0 rgba(0, 255, 0, .75),
 					 0.025em .05em 0 rgba(0, 0, 255, .75);
 		margin: 30px auto 20px;
-		/*width:  30%;*/
+		width:  100%;
 		padding-bottom: 10px;
-		animation: glitch 1s infinite;
+		animation: glitch 1.25s infinite;
 	}
 
-	header h1::after {
-	content: '';
-	position: absolute;
-	width: 125px;
-	border-top: 4px solid;
-	border-image-source: linear-gradient(90deg, rgba(60,220,200,1) 0%, rgba(65,105,225,1) 100%);
-	border-image-slice: 1;
-	padding: 0;
-	transform: translateX(-50%);
-	left: 50%;
-	bottom: 15px;
-}
+	header span:nth-child(1) {
+		animation: glitch 1s infinite;
+/*		color: rgba(65,105,225,1);*/
+		clip-path: polygon(0 0, 100% 0, 100% 40%, 0 25%);
+		transform: translate(-0.07em, -0.025em);
+		left: 0%;
+		opacity: 0.8;
+		z-index: 2;
+	}
+
+	header span:last-child {
+		animation: glitch 0.8s infinite;
+/*		color: rgba(0, 255, 0, .75);*/
+		clip-path: polygon(0 30%, 100% 40%, 100% 100%, 0 100%);
+		transform: translate(0.07em, 0.025em);
+		left: 0%;
+		opacity: 0.8;
+	}
+
+
+
+	/* the underline */
+	/*header span::after {
+		content: '';
+		position: absolute;
+		width: 125px;
+		border-top: 4px solid;
+		border-image-source: linear-gradient(90deg, rgba(60,220,200,1) 0%, rgba(65,105,225,1) 100%);
+		border-image-slice: 1;
+		padding: 0;
+		transform: translateX(-50%);
+		left: 50%;
+		bottom: 15px;
+	}*/
 
 
 	@keyframes glitch {
@@ -127,6 +157,17 @@ header {
 						 -0.025em -0.025em 0 rgba(0, 255, 0, .75),
 						 -0.025em -0.05em 0 rgba(0, 0, 255, .75)}
 		}
+
+
+/* 
+		As of 03. 06. 2023
+		All proceeding code outdated
+*/
+
+
+
+
+
 
 
 /*
@@ -238,7 +279,7 @@ nav#main span.corner span.indicator {
 
 
 
-div#navPage {
+/*div#navPage {
 	width: 100%;
 	height: 100vh;
 	position: fixed;
@@ -329,7 +370,7 @@ div#navPage ul li button {
 		}
 
 	div#navPage ul li:first-child {
-		/*display: none;*/
+		
 	}
 
 	div#navPage ul li:first-child button {
@@ -381,7 +422,7 @@ div#navPage ul li button {
 		}
 
 	nav#main div.cornerWrapper {
-			/*width: 60%;*/
+
     	position: absolute;
     	top: 50%;
     	left: 50%;
@@ -403,11 +444,7 @@ div#navPage ul li button {
 	nav.menu-active span.corner:nth-child(2) {}
 
 	div#navPage ul {
-		/*transform: none;
-		position: absolute;
-		/*top: auto;
-		bottom: 5%;
-		left: -30px;*/
+
 	}
 
 	div#navPage ul li:first-child {
@@ -415,8 +452,7 @@ div#navPage ul li button {
 		transition-property: opacity;
 		transition-timing-function: ease;
   		transition-duration: 1s;
-  		/*opacity: 1;*/
-  		/*display: block;*/
+
 	}
 
 	div#navPage ul li {
@@ -436,7 +472,6 @@ div#navPage ul li button {
 		}
 
 	div#navPage ul li.appear {
-		/*margin-bottom: 60px;*/
 		opacity: 1;
 	}
 } 
@@ -445,46 +480,4 @@ div#navPage ul li button {
 	nav#main div.cornerWrapper {
 		width: 215px;
 	}
-}
-
-
-
-
-
-
-
-
-
-
-section {
-	width: 100%;
-	height: 100vh !important; 
-	position: relative;
-/*	display: none;*/
-/*	opacity: 0;*/
-	overflow: hidden;
-	transition: all 1s ease;
-}
-
-section.active {
-	display: block;
-}
-
-section#gallery {
-	background-color: black;
-}
-
-/*section h1 {
-	font-family: 'Avenir';
-    font-weight: 500;
-    font-size: 3em;
-    text-align: center;
-    letter-spacing: 10px;
-    color: var(--text-gray);
-    text-align: left;
 }*/
-
-
-@media only screen and (max-width: 1024px) {
-	
-}

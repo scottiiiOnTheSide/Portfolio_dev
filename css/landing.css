@@ -1,9 +1,3 @@
-
-body {
-	background-color: black;
-}
-
-
 /* 
 		C S S  f o r  H e a d e r 
 */
@@ -130,6 +124,7 @@ div#showcaseWrapper {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	white-space: nowrap;
+	overflow-x: hidden;
 }
 
 	div.showcaseSlides {

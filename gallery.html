@@ -11,7 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="css/gallery.css">
 <head>
 
-<body>
+<body id="gallery">
 		
 	<!-- Fade in on arrival, 
 		 fade out on page leave -->
@@ -29,21 +29,82 @@
 			}
 		}
 	</script>
-<div id="overlay"></div>
+	<div id="overlay"></div>
+
+
+<!-- H E A D E R -->
+<header id="gallery">
+	<span aria-hidden="true" class="header" style="display: none;">beam me up !!!</span>
+	<span class="header">beam me up !!!</span>
+	<span aria-hidden="true" class="header" style="display: none;">beam me up !!!</span>
+</header>
+	
 
 
 
 <!-- Beginning of Page Body -->
-<section id="gallery">
+<!-- <section id="gallery"> -->
 
-	<div id="mainMenu" style="display: block;"> <!-- during dev -->
+	<ul id="mainMenu"> <!-- during dev -->
 		<!-- <div id="mainMenu" style="display: block;"> -->
-		<div><span>Model Work</span></div>
-		<div><span>Life & Events</spam></div>
-		<div><span>Cars. Tech. Toys</span></div>
-		<div><span>Arch. & Travel</span></div>
+		<li>All Photos</li>
+		<li>Genres</li>
+		<li>Projects</li>
+		<li>Video</li>
+	</ul>
+
+	<ul id="genres">
+		<li>Model Work</li>
+		<li>Life & Events</li>
+		<li>Cars. Tech. Toys</li>
+		<li>Arch. & Travel</li>
+	</ul>
+
+	<div id=gallery>
+		
+		<div id="heading">
+			<button id="return">Return</button>
+			<h2>Genre / <span id="genre"></span></h2>
+
+			<div id="images">
+			</div>
+		</div>
+
 	</div>
 
+	<div id="imageview">
+		<ul id="imageSlides">
+		</ul>
+
+		<div id="infoWrapper">
+			
+			<div id="imageCount">
+				<span id="current"></span>
+				<span id="total"></span>
+			</div>
+
+			<p>Swipe or drag the image from right to left, or vice versa</p>
+
+			<button id="exit">Exit</button>
+
+		</div>
+	</div>
+
+
+
+	
+
+	<div id="loader">
+		<img src="resources/Beammeupscottiii-LogoSolo-white.svg" alt="beammeupscottiii logo">
+	</div>
+<!-- </section> -->
+
+
+
+<script type="text/javascript" src="js/gallery.js"></script>
+</body>
+
+<!--
 	<div id="albums" style="display: none;">
 
 			<nav>
@@ -54,7 +115,7 @@
 			</nav>
 
 			<div id="allImages" style="display: none">
-				<!-- use a flexbox layout for the images -->
+				 use a flexbox layout for the images 
 				<div id="wrapper">
 				</div>
 			</div>
@@ -63,7 +124,7 @@
 			</div>		
 	</div>
 
-		<!-- new viewer goes here. Only need to make one -->
+		 new viewer goes here. Only need to make one 
 	<div id="imageview">
 			<ul id="imageSlidesWrapper">
 			</ul>
@@ -71,14 +132,14 @@
 			<div id="controlsMenu">
 				<ul id="controlsWrapper">
 					<li id="imagecount">
-						<span>1</span> <!-- current image number --> 
-						<span>10</span> <!-- full amount of images in gallery -->
+						<span>1</span>  current image number 
+						<span>10</span>  full amount of images in gallery 
 					</li>
 					<li>
-						<button>Scale Up</button> <!-- previous -->
+						<button>Scale Up</button>  previous 
 					</li>
 					<li>
-						<button>Exit Viewer</button> <!-- exit -->
+						<button>Exit Viewer</button>  exit 
 					</li>
 					<li id="desktopAlert">
 						<p>Click and drag images <br> from left to right</p>
@@ -95,14 +156,5 @@
 					<span id="tooltip"></span>
 				</div>
 			</div>
-	</div>
-
-	<div id="loader">
-		<img src="resources/Beammeupscottiii-LogoSolo-white.svg" alt="beammeupscottiii logo">
-	</div>
-</section>
-
-
-
-<script type="text/javascript" src="js/gallery.js"></script>
-</body>
+	</div> 
+ -->
