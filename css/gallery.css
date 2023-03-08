@@ -40,6 +40,7 @@ ul#mainMenu li:hover {}
 
 ul#genres {
 	display: none;
+	opacity: 0;
 }
 
 ul#genres li {
@@ -53,6 +54,7 @@ ul#genres li {
     text-transform: uppercase;
 
     width: 85%;
+    display: inline-block;
     margin-left: auto;
 /*    padding: 20px 0px;*/
 
@@ -152,16 +154,29 @@ div#gallery div#heading h2 span{
 
 
 div#gallery div#imagesWrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 	width: 95%;
 	margin: 60px auto;
+
 }
 
 div#gallery div#imagesWrapper img {
-	width: 18%;
+	width: 40%;
 	max-height: 320px;
 	padding: 10px;
 	object-fit: cover;
 }
+
+div#gallery div#imagesWrapper img:nth-child(even) {
+	position: relative;
+    top: 20px;
+}
+
+/*
+
+*/
 
 
 
@@ -184,4 +199,58 @@ div#loader {
 	    font-size: 2em;
 	}
 
+	ul#mainMenu li span {
+		top: 35px;
+	}	
+
+	div#gallery div#heading {
+		width: 85%;
+	}
+
+	ul#genres {
+		width: 80%;
+		flex-wrap: wrap;
+		flex-direction: row;
+	}
+
+	ul#genres li {
+		width: 50%;
+	}
+
+	ul#genres li span {
+		text-align: center;
+		padding: 80px 0;
+		right: 1px;
+	}
+}
+
+@media only screen and (min-width: 1023px) {
+
+	div#gallery div#imagesWrapper img {
+		width: 18%;
+		max-height: 320px;
+		padding: 10px;
+		object-fit: cover;
+	}
+
+	div#gallery div#imagesWrapper img:nth-child(even) {
+		position: relative;
+	    top: 20px;
+	}
+
+}
+
+@media only screen and (min-width: 1199px) {
+
+	div#gallery div#heading {
+		width: 85%;
+	}
+
+	div#gallery div#imagesWrapper {
+		width: 85%;
+	}
+
+	div#gallery div#imagesWrapper img:nth-child(even) {
+	    top: 0px;
+	}
 }

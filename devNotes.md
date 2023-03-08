@@ -1,6 +1,20 @@
 
 ## Portfolio Site - Development Version
 
+#03. 08. 2023
+@0200 Added toggleElement function
+	  styles for gallery/mainMenu and gallery/genres complete
+
+	  next:
+	  async load function when opening galleries
+	  - having imageview draw from loaded gallery
+	  	should be able to move images into an external array
+	  	imageview can then access. Images will probably 
+	  	remain cached so long as site isnt reloaded
+
+	 need to implement 'back' from genres
+	 probably smaller text button (positioned in middle for desktop)
+
 #03. 07. 2023
 
 @2005 Currently working on styling for gallery.
