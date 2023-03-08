@@ -2,6 +2,14 @@
 ## Portfolio Site - Development Version
 
 #03. 08. 2023
+
+@0755 using preloader function to add images to div,
+	  and then display imagesWrapper, is *mostly* working.
+
+	  Longer than expected delay between the loader dissappearing
+	  and the images appearing....
+
+
 @0200 Added toggleElement function
 	  styles for gallery/mainMenu and gallery/genres complete
 
@@ -14,6 +22,8 @@
 
 	 need to implement 'back' from genres
 	 probably smaller text button (positioned in middle for desktop)
+
+
 
 #03. 07. 2023
 
