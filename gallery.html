@@ -25,7 +25,10 @@
 
 				setTimeout(()=> {
 					overlay.style.zIndex = 0;
-				}, 250)
+					setTimeout(()=> {
+						overlay.style.display = 'none';
+					}, 200)
+				}, 1200)
 			}
 		}
 	</script>
@@ -40,34 +43,41 @@
 </header>
 	
 
-
-
-<!-- Beginning of Page Body -->
-<!-- <section id="gallery"> -->
-
-	<ul id="mainMenu"> <!-- during dev -->
-		<!-- <div id="mainMenu" style="display: block;"> -->
-		<li>All Photos</li>
-		<li>Genres</li>
-		<li>Projects</li>
-		<li>Video</li>
+<!-- Sections -->
+	<ul id="mainMenu" style="display: none"> <!-- during dev -->
+		<li class="glitch">
+			<span>All Photos</span>All Photos</li>
+		<li class="glitch">
+			<span>Projects</span>Projects</li>
+		<li class="glitch">
+			<span>Genres</span>Genres</li>
+		<li class="glitch">
+			<span>Video</span>Video</li>
 	</ul>
 
-	<ul id="genres">
-		<li>Model Work</li>
-		<li>Life & Events</li>
-		<li>Cars. Tech. Toys</li>
-		<li>Arch. & Travel</li>
+	<ul id="genres" style="display: none">
+		<li>
+			<span>Model Work</span>
+		</li>
+		<li>
+			<span>Life & Events</span>
+		</li>
+		<li>
+			<span>Cars. Tech. Toys</span>
+		</li>
+		<li>
+			<span>Arch. & Travel</span>
+		</li>
 	</ul>
 
-	<div id=gallery>
+	<div id="gallery" style="display: block">
 		
 		<div id="heading">
 			<button id="return">Return</button>
-			<h2>Genre / <span id="genre"></span></h2>
+			<h2>Genre<span id="genre">/ Model Work</span></h2>
+		</div>
 
-			<div id="images">
-			</div>
+		<div id="imagesWrapper">
 		</div>
 
 	</div>
@@ -95,12 +105,12 @@
 	
 
 	<div id="loader">
-		<img src="resources/Beammeupscottiii-LogoSolo-white.svg" alt="beammeupscottiii logo">
+		<img src="./resources/logos/Beammeupscottiii-LogoSolo-white.svg" alt="beammeupscottiii logo">
 	</div>
 <!-- </section> -->
 
 
-
+<script type="text/javascript" src="js/images.js"></script>
 <script type="text/javascript" src="js/gallery.js"></script>
 </body>
 

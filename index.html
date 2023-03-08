@@ -12,7 +12,7 @@
 
 	</head>
 
-<body>
+<body id="landing">
 <!-- Fade in on arrival, 
 	 fade out on page leave -->
 	<script type="text/javascript">
@@ -62,23 +62,27 @@
 			</div>
 </div>
 
-<ul id="menu" >
+<ul id="menu">
 
 	<li>
-		<a href="./about.html">About</a>
+		<a class="glitch" href="./about.html">
+			<span>About</span>About</a>
 	</li>
 
-		<li>
-			<a href="./gallery.html">Gallery</a>
-		</li>
+	<li>
+		<a class="glitch" href="./gallery.html">
+			<span>Gallery</span>Gallery</a>
+	</li>
 
-		<li>
-			<a href="./services.html">Work with Me</a>
-		</li>
+	<li>
+		<a class="glitch" href="./services.html">
+			<span>Work with Me</span>Work with Me</a>
+	</li>
 
-		<li>
-			<a href="./contact.html">Contact</a>
-		</li>
+	<li>
+		<a class="glitch" href="./contact.html">
+			<span>Contact</span>Contact</a>
+	</li>
 
 </ul>
 
@@ -93,23 +97,28 @@
 	runTheCarousel.repeat();
 
 	let overlay = document.getElementById('overlay');
+
+	/* Delay page leave for overlay fadeIn */
 	let links = Array.from(document.querySelectorAll('ul#menu li a'));
 	for(let link of links) {
 
 		link.addEventListener('click', (e)=> {
 			e.preventDefault();
-			overlay.style.zIndex = 10;
-			overlay.style.opacity = 1;
-
 			let dest = link.getAttribute("href");
+
+			setTimeout(()=> {
+				overlay.style.zIndex = 10;
+				overlay.style.opacity = 1;
+			}, 500)
+			
 			setTimeout(()=> {
 				window.location.href = dest;
-
+	
 				setTimeout(() => {
 					overlay.style.zIndex = 0;
 					overlay.style.opacity = 0;
-				}, 400)
-			}, 300)
+				}, 1200)
+			}, 1000)
 		})
 
 	}

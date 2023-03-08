@@ -1,7 +1,57 @@
 
 ## Portfolio Site - Development Version
 
+#03. 07. 2023
+
+@2005 Currently working on styling for gallery.
+	  Rn, page doesnt load until some of images have loaded
+	  Goal:
+	  load images async, while displaying loader. 
+	  Images should only have to load once, as imageview
+	  should draw from loaded images
+
+@1135 Not sure when, but need to properly implement the image
+	  preloader. 
+	  Can start with allPhotos, as that directly calls for all
+	  images to be loaded.
+	  Purpose of preloader is so that images can be smoothly
+	  added / revealed one after the other
+	  Preloader Code:
+	  `const preloadImages = (src) => {
+	  	return new Promise((resolve,reject) => {
+			const img = new Image();
+			img.onload = () => {
+				resolve(img);
+			} 
+			img.onerror = reject;
+			img.src = src;
+	 	 })
+	   }
+		const preloadImages_all = async (sources) => {
+		return Promise.all(sources.map(preloadImages))
+	   `
+
+	   create var for image gallery = to preloadImages_all
+	   write rest of code within imageGallery.then((imgs)=> {
+	   		create elements to place within wrapper
+	   	})
+
+@1125 CSS skeleton made for gallery page and sections
+	  completed CSS for mainMenu, genre menu.
+	  - with implementation of add/remove funcs,
+	  	that covers functionality
+	  	(should write functions to accept parameter for timing...)
+
+@0815 Made general class for glitch effect.
+	  Need to add span to link elements, or whichever get class.
+	  reminder to add overlay fadeIn....
+	  Actually, should be able to get them all in main.js file
+
 #03. 05. 2023
+@1030 Spent the past hour or so working on adding to the glitch effect - decided to 
+		stick with the original style for the header.
+		Will use the full glitch effect for navigation and particular buttons, however
+
 
 @2240 HTML skeleton created for gallery sections
 	  - create agnostic addSection, removeSection functions

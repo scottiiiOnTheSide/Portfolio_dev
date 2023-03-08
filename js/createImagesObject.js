@@ -25,7 +25,8 @@ function createGalleryObject(mainFolder) {
 
 		let images = fs.readdirSync(dir);
 		images.forEach(img => {
-			album.images.push(img);
+			let anImg = './img' + '/' + folder + '/' +img
+			album.images.push(anImg);
 			
 		})
 

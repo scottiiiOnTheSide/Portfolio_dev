@@ -61,7 +61,7 @@ div#overlay {
 	background-color: black;
 	opacity: 1;
 
-	transition: all ease 0.2s;
+	transition: all ease 1s;
 }
 
 /*
@@ -80,9 +80,10 @@ header#gallery  {
 
 		font-family: 'Avenir';
 		font-style: italic;    
-		font-size: 1.5em;
+		font-size: 1.25em;
 		text-align: center;
 		letter-spacing: 8px;
+		word-spacing: -5px;
 		text-transform: uppercase;
 		text-shadow: 0.05em 0 0 rgba(255, 0, 0, .75),
 					 -0.025em -.05em 0 rgba(0, 255, 0, .75),
@@ -93,9 +94,9 @@ header#gallery  {
 		animation: glitch 1.25s infinite;
 	}
 
-	header span:nth-child(1) {
+	/*header span:nth-child(1) {
 		animation: glitch 1s infinite;
-/*		color: rgba(65,105,225,1);*/
+		color: rgba(65,105,225,1);
 		clip-path: polygon(0 0, 100% 0, 100% 40%, 0 25%);
 		transform: translate(-0.07em, -0.025em);
 		left: 0%;
@@ -105,12 +106,12 @@ header#gallery  {
 
 	header span:last-child {
 		animation: glitch 0.8s infinite;
-/*		color: rgba(0, 255, 0, .75);*/
+		color: rgba(0, 255, 0, .75);
 		clip-path: polygon(0 30%, 100% 40%, 100% 100%, 0 100%);
 		transform: translate(0.07em, 0.025em);
 		left: 0%;
 		opacity: 0.8;
-	}
+	}*/
 
 
 
@@ -157,6 +158,23 @@ header#gallery  {
 						 -0.025em -0.025em 0 rgba(0, 255, 0, .75),
 						 -0.025em -0.05em 0 rgba(0, 0, 255, .75)}
 		}
+
+
+.glitch:hover {
+	animation: glitch 1.25s infinite;
+}
+
+.glitch span {
+		clip-path: polygon(0 0, 100% 0, 100% 70%, 0 60%);
+		transform: translate(-0.07em, -0.025em);
+		left: 0%;
+		opacity: 0;
+		z-index: 2;
+}
+
+.glitch:hover span {
+		opacity: 0.8;
+}
 
 
 /* 

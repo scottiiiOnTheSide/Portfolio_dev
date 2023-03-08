@@ -297,6 +297,12 @@ ul#menu li a {
 	text-decoration: none;
 }
 
+ul#menu li a span {
+	display: block;
+	position: relative;
+	top: 23px;
+}
+
 @media only screen and (max-width: 480px) {
 
 	ul#menu {

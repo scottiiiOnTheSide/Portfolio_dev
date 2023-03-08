@@ -1,0 +1,187 @@
+
+ul {
+	display: flex;
+	flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all ease 0.2s;
+}
+
+
+
+
+ul#mainMenu li {
+	font-family: 'Avenir';
+    font-weight: 500;
+    font-size: 1.5em;
+    color: white;
+    letter-spacing: 10px;
+    text-align: center;
+
+    margin: 16px auto;
+}
+
+ul#mainMenu li span {
+	display: block;
+	position: relative;
+	top: 29px;
+}
+
+ul#mainMenu li:hover {}
+
+
+
+ul#genres {
+	display: none;
+}
+
+ul#genres li {
+	font-family: 'Avenir';
+    font-weight: 500;
+    font-size: 1.25em;
+    color: white;
+    letter-spacing: 10px;
+    word-spacing: -10px;
+    text-align: right;
+    text-transform: uppercase;
+
+    width: 85%;
+    margin-left: auto;
+/*    padding: 20px 0px;*/
+
+    background-color: black;
+    background-position: center;
+    background-size: cover;
+    transition: all 0.5s ease-out;
+
+}
+
+	ul#genres li:first-child {
+		background-image: url(../resources/gallery/1.jpg);
+    	background-position: 75% 25%;
+	}
+
+	ul#genres li:nth-child(2) {
+		background-image: url(../resources/gallery/3.jpg);
+		background-position: 75% 25%;
+	}
+
+	ul#genres li:nth-child(3) {
+		background-image: url(../resources/gallery/2.jpg);
+	}
+
+	ul#genres li:last-child {
+		background-image: url(../resources/gallery/4.jpg);
+	}
+
+ul#genres li span {
+    display: block;
+    width: 102%;
+    background-color: black;
+    transition: all 0.5s ease-out;
+    padding: 20px 20px 20px 0;
+    position: relative;
+    right: 20px;
+}
+
+	ul#genres li:hover > span {
+		color: white;
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+
+
+
+
+div#gallery {
+/*	display: none;*/
+	margin-top: 80px;
+}
+
+div#gallery div#heading {
+	width: 95%;
+	margin: 0 auto;
+	border-bottom: 1px solid white;
+	position: relative;
+
+	color: white;
+
+}
+
+div#gallery div#heading button#return {
+	font-family: 'Avenir';
+	font-size: 0.8em;
+	font-weight: 500;    
+	color: white;
+	letter-spacing: 5px;
+	text-decoration: none;
+	text-transform: uppercase;
+
+	background-color: transparent;
+	border: none;
+
+	position: absolute;
+	bottom: -36px;
+}
+
+div#gallery div#heading h2 {
+	margin: 0 10px 10px 0;
+	text-align: right;
+
+	font-family: 'Avenir';
+	font-size: 1.5em;
+	font-weight: 500;    
+	color: white;
+	letter-spacing: 10px;
+	text-decoration: none;
+	letter-spacing: 5px;
+}
+
+div#gallery div#heading h2 span{
+	font-size: 0.5em;
+	margin-left: 6px;
+}
+
+
+
+
+div#gallery div#imagesWrapper {
+	width: 95%;
+	margin: 60px auto;
+}
+
+div#gallery div#imagesWrapper img {
+	width: 18%;
+	max-height: 320px;
+	padding: 10px;
+	object-fit: cover;
+}
+
+
+
+div#imageview {
+	display: none;
+}
+
+div#loader {
+	display: none;
+}
+
+
+
+
+
+
+@media only screen and (min-width: 767px) {
+
+	ul#mainMenu li {
+	    font-size: 2em;
+	}
+
+}
