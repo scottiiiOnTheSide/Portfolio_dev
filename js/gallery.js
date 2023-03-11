@@ -106,12 +106,28 @@ for(let i=0; i < mainMenuOptions.length; i++) {
 genreOptions.forEach((option, index) => {
 
 	option.addEventListener('click', ()=> {
-		headingText.innerText = '/ '+images[index].genre;
 
-		setTimeout(()=> {
-			toggleElement(genres, 500, 'flex');
-			setTimeout(loadGallery(images[index].images), 700)
-		}, 500)
+		/* for return to main menu */
+		if(index == 4) {
+			setTimeout(()=> {
+				toggleElement(genres, 500)
+				setTimeout(()=> {
+					toggleElement(mainMenu, 500, 'flex');
+				}, 700)
+			}, 500)
+			
+		/* Opening a gallery */	
+		} else {
+			headingText.innerText = '/ '+images[index].genre;
+			/* make loader display block */
+
+			setTimeout(()=> {
+				toggleElement(genres, 500, 'flex');
+				setTimeout(loadGallery(images[index].images), 700)
+			}, 500)
+		}
+
+		
 	})
 })
 

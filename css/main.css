@@ -42,10 +42,15 @@ body {
 	overscroll-behavior-y: contain;
 	position: relative;
 	height: 100vh;
+	width: 100%;
 }
 
 body#landing, body#gallery {
 	background-color: black;
+}
+
+body#gallery {
+	overflow: hidden;
 }
 
 

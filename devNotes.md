@@ -1,13 +1,20 @@
 
 ## Portfolio Site - Development Version
 
-#03. 10. 2023
+#03. 11. 2023
+@1145 Return button added to genres menu,
+	  return button for both gallery & genres functional.
 
+	  Adjusted positioning of gallery elements, so that
+	  they dont move around while images load
+	  (header would appear in middle while images loaded)
+
+#03. 10. 2023
 @2200 preloaded images get added into 'currentGalleries' array.
 	  
 	  Next, make changes to imageViewer -> add it
 
-	  Add return button to 'genres' menu
+	  Add return button to 'genres' menu (done)
 
 	  if imageWrapper has odd number of children, to add extra margin
 	  to that last, odd child
