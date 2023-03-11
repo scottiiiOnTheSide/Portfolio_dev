@@ -15,17 +15,14 @@ let mainMenu = document.getElementById("mainMenu"),
 	genres = document.getElementById("genres"),
 	genreOptions = Array.from(document.querySelectorAll('ul#genres li')),
 	gallery = document.querySelector('div#gallery'),
+	galleryHeader = document.querySelector('div#gallery div#heading'),
+	galleryReturn = document.querySelector('div#gallery div#heading button#return'),
 	headingText = document.querySelector('span#genre'),
 	imagesWrapper = document.getElementById("imagesWrapper"),
 	loader = document.getElementById("loader");
 
-// for (let img of images[0].images) {
-// 	let element = new Image();
-// 	element.src = img;
-// 	imagesWrapper.append(element);
-// }
+let currentGallery = [];
 
-	
 function toggleElement(element, timing, style) {
 	const elementState = window.getComputedStyle(element).getPropertyValue('opacity');
 
@@ -65,20 +62,26 @@ function toggleElement(element, timing, style) {
 
 function loadGallery(images) {
 
-	toggleElement(loader, 500, 'block');
+	toggleElement(gallery, 500, 'block');
+	toggleElement(galleryHeader, 500, 'block');
+	loader.style.opacity = 1;
 
 	preloadImages_all(images).then((imgs)=> {
-		
-		toggleElement(gallery, 500, 'block');
 
-		imgs.forEach(img => {
+		imgs.forEach((img, index) => {
 			imagesWrapper.append(img);
+			currentGallery.push(img);
 		})
 
-		toggleElement(loader, 500, 'block');
-		
-	})
+		loader.style.opacity = 0;
 
+		let pics = Array.from(imagesWrapper.children);
+		pics.forEach((img, index) => {
+			setTimeout(()=> {
+				img.style.opacity = 1;
+			}, 300 * index)
+		})
+	})
 }
 
 /* For Main Menu Options */
@@ -100,31 +103,6 @@ for(let i=0; i < mainMenuOptions.length; i++) {
 	})
 }
 
-/* For Genre Options */
-// for(let i=0; i < genreOptions.length; i++) {
-
-// 	genreOptions[i].addEventListener('click', ()=> {
-
-// 		if(i == 0) {
-// 			headingText.innerText = images[i].genre;
-
-// 			setTimeout(()=> {
-// 				toggleElement(genres, 500, 'flex');
-// 				setTimeout(loadGallery(images[i].images), 700)
-// 			}, 500)
-// 		} else if (i == 1) {
-// 			headingText.innerText = images[i].genre;
-			
-// 		} else if (i == 2) {
-// 			headingText.innerText = images[i].genre;
-			
-// 		} else if (i == 3) {
-// 			headingText.innerText = images[i].genre;
-			
-// 		}
-// 	})
-// }
-
 genreOptions.forEach((option, index) => {
 
 	option.addEventListener('click', ()=> {
@@ -135,5 +113,19 @@ genreOptions.forEach((option, index) => {
 			setTimeout(loadGallery(images[index].images), 700)
 		}, 500)
 	})
+})
 
+
+/* Gallery Return Button */
+galleryReturn.addEventListener('click', ()=> {
+	setTimeout(()=> {
+		toggleElement(gallery, 500)
+		toggleElement(galleryHeader, 500);
+
+		setTimeout(()=> {
+			imagesWrapper.innerHTML = "";
+			currentGallery = [];
+			toggleElement(genres, 500, 'flex');
+		}, 700)
+	}, 550)
 })

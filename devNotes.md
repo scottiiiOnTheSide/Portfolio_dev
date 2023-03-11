@@ -1,6 +1,28 @@
 
 ## Portfolio Site - Development Version
 
+#03. 10. 2023
+
+@2200 preloaded images get added into 'currentGalleries' array.
+	  
+	  Next, make changes to imageViewer -> add it
+
+	  Add return button to 'genres' menu
+
+	  if imageWrapper has odd number of children, to add extra margin
+	  to that last, odd child
+
+@2140 Implemented a solution for the jittery loading and appending of the images.
+	  Is much smoother, and imgs arent visible while they're being added - only after.
+
+	  Effect may be smoother with smaller image sizes...
+
+	  Need to add JS for mobile,
+	  that if imageWrapper has odd number of children, to add extra margin
+	  to that last, odd child
+
+@2040 The preloader and loader combo now works much better
+
 #03. 08. 2023
 
 @0755 using preloader function to add images to div,
