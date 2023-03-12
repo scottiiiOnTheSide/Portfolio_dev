@@ -1,6 +1,17 @@
 
 ## Portfolio Site - Development Version
 
+#03. 12. 2023
+@1350 Successfully got imageview imported. 
+	 * Have to change the direction, from vert swiping to horizonatal.
+	 * Have to see if I can make the initial touch more responsive...
+	 seems to be a lag. Not sure if this is reflected on mobile
+	 * Clean up the code, make the script _agnostic_
+
+	 Then, add other elements,
+	 add vertical styling / scripts
+	 integrate with rest of page....
+
 #03. 11. 2023
 @1145 Return button added to genres menu,
 	  return button for both gallery & genres functional.

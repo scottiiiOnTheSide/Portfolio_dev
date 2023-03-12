@@ -260,6 +260,52 @@ div#loader {
 
 
 
+div#imageView {
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	overflow: hidden;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.3s ease-out;
+
+	display: none;
+	opacity: 1; 
+}
+
+div#imageView ul#imageSlidesWrapper {
+	list-style-type: none;
+	padding: 0;
+	max-width: 545px;
+	transition: all 0.3s ease-out;
+}
+
+div#imageView ul#imageSlidesWrapper li {
+	display: none;
+	width: 100%;
+	transform:  translateX(0);
+	transition: all 0.3s ease-out;
+	cursor: grab;
+	user-select: none;
+}
+
+div#imageView ul#imageSlidesWrapper li img {
+	width: 100%;
+	transition: all 0.3s ease-out;
+}
+
+.grabbing {
+	cursor: grabbing;
+}
+
+.grabbing li img {
+	transform: scale(0.9);
+}
+
+
+
+
 
 
 @media only screen and (min-width: 767px) {
