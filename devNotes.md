@@ -1,6 +1,23 @@
 
 ## Portfolio Site - Development Version
 
+#03. 13. 2023
+@2255 Initial styling done for infoWrapper components
+	  - need to do desktop styling and vertical styling
+	  - have background color change while imageViewer up
+
+	  - Add JS functionality for the imageCount and return button 
+
+	  Afterwards,
+	  get allimages gallery functional
+
+	  Design "coming soon" page for projects and video
+	  probably 'In the Works' in large glitch text
+
+	  Then, done with this section - onto services.
+
+	  Need to plan dual section functionality for about section...
+
 #03. 12. 2023
 @1350 Successfully got imageview imported. 
 	 * Have to change the direction, from vert swiping to horizonatal.

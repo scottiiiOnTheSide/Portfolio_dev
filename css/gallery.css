@@ -306,6 +306,66 @@ div#imageView ul#imageSlidesWrapper li img {
 
 
 
+div#imageView div#infoWrapper {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 8%;
+
+	font-family: 'Avenir';
+	font-weight: 500;    
+	color: white;
+	letter-spacing: 5px;
+	width: 100%;
+}
+
+div#imageView div#infoWrapper div#imageCount {
+	display: flex;
+    justify-content: center;
+}
+
+div#imageView div#infoWrapper div#imageCount span {
+	font-size: 1.75em;
+}
+
+div#imageView div#infoWrapper div#imageCount span#current {}
+
+div#imageView div#infoWrapper div#imageCount span#total {}
+
+div#imageView div#infoWrapper div#imageCount span#divider {
+	border-right: 2px solid white;
+	height: 1.25em;
+	margin: 0 10px;
+}
+
+div#imageView div#infoWrapper p {
+	text-align: center;
+	font-size: 0.8em;
+	width: 70%;
+	margin: 30px auto;
+	letter-spacing: 4px;
+}
+
+div#imageView div#infoWrapper button#exit {
+	display: block;
+	margin: 40px auto 0;
+	border: none;
+	text-decoration: none;
+	background: transparent;
+
+	font-family: 'Avenir';
+	font-weight: 500;
+	font-size: 1.75em;    
+	color: var(--text-gray);
+	letter-spacing: 7px;
+	width: 100%;
+	text-transform: uppercase;
+
+}
+
+
+
+
 
 
 @media only screen and (min-width: 767px) {
