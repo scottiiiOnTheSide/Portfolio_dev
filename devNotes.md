@@ -1,6 +1,14 @@
 
 ## Portfolio Site - Development Version
 
+#03. 15. 2023
+@2325 Added media query for imageView, for smaller phones.
+	  Header should also change to alternate logo while viewer is up
+
+	  need to do:
+	  - tablet styling, hori & vert
+	  - Desktop Styling
+
 #03. 13. 2023
 @2255 Initial styling done for infoWrapper components
 	  - need to do desktop styling and vertical styling
