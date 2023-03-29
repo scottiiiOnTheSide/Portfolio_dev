@@ -1,6 +1,24 @@
 
 ## Portfolio Site - Development Version
 
+
+#03. 29. 2023
+@1135 Need to watch for when images are added to gallery imagesWrapper
+	  Then, take index of clicked image to open imageView with
+	  Current having trouble discerning where / when
+	  to run those functions....
+
+
+#03. 19. 2023
+@0745 Need to check old code for process on opening imageView with selected image
+	  from the gallery, setting the correct imageTotal and currentImage index, and such.
+
+	  added sessonStorage variable for determining which current gallery is being
+	  viewed - however,
+	  this would cause whichever gallery is being viewed to be restarted from
+	  the top upon return,
+	  so i may have to get rid of that implementation :/
+
 #03. 15. 2023
 @2325 Added media query for imageView, for smaller phones.
 	  Header should also change to alternate logo while viewer is up

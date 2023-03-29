@@ -12,6 +12,7 @@ let mainMenu = document.getElementById("mainMenu"),
 	galleryReturn = document.querySelector('div#gallery div#heading button#return'),
 	headingText = document.querySelector('span#genre'),
 	imagesWrapper = document.getElementById("imagesWrapper"),
+	galleryImages,
 	loader = document.getElementById("loader");
 
 let currentGallery = [];
@@ -73,31 +74,84 @@ function loadGallery(images) {
 				img.style.opacity = 1;
 			}, 300 * index)
 		})
+	}).then(()=> {
+
+		currentGallery.forEach((element, index) => {
+			let li = document.createElement('li');
+			let img = new Image();
+			img.src = element;
+			li.append(img);
+			imagesSlidesWrapper.append(li);
+		})
+
+		/* sets slide functions for imageView, once wrapper is populated with images*/
+		imagesControls(Array.from(imageSlidesWrapper.children));
 	})
 }
 
+//When do I implement this? need imagesWrapper to be populated, or detect population
+if(imagesWrapper.children > 0) {
+	let galleryImages = Array.from(imagesWrapper.chilren);
+	galleryImages.forEach((element, index) => {
+
+		element.addEventListener('click', ()=> {
+			console.log('hello');
+		})
+
+	})
+}
+
+
+let config = { attributes: true, childList: true, subtree: true};
+let callback = (mutationList, observer) => {
+
+	// let gallery = [];
+
+	// for (let mutation of mutationList) {
+
+	// 	let element = mutation.target;
+	// 	gallery.push(element);
+	// }
+
+	// console.log(gallery);
+	console.log(mutationList);
+
+}
+let observer = new MutationObserver(callback);
+observer.observe(imagesWrapper, config);
+
+
 /* For Main Menu Options */
-for(let i=0; i < mainMenuOptions.length; i++) {
-	mainMenuOptions[i].addEventListener('click', ()=> {
-		if(i == 0) {
+mainMenuOptions.forEach((element, index) => {
+
+	let place;
+
+	element.addEventListener('click', ()=> {
+		if(index == 0) {
 			console.log('lol')
-		} else if (i == 1) {
+		} else if (index == 1) {
 			console.log('lol')
-		} else if (i == 2) {
+		} else if (index == 2) {
+
+			place == 'all';
+
 			setTimeout(()=> {
 				toggleElement(mainMenu, 500, 'flex');
 				setTimeout(toggleElement(genres, 500, 'flex'), 700)
 			}, 500)
-			
-		} else if (i == 3) {
+		} else if (index == 3) {
 			console.log('lol')
 		}
 	})
-}
+
+	sessionStorage.setItem("currentGallery", place);
+})
 
 genreOptions.forEach((option, index) => {
 
 	option.addEventListener('click', ()=> {
+
+		sessionStorage.setItem("currentGallery", index);
 
 		/* for return to main menu */
 		if(index == 4) {
@@ -143,17 +197,34 @@ galleryReturn.addEventListener('click', ()=> {
 
 
 /*
+	Order of Process for Opening ImageView:
+	each image in any gallery has onClick which opens imageView over current gallery
+	index of image is used to open it first in imageView + counter
+
+*/
+/*
 	Image Viewer 
 */
 let imageView = document.getElementById('imageView'),
-	imagesSlidesWrapper = document.getElementById('imageSlidesWrapper');
+	imagesSlidesWrapper = document.getElementById('imageSlidesWrapper'),
+	imageViewExit = document.getElementById("exit"),
+	currentImage = document.getElementById("current"),
+	currentTotal = document.getElementById("total"),
+	previousPage;
 
+	if(sessionStorage.getItem('currentPage')) {
+		previousPage = getItem('currentPage');
+	}
+
+
+//currently not working as intended
 imageView.oncontextmenu = (event) => {
 	event.preventDefault();
 	event.stopPropagation();
 	return false;
 }
 
+//loop runs through all images in chosen album, adds li's to wrapper...
 for(let imglink of images[3].images) {
 	let li = document.createElement('li');
 	let img = new Image();
@@ -161,8 +232,10 @@ for(let imglink of images[3].images) {
 	li.append(img);
 	imagesSlidesWrapper.append(li);
 }
-imagesSlidesWrapper.children[0].style.display = 'block';
+//selected image index is what's opened...
 
+
+//for testing purposes
 let length = images[3].images.length;
 
 function imagesControls(imagesArray){
@@ -330,6 +403,3 @@ function imagesControls(imagesArray){
 		}
 	}
 }
-
-
-imagesControls(Array.from(imageSlidesWrapper.children));
