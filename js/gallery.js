@@ -70,55 +70,37 @@ function loadGallery(images) {
 
 		let pics = Array.from(imagesWrapper.children);
 		pics.forEach((img, index) => {
+
+			let i = index;
+
 			setTimeout(()=> {
 				img.style.opacity = 1;
-			}, 300 * index)
-		})
-	}).then(()=> {
+			}, 300 * index);
 
-		currentGallery.forEach((element, index) => {
-			let li = document.createElement('li');
-			let img = new Image();
-			img.src = element;
-			li.append(img);
-			imagesSlidesWrapper.append(li);
+			img.addEventListener('click', ()=> {
+				openImageView(index);
+			})
 		})
-
-		/* sets slide functions for imageView, once wrapper is populated with images*/
-		imagesControls(Array.from(imageSlidesWrapper.children));
 	})
 }
+
+
 
 //When do I implement this? need imagesWrapper to be populated, or detect population
-if(imagesWrapper.children > 0) {
-	let galleryImages = Array.from(imagesWrapper.chilren);
-	galleryImages.forEach((element, index) => {
+function openImageView(index) {
 
-		element.addEventListener('click', ()=> {
-			console.log('hello');
-		})
-
+	currentGallery.forEach(img => {
+		let li = document.createElement('li');
+		li.append(img);
+		imagesSlidesWrapper.append(li);
 	})
+
+	imagesControls(Array.from(imageSlidesWrapper.children));
+	imageSlidesWrapper.children[index].style.display = 'block';
+
+	setTimeout(toggleElement(imageView, 500, 'block'), 300);
 }
 
-
-let config = { attributes: true, childList: true, subtree: true};
-let callback = (mutationList, observer) => {
-
-	// let gallery = [];
-
-	// for (let mutation of mutationList) {
-
-	// 	let element = mutation.target;
-	// 	gallery.push(element);
-	// }
-
-	// console.log(gallery);
-	console.log(mutationList);
-
-}
-let observer = new MutationObserver(callback);
-observer.observe(imagesWrapper, config);
 
 
 /* For Main Menu Options */
@@ -223,20 +205,6 @@ imageView.oncontextmenu = (event) => {
 	event.stopPropagation();
 	return false;
 }
-
-//loop runs through all images in chosen album, adds li's to wrapper...
-for(let imglink of images[3].images) {
-	let li = document.createElement('li');
-	let img = new Image();
-	img.src = imglink;
-	li.append(img);
-	imagesSlidesWrapper.append(li);
-}
-//selected image index is what's opened...
-
-
-//for testing purposes
-let length = images[3].images.length;
 
 function imagesControls(imagesArray){
 
@@ -393,13 +361,24 @@ function imagesControls(imagesArray){
 					imagesArray[currentIndex].style.transform = 'scale(1)'	
 					imagesArray[currentIndex].style.opacity = 1;
 				}, 400)
-
-				//prevent image disappeareance if it is last
-				// didn't need to add further implementation :D 
-				
 			}
 		imagesWrapper.classList.remove('grabbing');
 		currentTranslate = 0;
 		}
 	}
 }
+
+//loop runs through all images in chosen album, adds li's to wrapper...
+// for(let imglink of images[3].images) {
+// 	let li = document.createElement('li');
+// 	let img = new Image();
+// 	img.src = imglink;
+// 	li.append(img);
+// 	imagesSlidesWrapper.append(li);
+// }
+//selected image index is what's opened...
+
+
+//for testing purposes
+// let length = images[3].images.length;
+

@@ -199,6 +199,35 @@ div#gallery div#imagesWrapper {
 	margin: 60px auto;
 	overflow-y: scroll;
 }
+
+div#gallery ul#imagesWrapper {
+	display: flex;
+	position: absolute;
+	left: 50%;
+    transform: translateX(-50%);
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 95%;
+	height: 75vh;
+	margin: 60px auto;
+	overflow-y: scroll;
+}
+
+	div#gallery ul#imagesWrapper li {
+		width: 40%;
+	    min-height: 100px;
+	    max-height: 320px;
+	    padding: 10px;
+	    opacity: 0;
+	    transition: all 0.2s ease;
+	}
+
+	div#gallery ul#imagesWrapper li img {
+		width: 100%;
+		object-fit: cover;
+	}
+
+
 /*for small phones w360px marginTop 65px,
   for large phones w415px marginTop 90px*/
 
@@ -282,7 +311,7 @@ div#imageView ul#imageSlidesWrapper {
 	max-width: 545px;
 	transition: all 0.3s ease-out;
 	width: 90%;
-	top: 42%;
+/*	top: 42%;*/
 }
 
 div#imageView ul#imageSlidesWrapper li {
@@ -378,7 +407,7 @@ div#imageView div#infoWrapper button#exit {
 @media only screen and (max-height: 415px) {
 
 	div#imageView ul#imageSlidesWrapper {
-    	top: 45%;
+/*    	top: 45%;*/
     	transform: translateY(-50%);
     	left: unset;
     	margin: 0 0 0 20px;

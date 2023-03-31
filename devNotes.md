@@ -1,8 +1,20 @@
 
 ## Portfolio Site - Development Version
 
+#03. 30. 2023
+@2240 clicking images from gallery now launches , but doing so now causes the gallery
+	  to dissappear. Not sure why or how specifically - needs to be fixed.
+	  After that:
+	  - add code for image count ...
+
 
 #03. 29. 2023
+
+@1650 Current plan:
+	  convert imagesWrapper to ul,
+	  have js create and push li's with images
+	  have clicking on the li's toggle the imageView
+
 @1135 Need to watch for when images are added to gallery imagesWrapper
 	  Then, take index of clicked image to open imageView with
 	  Current having trouble discerning where / when
