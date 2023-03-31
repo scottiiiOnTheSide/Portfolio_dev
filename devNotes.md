@@ -1,11 +1,29 @@
 
 ## Portfolio Site - Development Version
 
+#03. 31. 2023
+@1800	
+	Otherwise, imageView more or less complete
+	- need to change the info text line spacing for mobile
+	- would like to change the image sliding direction to horizontal
+
+	Next, 
+	- implement functions and such for All Photos
+	- creating "coming soon" or "in progress" sections for Projects and Videos
+		- would like to have design similar to original gallery look for projects
+		- images have some details in gallery view, but regular imageView
+
+	This was supposed to be noted on branch / repo I made on my phone, however,
+	- on mobile, the body having no overflow prevents the page from taking full
+	  width (with how browsers adjust the nav bar these days)
+	  - need to adjust elements so that they're centered regardless
+
 #03. 30. 2023
-@2240 clicking images from gallery now launches , but doing so now causes the gallery
-	  to dissappear. Not sure why or how specifically - needs to be fixed.
-	  After that:
-	  - add code for image count ...
+@2240 
+	clicking images from gallery now launches , but doing so now causes the gallery
+	to dissappear. Not sure why or how specifically - needs to be fixed.
+	After that:
+	- add code for image count ...
 
 
 #03. 29. 2023

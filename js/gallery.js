@@ -69,18 +69,24 @@ function loadGallery(images) {
 		loader.style.opacity = 0;
 
 		let pics = Array.from(imagesWrapper.children);
-		pics.forEach((img, index) => {
+		setTimeout(()=> {
+			pics.forEach((img, index) => {
 
-			let i = index;
+				let i = index;
 
-			setTimeout(()=> {
-				img.style.opacity = 1;
-			}, 300 * index);
+				setTimeout(()=> {
+					img.style.opacity = 1;
+				}, 300 * index);
+			
 
-			img.addEventListener('click', ()=> {
-				openImageView(index);
+				img.addEventListener('click', ()=> {
+					// toggleElement(overlay, 500, "block");
+					// loader.style.opacity = 0;
+					openImageView(index);
+				})
 			})
-		})
+		}, 500)
+		
 	})
 }
 
@@ -89,17 +95,37 @@ function loadGallery(images) {
 //When do I implement this? need imagesWrapper to be populated, or detect population
 function openImageView(index) {
 
-	currentGallery.forEach(img => {
-		let li = document.createElement('li');
-		li.append(img);
-		imagesSlidesWrapper.append(li);
+	let images = [];
+	currentGallery.forEach((element) => {
+		let imgsrc = element.src;
+		images.push(imgsrc);
 	})
 
-	imagesControls(Array.from(imageSlidesWrapper.children));
-	imageSlidesWrapper.children[index].style.display = 'block';
+	let current = structuredClone(index);
+	currentTotal.innerHTML = currentGallery.length;
+	currentImageNum.innerHTML = current + 1;
 
-	setTimeout(toggleElement(imageView, 500, 'block'), 300);
+	preloadImages_all(images).then((imgs) => {
+		imgs.forEach(img => {
+			let li = document.createElement('li');
+			li.append(img);
+			imagesSlidesWrapper.append(li);
+		});
+
+		imagesControls(Array.from(imageSlidesWrapper.children));
+		imageSlidesWrapper.children[index].style.display = 'block';
+
+		setTimeout(toggleElement(imageView, 500, 'block'), 300);
+	})
 }
+function closeImageView(index) {
+	Array.from(imageSlidesWrapper.children).forEach(element => {
+		element.style.display = "none";
+	})
+
+	toggleElement(imageView, 500, 'block');
+}
+
 
 
 
@@ -162,6 +188,9 @@ genreOptions.forEach((option, index) => {
 
 /* Gallery Return Button */
 galleryReturn.addEventListener('click', ()=> {
+	currentGallery = [];
+	imageSlidesWrapper.innerHTML = null;
+	console.log(currentGallery)
 	setTimeout(()=> {
 		toggleElement(gallery, 500)
 		toggleElement(galleryHeader, 500);
@@ -190,13 +219,9 @@ galleryReturn.addEventListener('click', ()=> {
 let imageView = document.getElementById('imageView'),
 	imagesSlidesWrapper = document.getElementById('imageSlidesWrapper'),
 	imageViewExit = document.getElementById("exit"),
-	currentImage = document.getElementById("current"),
+	currentImageNum = document.getElementById("current"),
 	currentTotal = document.getElementById("total"),
-	previousPage;
-
-	if(sessionStorage.getItem('currentPage')) {
-		previousPage = getItem('currentPage');
-	}
+	exitImageView = document.querySelector('div#imageView button#exit');
 
 
 //currently not working as intended
@@ -205,6 +230,8 @@ imageView.oncontextmenu = (event) => {
 	event.stopPropagation();
 	return false;
 }
+
+exitImageView.addEventListener('click', closeImageView);
 
 function imagesControls(imagesArray){
 
@@ -326,25 +353,26 @@ function imagesControls(imagesArray){
 				//for mobile
 				if(movedBy < -100 && currentIndex < imagesArray.length - 1) {
 					currentIndex += 1;
+					let current = structuredClone(currentIndex);
 					
-					// controls_UI[0].firstElementChild.style.opacity = 0;		
-					// setTimeout(()=> {
-					// 	controls_UI[0].firstElementChild.innerHTML = place;
-					// }, 350)
-					// setTimeout(()=> {
-					// 	controls_UI[0].firstElementChild.style.opacity = 1;
-					// }, 400)
+					currentImageNum.style.opacity = 0;		
+					setTimeout(()=> {
+						currentImageNum.innerHTML = current + 1;
+					}, 350)
+					setTimeout(()=> {
+						currentImageNum.style.opacity = 1;
+					}, 400)
 				}
 				if(movedBy > 100 && currentIndex > 0) {
 					currentIndex -= 1;
 
-					// controls_UI[0].firstElementChild.style.opacity = 0;		
-					// setTimeout(()=> {
-					// 	controls_UI[0].firstElementChild.innerHTML = place;
-					// }, 350)
-					// setTimeout(()=> {
-					// 	controls_UI[0].firstElementChild.style.opacity = 1;
-					// }, 400)
+					currentImageNum.style.opacity = 0;		
+					setTimeout(()=> {
+						currentImageNum.innerHTML = currentIndex;
+					}, 350)
+					setTimeout(()=> {
+						currentImageNum.style.opacity = 1;
+					}, 400)
 				}
 
 				imagesArray[index].style.opacity = 0;
