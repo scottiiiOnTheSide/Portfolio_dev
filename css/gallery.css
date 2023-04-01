@@ -25,8 +25,9 @@ ul#mainMenu li {
     color: white;
     letter-spacing: 10px;
     text-align: center;
-
     margin: 16px auto;
+
+    user-select: none;
 }
 
 ul#mainMenu li span {
@@ -278,6 +279,7 @@ div#imageView {
 	display: none;
 	opacity: 0; 
 
+	overflow: hidden;
 }
 
 div#imageView ul#imageSlidesWrapper {
@@ -286,7 +288,7 @@ div#imageView ul#imageSlidesWrapper {
 	max-width: 545px;
 	transition: all 0.3s ease-out;
 	width: 90%;
-	top: 42%;
+	top: 40%;
 }
 
 div#imageView ul#imageSlidesWrapper li {
@@ -318,7 +320,7 @@ div#imageView div#infoWrapper {
 	position: absolute;
 	left: 50%;
 	transform: translateX(-50%);
-	bottom: 5%;
+	bottom: 3%;
 
 	font-family: 'Avenir';
 	font-weight: 500;    
@@ -349,14 +351,15 @@ div#imageView div#infoWrapper div#imageCount span#divider {
 div#imageView div#infoWrapper p {
 	text-align: center;
 	font-size: 0.8em;
-	width: 70%;
-	margin: 30px auto;
+	width: 75%;
+	margin: 25px auto;
 	letter-spacing: 4px;
+	line-height: 20px;
 }
 
 div#imageView div#infoWrapper button#exit {
 	display: block;
-	margin: 40px auto 0;
+	margin: 20px auto 0;
 	border: none;
 	text-decoration: none;
 	background: transparent;
@@ -386,15 +389,16 @@ div#imageView div#infoWrapper button#exit {
     	transform: translateY(-50%);
     	left: unset;
     	margin: 0 0 0 20px;
+    	width: 60%;
     }
 
 	div#imageView div#infoWrapper {
-		width: 50%;
-		top: 50%;
-    	right: -6%;
-    	left: unset;
-    	bottom: unset;
-    	transform: translateY(-50%);
+		width: 40%;
+	    top: 50%;
+	    right: -2%;
+	    left: unset;
+	    bottom: unset;
+	    transform: translateY(-50%);
 	}
 }
 

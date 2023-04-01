@@ -1,11 +1,31 @@
 
 ## Portfolio Site - Development Version
 
+#04. 01. 2023
+
+@0200 To Do Next
+	  - Desktop and Tablet Styling
+	  - TBD section for Projects and Videos
+	  ?! Gotta figure out a solution to the landscape scrolling...
+
+@0145 scrolling is now horizontal :D
+
+@0130 Fixed sizing of elements when imageview rotated, looks perfect.
+	  Also removed the body.overflow = hidden from the gallery,
+	  and all the menus look / work fine. 
+
+	  However! new issue of the gallery behind imageview still being visible, 
+	  causing scrolling down to see it behind the imageview to be possible.
+	  Unsure of possible fix right now ...
+	  Also, need to fix currentImageCount when going backwards (fixed) ✔️
+
+
 #03. 31. 2023
 @1800	
 	Otherwise, imageView more or less complete
-	- need to change the info text line spacing for mobile
-	- would like to change the image sliding direction to horizontal
+	- need to change the info text line spacing for mobile ✔️
+	- would like to change the image sliding direction to horizontal ✔️
+	- Desktop and Tablet css styling 
 
 	Next, 
 	- implement functions and such for All Photos
@@ -14,9 +34,9 @@
 		- images have some details in gallery view, but regular imageView
 
 	This was supposed to be noted on branch / repo I made on my phone, however,
-	- on mobile, the body having no overflow prevents the page from taking full
-	  width (with how browsers adjust the nav bar these days)
-	  - need to adjust elements so that they're centered regardless
+	- on mobile, the body having no overflow prevents the page from taking full 
+	  width (with how browsers adjust the nav bar these days) ✔️
+	  - need to adjust elements so that they're centered regardless ✔️
 
 #03. 30. 2023
 @2240 

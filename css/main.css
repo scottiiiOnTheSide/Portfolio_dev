@@ -49,10 +49,10 @@ body#landing, body#gallery {
 	background-color: black;
 }
 
-body#gallery {
+/*body#gallery {
 	overflow: hidden;
 }
-
+*/
 
 div#overlay {
 	display: block;

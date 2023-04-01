@@ -95,6 +95,8 @@ function loadGallery(images) {
 //When do I implement this? need imagesWrapper to be populated, or detect population
 function openImageView(index) {
 
+	imageView.style.overflow = 'hidden';
+
 	let images = [];
 	currentGallery.forEach((element) => {
 		let imgsrc = element.src;
@@ -119,6 +121,9 @@ function openImageView(index) {
 	})
 }
 function closeImageView(index) {
+
+	imageView.style.overflow = 'unset';
+
 	Array.from(imageSlidesWrapper.children).forEach(element => {
 		element.style.display = "none";
 	})
@@ -190,6 +195,8 @@ genreOptions.forEach((option, index) => {
 galleryReturn.addEventListener('click', ()=> {
 	currentGallery = [];
 	imageSlidesWrapper.innerHTML = null;
+	loader.style.opacity = 0;
+
 	console.log(currentGallery)
 	setTimeout(()=> {
 		toggleElement(gallery, 500)
@@ -232,6 +239,9 @@ imageView.oncontextmenu = (event) => {
 }
 
 exitImageView.addEventListener('click', closeImageView);
+imageView.addEventListener('click', (e)=> {
+	e.stopPropagation();
+})
 
 function imagesControls(imagesArray){
 
@@ -303,26 +313,29 @@ function imagesControls(imagesArray){
 	function touchStart(index) {
 		return function(event) {
 
+			/*commented out code for vertical scroll
+			  only horizontal scroll */
+
 			//should prevent top of screen from being pulled down 
 			event.stopPropagation()
 
 			currentIndex = index;
-			if(window.innerWidth >= 1024) {
+			// if(window.innerWidth >= 1024) {
 				startPos = getPositionX(event);
-				console.log('X read')
-			} else {
-				startPos = getPositionY(event);
-				console.log('Y read')
-			}
+			// 	console.log('X read')
+			// } else {
+				// startPos = getPositionY(event);
+				// console.log('Y read')
+			// }
 
 			
 			isDragging = true;
 
-			if(window.innerWidth >= 1024) {
+			// if(window.innerWidth >= 1024) {
 				animationID = requestAnimationFrame(animationX);	
-			} else {
-				animationID = requestAnimationFrame(animationY);
-			}
+			// } else {
+				// animationID = requestAnimationFrame(animationY);
+			// }
 			imagesWrapper.classList.add('grabbing');
 		}
 	}
@@ -333,11 +346,11 @@ function imagesControls(imagesArray){
 		event.stopPropagation()
 
 		if(isDragging) {
-			if(window.innerWidth >= 1024) { 
+			// if(window.innerWidth >= 1024) { 
 				var currentPosition = getPositionX(event);
-			} else {
-				var currentPosition = getPositionY(event);
-			}
+			// } else {
+				// var currentPosition = getPositionY(event);
+			// }
 			currentTranslate = prevTranslate + currentPosition - startPos;
 		}
 	}
@@ -346,14 +359,13 @@ function imagesControls(imagesArray){
 		return function(event) {
 			if(isDragging == true) {
 				isDragging = false;
-		    	cancelAnimationFrame(animationID)
-		    	/* this needs to be the gallery currently being viewed */
+		    	cancelAnimationFrame(animationID);
+		    	let current = structuredClone(currentIndex);
 
 				const movedBy = currentTranslate - prevTranslate;
 				//for mobile
 				if(movedBy < -100 && currentIndex < imagesArray.length - 1) {
 					currentIndex += 1;
-					let current = structuredClone(currentIndex);
 					
 					currentImageNum.style.opacity = 0;		
 					setTimeout(()=> {
@@ -368,7 +380,7 @@ function imagesControls(imagesArray){
 
 					currentImageNum.style.opacity = 0;		
 					setTimeout(()=> {
-						currentImageNum.innerHTML = currentIndex;
+						currentImageNum.innerHTML = current - 1;
 					}, 350)
 					setTimeout(()=> {
 						currentImageNum.style.opacity = 1;
