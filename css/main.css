@@ -78,6 +78,7 @@ header#gallery  {
 }
 
 	header span {
+/*	div#comingSoon span {*/
 		position: absolute;
 		top: 0;
 		left: 50%;
@@ -99,7 +100,7 @@ header#gallery  {
 		animation: glitch 1.25s infinite;
 	}
 
-	/*header span:nth-child(1) {
+	header span:nth-child(1) {
 		animation: glitch 1s infinite;
 		color: rgba(65,105,225,1);
 		clip-path: polygon(0 0, 100% 0, 100% 40%, 0 25%);
@@ -116,7 +117,7 @@ header#gallery  {
 		transform: translate(0.07em, 0.025em);
 		left: 0%;
 		opacity: 0.8;
-	}*/
+	}
 
 
 

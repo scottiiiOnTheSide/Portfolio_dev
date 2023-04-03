@@ -13,7 +13,9 @@ let mainMenu = document.getElementById("mainMenu"),
 	headingText = document.querySelector('span#genre'),
 	imagesWrapper = document.getElementById("imagesWrapper"),
 	galleryImages,
-	loader = document.getElementById("loader");
+	loader = document.getElementById("loader"),
+	comingSoon = document.getElementById("comingSoon"),
+	comingSoon_return = document.querySelector('div#comingSoon button#return');
 
 let currentGallery = [];
 
@@ -53,6 +55,19 @@ let preloadImages = (src) => {
 let preloadImages_all = async(sources) => {
 		return Promise.all(sources.map(preloadImages))
 	}
+
+/* Durstenfeld Shuffle */
+let randomize = (array) => {
+
+	let returnedArray = [...array];
+
+	for(let i = returnedArray.length - 1; i > 0; i--) {
+		let o = Math.floor(Math.random() * (i + 1));
+		[returnedArray[i], returnedArray[o]] = [returnedArray[o], returnedArray[i]];
+	}
+
+	return returnedArray;
+}
 function loadGallery(images) {
 
 	toggleElement(gallery, 500, 'block');
@@ -137,34 +152,44 @@ function closeImageView(index) {
 /* For Main Menu Options */
 mainMenuOptions.forEach((element, index) => {
 
-	let place;
-
 	element.addEventListener('click', ()=> {
-		if(index == 0) {
-			console.log('lol')
-		} else if (index == 1) {
-			console.log('lol')
-		} else if (index == 2) {
+		if(index == 0) { 		/* all photos */
+				
+			headingText.innerText = "All Photos";
 
-			place == 'all';
+			setTimeout(()=> {
+				toggleElement(mainMenu, 500, 'flex');
+				setTimeout(loadGallery(randomize(images[4])), 700);
+			}, 500)
+
+
+		} 
+		else if (index == 1) {
+			
+			setTimeout(()=> {
+				toggleElement(mainMenu, 500, 'flex');
+				setTimeout(toggleElement(comingSoon, 500, 'block'), 700)
+			}, 500)
+
+		} else if (index == 2) { /* genres */
 
 			setTimeout(()=> {
 				toggleElement(mainMenu, 500, 'flex');
 				setTimeout(toggleElement(genres, 500, 'flex'), 700)
 			}, 500)
+
 		} else if (index == 3) {
-			console.log('lol')
+			setTimeout(()=> {
+				toggleElement(mainMenu, 500, 'flex');
+				setTimeout(toggleElement(comingSoon, 500, 'block'), 700)
+			}, 500)
 		}
 	})
-
-	sessionStorage.setItem("currentGallery", place);
 })
 
 genreOptions.forEach((option, index) => {
 
 	option.addEventListener('click', ()=> {
-
-		sessionStorage.setItem("currentGallery", index);
 
 		/* for return to main menu */
 		if(index == 4) {
@@ -177,7 +202,7 @@ genreOptions.forEach((option, index) => {
 
 		/* Opening a gallery */	
 		} else {
-			headingText.innerText = '/ '+images[index].genre;
+			headingText.innerText = images[index].genre;
 			/* make loader display block */
 
 			setTimeout(()=> {
@@ -205,10 +230,24 @@ galleryReturn.addEventListener('click', ()=> {
 		setTimeout(()=> {
 			imagesWrapper.innerHTML = "";
 			currentGallery = [];
-			toggleElement(genres, 500, 'flex');
+
+			if(headingText.innerHTML == 'All Photos') {
+				toggleElement(mainMenu, 500, 'flex');
+			} else {
+				toggleElement(genres, 500, 'flex');
+			}
+
+			
 		}, 700)
 	}, 550)
 })
+
+comingSoon_return.addEventListener('click', ()=> {
+	setTimeout(()=> {
+		toggleElement(comingSoon, 500);
+		setTimeout(toggleElement(mainMenu, 500, 'flex'), 700)
+	}, 500)	
+});
 
 
 

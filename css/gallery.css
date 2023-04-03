@@ -261,6 +261,76 @@ div#loader {
 
 
 
+div#comingSoon {
+	width: 80%;
+	position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.2s ease;
+    opacity: 0;
+}
+
+div#comingSoon h1 {
+	font-size: 2em;
+	color: white;
+	font-family: 'Avenir';
+		font-style: italic;    
+		text-align: center;
+		letter-spacing: 8px;
+		word-spacing: -5px;
+		text-transform: uppercase;
+		text-shadow: 0.05em 0 0 rgba(255, 0, 0, .75),
+					 -0.025em -.05em 0 rgba(0, 255, 0, .75),
+					 0.025em .05em 0 rgba(0, 0, 255, .75);
+	margin: 0 auto;
+	width: 100%;
+}
+
+div#comingSoon p {
+	color: var(--text-gray);
+	font-family: "Open Sans";
+    font-size: 0.8em;
+    font-weight: 300;
+    text-align: center;
+    letter-spacing: 6px;
+    line-height: 22px;
+    width: 80%;
+    margin: 20px auto;
+}
+
+div#comingSoon button#return {
+
+	display: block;
+    border: none;
+    margin: 40px auto 0;
+
+	font-family: 'Avenir';
+    font-weight: 500;
+    font-size: 1em;
+    color: white;
+    letter-spacing: 5px;
+    word-spacing: -10px;
+    text-align: right;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+
+    transition: all 0.2s ease;
+}
+
+div#comingSoon button#return:hover {
+	letter-spacing: 10px;
+}
+
+
+
+
+
+
+
+
 
 div#imageView {
 	width: 100%;

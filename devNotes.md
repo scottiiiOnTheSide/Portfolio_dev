@@ -1,11 +1,23 @@
 
 ## Portfolio Site - Development Version
 
+#04. 03. 2023
+@1205 Coming soon section added for 'Projects' andd 'Video' section
+	  reusable function structure really came in clutch here
+
+#04. 02. 2023
+
+@2233 All photos section works + randomizer for image order :D
+
+@2010 Need to get 'all photos' working
+
+
 #04. 01. 2023
 
 @0200 To Do Next
+	  - All photos gallery and imageView ✔️
 	  - Desktop and Tablet Styling
-	  - TBD section for Projects and Videos
+	  - TBD section for Projects and Videos ✔️
 	  ?! Gotta figure out a solution to the landscape scrolling...
 
 @0145 scrolling is now horizontal :D
