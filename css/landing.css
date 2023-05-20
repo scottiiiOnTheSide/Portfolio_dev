@@ -67,21 +67,20 @@ div#landingHeader div#logoWrapper {
 
 div#landingHeader div#logoWrapper img {
 	width: 90px;
-	margin: 0 auto;
+	margin: 0;
 }
 
 div#landingHeader div#logoWrapper p#tagline {
 	font-family: "Open Sans";
-	font-size: 0.6em;
+	font-size: 1em;
 	font-weight: 300;
-	text-align: center;
+	text-align: left;
 	letter-spacing: 6px;
 	line-height: 22px;
 	color: white;
 
 	/*width: 20%;*/
 	max-width: 325px;
-	margin: 20px 0 0;
 }
 
 
@@ -295,15 +294,26 @@ ul#menu li a {
 	letter-spacing: 10px;
 	color: white;
 	text-decoration: none;
+	position: relative;
 }
 
 ul#menu li a span {
-	display: block;
-	position: relative;
-	top: 23px;
+	display: inline-block;
+	position: absolute;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (min-width: 1200px) {
+
+	ul#menu li a span {
+		display: inline-block;
+	/*	display: none;*/
+		position: relative;
+		top: 36px;
+	}
+
+}
+
+@media only screen and (max-width: 1200px) {
 
 	ul#menu {
 		flex-direction: column;

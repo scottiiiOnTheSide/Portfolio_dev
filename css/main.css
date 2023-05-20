@@ -45,7 +45,7 @@ body {
 	width: 100%;
 }
 
-body#landing, body#gallery {
+body#landing, body#gallery, body#services {
 	background-color: black;
 }
 
@@ -76,6 +76,42 @@ div#overlay {
 header#gallery  {
 	color: white;
 }
+
+header#logo {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+ 	align-content: center;
+ 	transition: all 0.2s ease;
+ 	margin: -18px 0 20px;
+ 	padding-top: 16px;
+}
+
+header#logo:hover {
+	transform: scale(1.15);
+}
+
+header#logo img {
+	width: 64px;
+	margin: 10px 5px;
+}
+
+header#logo p#brandname {
+	font-family: "Open Sans";
+	font-size: 1em;
+	font-weight: 300;
+	text-align: left;
+	letter-spacing: 6px;
+	line-height: 22px;
+	color: white;
+	text-transform: lowercase;
+	font-style: unset;
+
+	clip-path: none;
+	max-width: 325px;
+}
+
 
 	header span {
 /*	div#comingSoon span {*/
@@ -120,22 +156,6 @@ header#gallery  {
 	}
 
 
-
-	/* the underline */
-	/*header span::after {
-		content: '';
-		position: absolute;
-		width: 125px;
-		border-top: 4px solid;
-		border-image-source: linear-gradient(90deg, rgba(60,220,200,1) 0%, rgba(65,105,225,1) 100%);
-		border-image-slice: 1;
-		padding: 0;
-		transform: translateX(-50%);
-		left: 50%;
-		bottom: 15px;
-	}*/
-
-
 	@keyframes glitch {
 			0% {text-shadow: 0.05em 0 0 rgba(255, 0, 0, .75),
 						 -0.025em -.05em 0 rgba(0, 255, 0, .75),
@@ -170,6 +190,10 @@ header#gallery  {
 	animation: glitch 1.25s infinite;
 }
 
+.glitch-constant {
+	animation: glitch 1.5s infinite;;
+}
+
 .glitch span {
 		clip-path: polygon(0 0, 100% 0, 100% 70%, 0 60%);
 		transform: translate(-0.07em, -0.025em);
@@ -183,15 +207,34 @@ header#gallery  {
 }
 
 
+
+
+
+
+button.default {
+		font-family: 'Avenir';
+    font-size: 0.8em;
+    font-weight: 500;
+    color: white;
+    letter-spacing: 5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: none;
+    transition: all 0.5s ease;
+}
+
+button.default:hover {
+	letter-spacing: 10px;
+}
+
+
+
+
 /* 
 		As of 03. 06. 2023
 		All proceeding code outdated
 */
-
-
-
-
-
 
 
 /*

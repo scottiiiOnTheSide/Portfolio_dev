@@ -1,6 +1,15 @@
 
 ## Portfolio Site - Development Version
 
+
+#05. 17. 2023
+@0735 Issue with 3D effect for landing/mainMenu options fixed
+
+
+#05. 16. 2023
+@1333 Need to adjust 3D affect for landing/mainMenu options
+	  issue with the positioning - effect removed for now
+
 #04. 03. 2023
 @1205 Coming soon section added for 'Projects' andd 'Video' section
 	  reusable function structure really came in clutch here
