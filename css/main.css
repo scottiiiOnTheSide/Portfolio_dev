@@ -211,7 +211,8 @@ header#logo p#brandname {
 
 
 
-button.default {
+button.default,
+a.default {
 		font-family: 'Avenir';
     font-size: 0.8em;
     font-weight: 500;

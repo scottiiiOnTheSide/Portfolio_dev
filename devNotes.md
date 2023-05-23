@@ -1,6 +1,13 @@
 
 ## Portfolio Site - Development Version
 
+#05. 22. 2023
+@2340 HTML & CSS(for mobile) complete regarding initial section of Services page
+
+	  To Do:
+	  - Build Request form modal
+	  - Desktop styles for everything
+	  - JS functionality for launching modal ...
 
 #05. 17. 2023
 @0735 Issue with 3D effect for landing/mainMenu options fixed

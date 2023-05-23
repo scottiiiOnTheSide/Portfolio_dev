@@ -1,4 +1,8 @@
 
+html {
+	scroll-behavior: smooth;	
+}
+
 header#hero {
 	width: 100%;
 	height: 50vh;
@@ -51,7 +55,8 @@ header#hero h1 {
 	transform: translate(-50%, -50%);
 }
 
-header#hero button#scrollToServices.default {
+header#hero a#scrollToServices {
+	display: inline-block;
 	position: relative;
     top: 76px;
     left: 50%;
@@ -120,8 +125,9 @@ div#quoteTwo {
 
 div#quoteTwo h2 {
 	font-family: "Open Sans";
-	font-size: 1.25em;
+	font-size: 1.5em;
 	letter-spacing: 5px;
+	font-weight: 500;
 }
 
 div#quoteTwo div.underline {
@@ -145,16 +151,94 @@ div#quoteTwo p {
 
 
 
-div#menu {}
-
-div#menu h2#title {
-	font-size: 1.25em;
+div#menu {
+	font-family: "Open Sans";
 }
 
-div#menu div.underline {}
+div#menu h2#title {
+	font-size: 1.5em;
+	letter-spacing: 5px;
+	font-weight: 500;
+}
 
-div#menu div.package {}
+div#menu div.underline {
+	width: 15%;
+	border-bottom: 2px solid white;
+	margin-bottom: 30px;
+}
+
+div#menu div.package {
+	width: 85%;
+	margin: 60px;
+}
 
 div#menu div.package div.left {}
 
-div#menu div.package div.right {}
+div#menu div.package div.right {
+	margin: 40px 0;
+}
+
+div#menu div.package div h3 {
+	font-size: 1.25em;
+	letter-spacing: 3px;
+	font-weight: 500;
+	text-align: left;
+}
+
+div#menu div.package div h3 span {
+	display: block;
+	font-size: 1.25em;
+	font-weight: 700;
+	text-align: left;
+}
+
+div#menu div.package div.left ul {
+	margin: 10px 0;
+	padding: 0 0 0 20px;
+}
+
+div#menu div.package div.left ul li {
+	font-size: 1em;
+	font-weight: 300;
+	line-height: 28px;
+	text-align: left;
+	letter-spacing: 1px;
+	margin: 20px 0;
+}
+
+div#menu div.package div.right ul {
+	margin: 60px 0 20px;
+	padding: 0;
+	list-style-type: none;
+}
+
+div#menu div.package div.right ul li {
+	font-size: 1.5em;
+}
+
+	div#menu div.package div.right ul li span:first-child {
+		font-weight: 500;
+		border-right: 2px solid white;
+		padding-right: 15px;
+	}
+
+	div#menu div.package div.right ul li span:last-child {
+		font-weight: 300;
+		padding-left: 10px;
+	}
+
+
+
+
+div#menu div.package div.buttonWrapper {
+	margin: 20px 0 40px;
+}
+
+div#menu div.package div.buttonWrapper button {
+	font-size: 1.25em;
+
+	padding: 12px 20px;
+	background-color: rgba(109, 109, 109, 0.25);
+	border: none;
+	border-radius: 4px;
+}
