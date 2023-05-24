@@ -78,6 +78,7 @@ header#gallery  {
 }
 
 header#logo {
+	position: relative;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -86,6 +87,7 @@ header#logo {
  	transition: all 0.2s ease;
  	margin: -18px 0 20px;
  	padding-top: 16px;
+ 	z-index: 10;
 }
 
 header#logo:hover {

@@ -401,7 +401,7 @@ div#emailScotty form fieldset input:focus-visible {
 
 div#emailScotty form fieldset textarea {
 	display: inline-block;
-	width: 100%;
+	width: 95%;
 	border: none;
 	border-top: 2px solid black;
 	margin: 10px 0 0;

@@ -1,13 +1,21 @@
 
 ## Portfolio Site - Development Version
 
+#05. 23. 2023
+@2210 Built requestForm modal for services page
+	  
+	  Next: desktop styles for everything on page
+
 #05. 22. 2023
 @2340 HTML & CSS(for mobile) complete regarding initial section of Services page
 
 	  To Do:
-	  - Build Request form modal
+	  - Build Request form modal ✔️
 	  - Desktop styles for everything
-	  - JS functionality for launching modal ...
+	  - JS functionality for launching modal, connecting the form, animations...
+For page animations: on page load, everything below the 'scroll down' alert is invisble
+until page is scrolled on. 
+Alert hovers up and down
 
 #05. 17. 2023
 @0735 Issue with 3D effect for landing/mainMenu options fixed

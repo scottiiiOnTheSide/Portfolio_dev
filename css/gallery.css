@@ -350,6 +350,7 @@ div#imageView {
 	opacity: 0; 
 
 	overflow: hidden;
+	z-index: 15;
 }
 
 div#imageView ul#imageSlidesWrapper {
