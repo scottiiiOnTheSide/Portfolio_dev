@@ -1,10 +1,21 @@
 
 ## Portfolio Site - Development Version
 
+#05. 25. 2023
+@0050 functionality for opening requestForm and closing it.
+
+	  Next:
+	  - lil bounce animation for the mouse
+	  - Desktop styles
+	  - connect form to email.jss
+
 #05. 23. 2023
 @2210 Built requestForm modal for services page
 	  
 	  Next: desktop styles for everything on page
+
+	  List all needed JS functions:
+	  - disable scroll on body while modal is up
 
 #05. 22. 2023
 @2340 HTML & CSS(for mobile) complete regarding initial section of Services page
