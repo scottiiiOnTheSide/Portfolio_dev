@@ -54,7 +54,8 @@ div#landingHeader h3 {
 
 div#landingHeader div#logoWrapper {
 	display: flex;
-	flex-direction: column;
+	max-width: 300px;
+	flex-direction: row;
 	justify-content: center;
 	flex-wrap: wrap;
  	align-content: center;
@@ -72,7 +73,7 @@ div#landingHeader div#logoWrapper img {
 
 div#landingHeader div#logoWrapper p#tagline {
 	font-family: "Open Sans";
-	font-size: 1em;
+	font-size: 0.8em;
 	font-weight: 300;
 	text-align: left;
 	letter-spacing: 6px;
@@ -91,6 +92,7 @@ div#landingHeader div#logoWrapper p#tagline {
 		flex-direction: row-reverse;
 		flex-wrap: nowrap;
 		margin: -50px auto 0;
+		transform: scale(0.85);
 	}
 
 	div#landingHeader h1 {
@@ -325,7 +327,7 @@ ul#menu li a span {
 	}
 
 	ul#menu li a {
-		font-size: 1.25em;
+		font-size: 1.5em;
 	}
 
 }

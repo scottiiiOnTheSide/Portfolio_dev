@@ -4,7 +4,8 @@ let body = document.getElementsByTagName('body')[0],
 	openRequestForm = Array.from(document.getElementsByClassName('openMessagePrompt')),
 	requestForm = document.getElementById('requestForm'),
 	requestForm_send = document.getElementById('sendRequest'),
-	requestForm_exit = document.getElementById('exit');
+	requestForm_exit = document.getElementById('exit'),
+	requestForm_topExit = document.getElementById('topExit');
 
 let headings = [
 	"Headshots, Profile Photos",
@@ -26,6 +27,7 @@ function toggleRequestForm(toggle, index) {
 	
 
 	if(toggle) { //if yes, as in, activate
+		body.style.overflowY = 'hidden';
 		requestForm.style.display = 'block';
 		setTimeout(()=> {
 			requestForm.style.opacity = 1;
@@ -34,13 +36,8 @@ function toggleRequestForm(toggle, index) {
 		requestForm.style.opacity = 0;
 		setTimeout(()=> {
 			requestForm.style.display = 'none';
+			body.style.overflowY = 'auto';
 		}, 600)
-	}
-
-	if(requestForm.active) {
-		body.style.overflowY = 'hidden';
-	} else {
-		body.style.overflowY = 'auto';
 	}
 }
 
@@ -52,6 +49,11 @@ openRequestForm.forEach((element, index) => {
 })
 
 requestForm_exit.addEventListener('click', (e)=> {
+	e.preventDefault();
+	toggleRequestForm(false, '...');
+})
+
+requestForm_topExit.addEventListener('click', (e)=> {
 	e.preventDefault();
 	toggleRequestForm(false, '...');
 })

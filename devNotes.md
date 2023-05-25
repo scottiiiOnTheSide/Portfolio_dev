@@ -2,10 +2,22 @@
 ## Portfolio Site - Development Version
 
 #05. 25. 2023
+
+@1510 Added a topExit to the requestForm and the bouncing animation for the mouse Icon
+	  
+	  Next to do:
+	  - Desktop styles
+	  - connect form to email.js
+
+@1410 May need to add an additional exit button to the top of the requestPrompt due to when
+	  mobile browsers have their searchbars at the botton ...
+
+@1345 Finally added a working sync function between the linux folder and the windows side.
+
 @0050 functionality for opening requestForm and closing it.
 
 	  Next:
-	  - lil bounce animation for the mouse
+	  - lil bounce animation for the mouse ✔️
 	  - Desktop styles
 	  - connect form to email.jss
 
