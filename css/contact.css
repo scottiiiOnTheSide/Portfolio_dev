@@ -1,52 +1,21 @@
 
-.glitch {
-			text-shadow: 0.05em 0 0 rgba(255, 0, 0, .75),
-						 -0.025em -.05em 0 rgba(0, 255, 0, .75),
-						 0.025em .05em 0 rgba(0, 0, 255, .75);
-			animation: glitch 750ms infinite;
-		}
 
-@keyframes glitch {
-			0% {text-shadow: 0.05em 0 0 rgba(255, 0, 0, .75),
-						 -0.025em -.05em 0 rgba(0, 255, 0, .75),
-						 0.025em .05em 0 rgba(0, 0, 255, .75)}
-
-			24% {text-shadow: 0.05em 0 0 rgba(255, 0, 0, .75),
-						 -0.025em -.05em 0 rgba(0, 255, 0, .75),
-						 0.025em .05em 0 rgba(0, 0, 255, .75)}
-
-			25% {text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, .75),
-						 0.025em .025em 0 rgba(0, 255, 0, .75),
-						 -0.05em -.05em 0 rgba(0, 0, 255, .75)}
-
-			75% {text-shadow: 0.05em 0.05em 0 rgba(255, 0, 0, .75),
-						 0.05em .0em 0 rgba(0, 255, 0, .75),
-						 0.025em -.05em 0 rgba(0, 0, 255, .75)}
-
-			76% {text-shadow: 0.05em 0.05em 0 rgba(255, 0, 0, .75),
-						 0.05em .0em 0 rgba(0, 255, 0, .75),
-						 0.025em -.05em 0 rgba(0, 0, 255, .75)}
-
-			99% {text-shadow: -0.025em 0 0 rgba(255, 0, 0, .75),
-						 -0.025em -0.025em 0 rgba(0, 255, 0, .75),
-						 -0.025em -0.05em 0 rgba(0, 0, 255, .75)}
-			100% {text-shadow: -0.025em 0 0 rgba(255, 0, 0, .75),
-						 -0.025em -0.025em 0 rgba(0, 255, 0, .75),
-						 -0.025em -0.05em 0 rgba(0, 0, 255, .75)}
+header#logo p#brandname {
+	color: black;
+	font-weight: 400;
 }
 
-section#transmissions {}
-
-section#transmissions div#optionsWrapper {
+div#optionsWrapper {
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	width: 80%;
-	height: 60vh;
+	height: 50vh;
 	box-sizing: border-box;
 	padding: 20px;
 	transition: all 0.5s ease-out;
+/*	animation: wrapper_onOpen 2s forwards 0.5s;*/
 	/*background-color: blueviolet;*/
 
 	/*reduce to
@@ -55,10 +24,8 @@ section#transmissions div#optionsWrapper {
 	z-index: 5;
 }
 
-section#transmissions div#optionsWrapper::before {
+div#optionsWrapper::before {
 	content: '';
-	/*width: 35%;
-	height: 35%;*/
 	width: 220px;
 	height: 220px;
 	border: 2px solid black;
@@ -69,10 +36,8 @@ section#transmissions div#optionsWrapper::before {
 	position: absolute;
 }
 
-section#transmissions div#optionsWrapper::after {
+div#optionsWrapper::after {
 	content: '';
-	/*width: 35%;
-	height: 35%;*/
 	width: 220px;
 	height: 220px;
 	border: 2px solid black;
@@ -83,28 +48,28 @@ section#transmissions div#optionsWrapper::after {
 	position: absolute;
 }
 
-section#transmissions div#optionsWrapper div.opt {
+div#optionsWrapper div.opt {
 	position: absolute;
 	padding: 30px;
 	transition: all 0.3s ease-out;
 	cursor: pointer;
 }
 
-section#transmissions div#optionsWrapper div.opt:hover {
+div#optionsWrapper div.opt:hover {
 	background-color: black;
     color: white;
 }
 
-section#transmissions div#optionsWrapper div.opt h2 {
+div#optionsWrapper div.opt h2 {
 	font-family: Avenir;
-	font-weight: 500;
+	font-weight: 700;
 	font-size: 1.25em;
 	letter-spacing: 8px;
 	/*text-align: center;*/
 	margin-bottom: 5px;
 }
 
-section#transmissions div#optionsWrapper div.opt span {
+div#optionsWrapper div.opt span {
 	font-family: Avenir;
 	font-size: 0.7em;
 	letter-spacing: 10px;
@@ -114,12 +79,12 @@ section#transmissions div#optionsWrapper div.opt span {
 	width: 100%;
 }
 
-	section#transmissions div#optionsWrapper div.opt:first-child {
+	div#optionsWrapper div.opt:first-child {
 		top: 0;
 		left: 0;
 	}
 
-	section#transmissions div#optionsWrapper div.opt:nth-child(2) {
+	div#optionsWrapper div.opt:nth-child(2) {
 		top: 50%;
     	left: 50%;
     	transform: translate(-50%, -50%);
@@ -129,7 +94,7 @@ section#transmissions div#optionsWrapper div.opt span {
     	width: 110%;*/
 	}
 
-	section#transmissions div#optionsWrapper div.opt:nth-child(3) {
+	div#optionsWrapper div.opt:nth-child(3) {
 		bottom: 0;
 		right: 0;
 		text-align: right;
@@ -196,11 +161,8 @@ div#testimonials {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0.75);
-    display: block;
-    width: 38%;
-    /*width: 95%; on mobile */
-    height: 42%;
-    /*background-color: dodgerblue;*/
+    width: 40%;
+    height: 45%;
     opacity: 0;
     transition: all 0.3s ease-out;
     padding: 11px;
@@ -218,6 +180,10 @@ div#testimonials ul {
 
 div#testimonials ul li {
 	display: none;
+	flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
 	width: 100%;
 	height: 100%;
 	box-sizing: border-box;
@@ -231,9 +197,8 @@ div#testimonials ul li {
 }
 
 	div#testimonials ul li:first-child {
-		display: block;
+		display: flex;
 		opacity: 1;
-		/*left: 0;*/
 		background-position: 75% 25%;
 	}
 
@@ -272,7 +237,7 @@ div#testimonials ul li h2 {
 div#testimonials ul li p {
 	font-family: Avenir;
     font-weight: 500;
-    font-size: 1em;
+    font-size: 0.9em;
     margin-bottom: 5px;
     line-height: 24px;
 }
@@ -286,9 +251,14 @@ div#socials {
 	left: 50%;
 	transform: translate(-50%, -50%) scale(0.5);
 	border:  2px solid;
-	width: 50%;
-	transition: all 0.4s ease-out;
+/*	width: 50%;*/
+	width: 51.7%;
+	transition: all 0.5s ease-out;
 	z-index: 10;
+}
+
+div#socials.scale {
+	transform: translate(-50%, -50%) scale(1);
 }
 
 div#socials ul {
@@ -313,7 +283,8 @@ div#socials ul li:hover {}
 div#socials ul li a {
 	display: inline-block;
 	width: 100%;
-	padding: 20px 0;
+/*	padding: 20px 0;*/
+	padding: 99px 0;
 	text-align: center;
 	text-decoration: none;
 
@@ -347,10 +318,10 @@ div#socials ul li a:hover {
 
 div#emailScotty {
 	position: absolute;
-	top: 57%;
-	left: 48%;
+	top: 52%;
+	left: 49%;
 	transform: translate(-50%, -50%) scale(0.5);
-	width: 52%;
+	width: 45%;
 	transition: all 0.3s ease-out;
 	display: none;
 	opacity: 0;
@@ -372,9 +343,9 @@ div#emailScotty form fieldset input {
 	display: inline-block;
 	width: 100%;
 	border: none;
-	font-family: Avenir;
-	font-size: 1em;
-	letter-spacing: 6px;
+	font-family: Open Sans;
+	font-size: 0.9em;
+	letter-spacing: 4px;
 	color: var(--text-gray);
 	padding: 5px;
 }
@@ -401,9 +372,9 @@ div#emailScotty form fieldset input:focus-visible {
 
 div#emailScotty form fieldset textarea {
 	display: inline-block;
-	width: 95%;
+	width: 100%;
 	border: none;
-	border-top: 2px solid black;
+	border-bottom: 2px solid black;
 	margin: 10px 0 0;
 
 	font-family: Avenir;
@@ -420,7 +391,7 @@ div#emailScotty form fieldset textarea:focus-visible {
 
 div#emailScotty button#submitForm {
 	position: relative;
-	bottom: -100px;
+	bottom: -140px;
 	background-color: transparent;
 	border: none;
 	left: 50%;
@@ -439,47 +410,61 @@ div#emailScotty button#submitForm:hover {
 	/*add glitch effect*/
 }
 
+div#emailScotty button#backToOptions {
+	font-family: 'Avenir';
+    font-size: 1em;
+    text-align: center;
+    letter-spacing: 5px;
+    transition: all 0.3s ease-out;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: -120px;
+    left: 0px;
+    z-index: 10;
+    padding: 11px;
+
+    display: none;
+    opacity: 0;
+
+}
+
 
 @media screen and (max-width: 440px) {
-	section#transmissions div#optionsWrapper {
+	div#optionsWrapper {
 		width: 99%;
 	}
 
-	section#transmissions div#optionsWrapper div.opt:nth-child(2) {
+	div#optionsWrapper div.opt:nth-child(2) {
 		width: 60%;
 		text-align: center;
 	}
 
-	section#transmissions div#optionsWrapper div.opt:last-child {
+	div#optionsWrapper div.opt:last-child {
 		text-align: right;
 	}
 
-	section#transmissions div#optionsWrapper div.opt h2 {
-		font-size: 1em;
-	}
-
-	section#transmissions div#optionsWrapper div.opt span {
-		font-size: 0.7em;
-		letter-spacing: 7px;
+	div#optionsWrapper div.opt h2 {
+		font-size: 1.25em;
 	}
 
 	div#testimonials {
-    	width: 95%; 
-    	height: 40%;
+    	width: 92%;
+    	height: 44%; 
 	}
 
 	div#socials {
-		width: 90%;
+		width: 98%;
 	}
 
 	div#emailScotty {
+		top: 54%;
 		width: 90%;
 	}
 
 	div#emailScotty button#submitForm {
-		font-size: 2.25em;
+		font-size: 2em;
+		bottom: -120px;
 		margin-left: 15px;
 	}
 }
-
-

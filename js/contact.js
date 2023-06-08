@@ -1,18 +1,23 @@
 
 const optionsWrapper = document.getElementById('optionsWrapper'),
-	  sideButtons = Array.from(document.querySelectorAll('div#optionsWrapper button')),
 	  options = Array.from(document.getElementsByClassName('opt')),
-	  socials = document.getElementById('socials'),
+	  optButtons = Array.from(document.querySelectorAll('div#optionsWrapper button')),
+
+	  testimonials = document.getElementById('testimonials'),
+	  clientRegards = Array.from(document.querySelectorAll('div#testimonials ul li')),
+	  testimonialButtons = Array.from(document.querySelectorAll('div#optionsWrapper button')),
+	  
+	  socialsWrapper = document.getElementById('socials'),
+
 	  formWrapper = document.getElementById('emailScotty'),
 	  emailScotty = document.getElementById('emailScotty').firstElementChild,
-	  emailScottyForm = emailScotty.firstElementChild,
 	  inputs = Array.from(emailScotty.firstElementChild.children),
 	  submitForm = document.getElementById('submitForm'),
 	  successMessage = document.getElementById('successfulSubmit'),
-	  testimonials = document.getElementById('testimonials'),
-	  clientRegards = Array.from(document.querySelectorAll('div#testimonials ul li')),
-	  optButtons = Array.from(document.querySelectorAll('div#optionsWrapper button')),
-	  pageSections = [testimonials, socials, formWrapper];
+
+	  pageSections = [testimonials, socialsWrapper, formWrapper];
+
+
 
 let closeWrapper = () => {
 		setTimeout(() => {
@@ -21,11 +26,6 @@ let closeWrapper = () => {
 
 			options.forEach(element => {
 				element.style.display = 'none';
-				
-				// element.style.opacity = 0;
-				// setTimeout(() => {
-				// 	element.style.display = 'none';
-				// }, 310)
 			})
 		}, 500)
 	},
@@ -33,7 +33,7 @@ let closeWrapper = () => {
 		setTimeout(() => {
 			if(window.innerWidth < 440) {
 				optionsWrapper.style.width = "98%";
-				optionsWrapper.style.height = "42%";
+				optionsWrapper.style.height = "48%";
 			} else {
 				optionsWrapper.style.width = "42%";
 				optionsWrapper.style.height = "49%";
@@ -56,31 +56,27 @@ let closeWrapper = () => {
 		}, 1200)
 	}
 	openWrapper_socials = () => {
-		optionsWrapper.style.transform = "translate(-50%, -50%) scale(0.3)";
-		socials.style.transform = 'translate(-50%, -50%) scale(0.5)'
+		optionsWrapper.style.transform = "translate(-50%, -50%)";
+		// socialsWrapper.style.transform = 'translate(-50%, -50%)'
 
 		setTimeout(() => {
 			if(window.innerWidth < 440) {
-				optionsWrapper.style.width = "301%";
+				optionsWrapper.style.width = "99%";
 			} else {
-				optionsWrapper.style.width = "167%";
+				optionsWrapper.style.width = "52%";
 			}
-
-			
+			socialsWrapper.style.display = "block";
 		}, 600)
 		setTimeout(() => {
-			socials.style.display = "block";
-		}, 610)
-		setTimeout(() => {
-			socials.style.opacity = 1;
-			socials.style.transform = 'translate(-50%, -50%) scale(1)'
-		}, 725)
+			socialsWrapper.style.opacity = 1;
+			socialsWrapper.classList.add('scale');
+		}, 650)
 	},
 	openWrapper_emailScotty = () => {
 		if(window.innerWidth > 440) {
-			optionsWrapper.style = "width: 80%; height: 60%;";	
+			optionsWrapper.style = "width: 50%; height: 50%;";	
 		} else if (window.innerWidth < 440) {
-			optionsWrapper.style = "width: 99%; height: 45%;";
+			optionsWrapper.style = "width: 99%; height: 50%;";
 		}
 
 		setTimeout(() => {
@@ -92,50 +88,55 @@ let closeWrapper = () => {
 		}, 725)
 	};
 
-options[1].addEventListener('click', ()=> {
-	closeWrapper();
-	setTimeout(()=>{
-		openWrapper_socials()
-		sideButtons[0].style = 'display: block; transform: scale(4); top: -100px; left: 270px';
-	}, 1500);
-	setTimeout(()=>{
-		sideButtons[0].style.opacity = 1;
-	}, 3000);
-});
-options[2].addEventListener('click', ()=> {
-	closeWrapper();
-	setTimeout(()=>{
-		openWrapper_emailScotty()
-	}, 1500);
-})
 options[0].addEventListener('click', ()=> {
 	closeWrapper();
 	setTimeout(()=>{
 		openWrapper_testimonials()
 	}, 1500);
 })
-sideButtons[0].addEventListener('click', ()=> {
+options[1].addEventListener('click', ()=> {
+	closeWrapper();
+	setTimeout(()=>{
+		openWrapper_socials()
+		optButtons[0].style = 'display: block';
+	}, 1500);
+	setTimeout(()=>{
+		optButtons[0].style.opacity = 1;
+	}, 3000);
+});
+options[2].addEventListener('click', ()=> {
+	closeWrapper();
+	setTimeout(()=>{
+		openWrapper_emailScotty()
+		optButtons[0].style = 'display: block';
+	}, 1500);
+	setTimeout(()=>{
+		testimonialButtons[0].style.opacity = 1;
+	}, 3000);
+})
+testimonialButtons[0].addEventListener('click', ()=> {
 	pageSections.forEach(element => {
 		if(getComputedStyle(element).display == 'block') {
 			element.style.opacity = 0;
-			sideButtons.forEach((element) => {
+			testimonialButtons.forEach((element) => {
 				element.style.opacity = 0;
 			})
 			setTimeout(() => {
 				element.style.display = 'none'
-				sideButtons.forEach((element) => {
+				testimonialButtons.forEach((element) => {
 					element.style.display = 'none'
 				})
 			}, 350);
 		}
 	});
 
-	//add desktop and mobile queries
+	//reOpening the wrapper
 	if(window.innerWidth < 440) {
 		optionsWrapper.style = "height: 60vh; width: 99%;"
 	} else {
 		optionsWrapper.style = "height: 60vh; width: 80%;"
 	}
+
 	options.forEach(element => {
 		element.style = 'display:block; opacity: 0;'
 		setTimeout(() => {
@@ -147,17 +148,20 @@ sideButtons[0].addEventListener('click', ()=> {
 		successMessage.style.display = 'none';
 	}
 	setTimeout(()=>{
-		sideButtons[0].style = null;
+		testimonialButtons[0].style = null;
 		successMessage.style.display = 0;
 	}, 300);
-})
 
-sideButtons[1].addEventListener('click', ()=> {
+	if(socialsWrapper.classList.contains('scale')) {
+		socialsWrapper.classList.remove('scale');
+	}
+})
+testimonialButtons[1].addEventListener('click', ()=> {
 	let next;
 	let before;
 	setTimeout(() => {
 		clientRegards.forEach((element, index) => {
-			if(getComputedStyle(element).display == 'block') {
+			if(getComputedStyle(element).display == 'flex') {
 				if(index == clientRegards.length - 1) {
 					next = 0;
 				} else {
@@ -181,7 +185,7 @@ sideButtons[1].addEventListener('click', ()=> {
 		clientRegards[before].style = null;
 		clientRegards[before].style.left = '200px';
 		clientRegards[next].style.left = '200px';
-		clientRegards[next].style.display = 'block';
+		clientRegards[next].style.display = 'flex';
 		setTimeout(() => {
 			clientRegards[next].style.left = "0px"
 		}, 10)
@@ -192,13 +196,18 @@ sideButtons[1].addEventListener('click', ()=> {
 });
 
 
+/**
+ * onLoad animation sequence:
+ * wrapper starts as scaled down square, scales up then opens out,
+ * options then scaleUp 
+ **/
 
 
 /*
 	Form stuff
 */
-let formData = {};
 
+// let formData = {};
 let moveToNextOnEnter = (event) => {
 	if(event.keyCode === 13) {
 		event.preventDefault();
@@ -230,8 +239,8 @@ inputs.forEach((element, index) => {
 			optionsWrapper.style.opacity = 1;
 		}
 	})		
-
 })
+
 //when all inputs are filled, submit button appears
 emailScotty.addEventListener('change', () =>{
 	let fullName = inputs[0].value,
@@ -251,17 +260,15 @@ submitForm.addEventListener('click', () => {
 
 	event.preventDefault();
 	submitForm.classList.add('glitch');
-	formData = {
-		name: inputs[0].value,
-		emailAddr: inputs[1].value,
-		subject: inputs[2].value,
-		content: inputs[3].value,
-	}
-	console.log(formData);
+	// formData = {
+	// 	name: inputs[0].value,
+	// 	emailAddr: inputs[1].value,
+	// 	subject: inputs[2].value,
+	// 	content: inputs[3].value,
+	// }
+	// console.log(formData);
 
-
-
-	emailjs.sendForm('emailViaMyMedia', 'ppcontactForm', emailScotty)
+	emailjs.sendForm('viaMyMedia', 'ppcontactForm', emailScotty)
 		.then(() => {
 			setTimeout(() => {
 				formWrapper.style.opacity = 0;
@@ -281,21 +288,13 @@ submitForm.addEventListener('click', () => {
 					}, 400)
 				}, 1400);
 				setTimeout(()=>{
-					sideButtons[0].style = 'display: block';
+					testimonialButtons[0].style = 'display: block';
 				}, 1500);
 				setTimeout(()=>{
-					sideButtons[0].style.opacity = 1;
+					testimonialButtons[0].style.opacity = 1;
 					submitForm.style = null;
 					submitForm.classList.remove('glitch');
 				}, 2400);
 			}, 1000)
 		})
 })
-
-window.onload = () => {
-	submitForm.addEventListener('click', (event) => {
-		
-
-		
-	})
-}

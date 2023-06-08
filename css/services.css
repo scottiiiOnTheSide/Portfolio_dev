@@ -72,7 +72,7 @@ header#hero a#scrollToServices {
 
 @media only screen and (min-width: 767px) {
 	header#hero h1 {
-		width: 25%;
+		width: 45%;
 	}
 }
 
@@ -97,7 +97,7 @@ div#splash, div#quoteTwo, div#menu {
 div#splash {
 	position: relative;
 	margin: 120px 0;
-	animation: bounce 3s infinite ease-out 2s;
+	animation: bounce 3s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94) 2s;
 
 }
 
@@ -116,13 +116,13 @@ div#splash p {
 	0% {
 		top: 0px
 	}
-	33% {
+	25% {
 		top: -60px;
 	}
-	66% {
-		top: 20px;
+	45% {
+		opacity: 0;
 	}
-	99% {
+	100% {
 		top: 0px;
 	}
 }
@@ -136,13 +136,15 @@ p#quote {
 	color: white;
 	text-align: center;
 	width: 85%;
+	max-width: 575px;
 	margin: 60px auto;
 }
 
 
 
 div#quoteTwo {
-	margin: 180px 0;
+	margin: 180px auto;
+	max-width: 700px;
 }
 
 div#quoteTwo h2 {
@@ -163,6 +165,7 @@ div#quoteTwo p {
 	font-size: 1em;
 	letter-spacing: 2px;
 	line-height: 32px;
+	margin: 10px auto;
 }
 
 
@@ -191,6 +194,7 @@ div#menu div.underline {
 
 div#menu div.package {
 	width: 85%;
+	max-width: 800px;
 	margin: 60px;
 }
 
@@ -266,6 +270,27 @@ div#menu div.package div.buttonWrapper button {
 
 
 
+@media only screen and (min-width: 768px) {
+	div#menu div.package {
+
+	}
+
+	div#menu div.package div.left,
+	div#menu div.package div.right {
+		display: inline-block;
+		width: 48%;
+	}
+
+	div#menu div.package div.right {
+    	position: relative;
+    	top: -120px;
+    	right: -40px;
+	}
+
+}
+
+
+
 
 
 
@@ -293,7 +318,7 @@ div#requestForm h2 {
 }
 
 div#requestForm h2 span {
-	display: inline-block;
+	display: block;
 	font-weight: 300;
 	font-size: 0.9em;
 	color: rgba(255, 255, 255, 0.4);
@@ -301,6 +326,7 @@ div#requestForm h2 span {
 
 div#requestForm form {
 	width: 90%;
+	max-width: 535px;
 	margin: 0 auto;
 	padding: 0;
 	border: 0;
@@ -332,6 +358,10 @@ div#requestForm textarea {
 	transition: all 0.2s ease;
 }
 
+div#requestForm input#inquiryType {
+	display: none;
+}
+
 div#requestForm input {}
 
 div#requestForm textarea {
@@ -349,7 +379,7 @@ div#requestForm input:focus-visible {
 	background-color: rgba(115, 115, 115, 0.2);
 }
 
-div#requestForm button {
+div#requestForm button#sendRequest {
 	font-size: 1.25em;
 	position: relative;
     display: block;
@@ -357,9 +387,10 @@ div#requestForm button {
     padding: 15px 20px;
     border-radius: 4px;
     color: var(--text-gray);
+
 }
 
-div#requestForm button.active {
+div#requestForm button#sendRequest.active {
 	
 	background-color: rgba(109, 109, 109, 0.25);
 	color: white;
@@ -377,7 +408,61 @@ div#requestForm button#exit {
 }
 
 div#requestForm button#topExit {
-    font-size: 3em;
+    font-size: 2.5em;
     padding: 0;
     margin: 20px auto 0;
+    width: 100%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+
+
+
+
+div#requestForm div#confirmation {
+	display: none;
+	position: absolute;
+	top: 0;
+	flex-direction: column;
+	align-content: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	width: 100%;
+	height: 100%;
+	background-color: #1f1f1f;
+	transition: all 0.2s ease;
+
+	color: white;
+	opacity: 0;
+}
+
+div#requestForm div#confirmation img#logo {
+	width: 64px;
+	margin: 0px auto 20px;
+}
+
+div#requestForm div#confirmation h2 {
+	margin: 20px auto 0;
+}
+
+div#requestForm div#confirmation p {
+	font-size: 0.8em;
+	font-weight: 300;
+	letter-spacing: 3px;
+
+	width: 70%;
+	text-align: center;
+}
+
+div#requestForm div#confirmation button {
+	font-size: 2.5em;
+}
+
+
+@media only screen and (min-width: 768px) {
+
+
 }

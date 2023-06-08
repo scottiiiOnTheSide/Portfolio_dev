@@ -1,12 +1,61 @@
 
 ## Portfolio Site - Development Version
 
-#05. 25. 2023
+@06. 07. 2023
+@2235 - Decided to forgoe the animation on load, for now: May revise idea
 
+	  - adjusted styling for socials wrapper so design is more cohesive
+
+#06. 01. 2023
+@0345 Finished updated / fixing Contact page
+
+	  - Would like to add animation on load where optionsWrapper
+	 	opens up and then reveals options
+
+	  - Contact form needs to be resized for tablets
+
+	  - delay needs to be added to socialMedia links
+
+	  - Would like inputs to be highlighted upon entering text
+
+	  TO DO AFTER:
+	    - About Section
+	    - Site nav menu
+	    - Have header go back to landing page
+
+
+#05. 31. 2023
+@0940 
+	  Need to clean up entirity of contact section,
+	  reorganize.
+
+	  Should be a back button for sending a message
+
+	  Elements need to be restyled...
+
+
+#05. 30. 2023
+
+@1333 services.html page complete!
+
+	  To Do Next:
+	  - refresh contact page design...
+
+@0925 
+	  To Do:
+	  - Create submission confirm div ✔️
+	  - have sendButton appear active and clickable when fields are filled ✔️
+	  - Upon completed submission, confirmPage should appear ✔️
+
+#05. 27. 2023
+@1545 Desktop styles for services page complete!
+	  Connecting the form to email.js is the final step...
+
+#05. 25. 2023
 @1510 Added a topExit to the requestForm and the bouncing animation for the mouse Icon
 	  
 	  Next to do:
-	  - Desktop styles
+	  - Desktop styles ✔️
 	  - connect form to email.js
 
 @1410 May need to add an additional exit button to the top of the requestPrompt due to when

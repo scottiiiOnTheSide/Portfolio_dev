@@ -12,10 +12,12 @@
 <head>
 
 <body>
-		
-	<!-- Fade in on arrival, 
-		 fade out on page leave -->
-	<script type="text/javascript">
+<script type="text/javascript">
+
+		function delay(URL) {
+    		setTimeout( function() { window.location = URL }, 500 );
+		}
+
 		window.onload = () => {
 			let overlay = document.getElementById("overlay");
 			let overlayState = window.getComputedStyle(overlay).getPropertyValue('opacity');
@@ -28,31 +30,30 @@
 				}, 250)
 			}
 		}
-	</script>
+</script>
 <div id="overlay"></div>
 
 
 
 <!-- Beginning of Page Body -->
-<section id="transmissions" >
+
+<header id="logo">
+	<img id="logo" src="./resources/logos/Beammeupscottiii-LogoSolo.svg" alt="The beam me up scotty logo"/>
+	<p id="brandname" class="glitch">beam<br>me<br>up!</ps>
+</header>
 	
-	<div id="optionsWrapper">
-	<!-- <div id="optionsWrapper" style="display: none"> -->
-
+	<div id="optionsWrapper"><!-- <div id="optionsWrapper" style="display: none"> -->
 
 		<div class="opt">
-			<h2>Regards from <br>Previous Clients</h2>
-			<span>( Testimonials )</span>
+			<h2>Testimonials</h2>
 		</div>
 
 		<div class="opt">
-			<h2>Personal Perceptions & <br>Visual Exploits</h2>
-			<span>( Social Media )</span>
+			<h2>Social Media</h2>
 		</div>
 
 		<div class="opt">
-			<h2>Inquire and or <br>Request Services</h2>
-			<span>( Contact Form )</span>
+			<h2>Contact Form</h2>
 		</div>
 
 		<span id='successfulSubmit'>
@@ -103,20 +104,19 @@
 	<div id="emailScotty">
 		<form >
 			<fieldset>
-				<input type="text" name="name" placeholder="(fullname)">
-				<input type="text" name="emailAddr" placeholder="(email address)">
-				<input type="text" name="subject" placeholder="(subject)">
-				<textarea name="message" rows="5" cols="5" placeholder="(your intent?)"></textarea>
+				<input type="text" name="name" placeholder="your name">
+				<input type="text" name="emailAddr" placeholder="email address">
+				<input type="text" name="subject" placeholder="subject">
+				<textarea name="message" rows="5" cols="5" placeholder="convey your intent"></textarea>
 			</fieldset>
 		</form>
 
 		<button id="submitForm">SENDMESSAGE</button>
 	</div>
 
-</section>
 
 
-
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
 	
 	(function () {
@@ -125,7 +125,6 @@
 
 </script>
 <script type="text/javascript" src="js/contact.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 </body>
 </html>
