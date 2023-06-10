@@ -1,6 +1,26 @@
 
 ## Portfolio Site - Development Version
 
+@06. 09. 2023
+@0705 Adjustment of landing section elements complete.
+
+	  Gallery could actually use abit of work - will need to reorganize
+	  the elements on page so that 
+	  - when whole page is scrolled, everything moves down (the header is fixed?)
+	  - optimized spacing between logo header, section header and images gallery
+	  - and tablet styling ...
+
+@06. 09. 2023
+@2145 had issues on iOS concerning buttons being blue and the inputs for the contact
+	  form having curved, visible borders 
+
+	  Fixed some other previously listed issues as well.
+
+	  Will add the opening animation in a future update....
+
+	  Need to adjust width at which landing Menu goes vertical 
+	  and height of menu button (done) ✔️
+
 @06. 07. 2023
 @2235 - Decided to forgoe the animation on load, for now: May revise idea
 
@@ -10,13 +30,13 @@
 @0345 Finished updated / fixing Contact page
 
 	  - Would like to add animation on load where optionsWrapper
-	 	opens up and then reveals options
+	 	opens up and then reveals options 
 
-	  - Contact form needs to be resized for tablets
+	  - Contact form needs to be resized for tablets ✔️
 
-	  - delay needs to be added to socialMedia links
+	  - delay needs to be added to socialMedia links ✔️
 
-	  - Would like inputs to be highlighted upon entering text
+	  - Would like inputs to be highlighted upon entering text ✔️
 
 	  TO DO AFTER:
 	    - About Section

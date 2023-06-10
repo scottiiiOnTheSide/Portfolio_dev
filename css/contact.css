@@ -321,7 +321,7 @@ div#emailScotty {
 	top: 52%;
 	left: 49%;
 	transform: translate(-50%, -50%) scale(0.5);
-	width: 45%;
+	width: 60%;
 	transition: all 0.3s ease-out;
 	display: none;
 	opacity: 0;
@@ -343,6 +343,7 @@ div#emailScotty form fieldset input {
 	display: inline-block;
 	width: 100%;
 	border: none;
+	border-radius: 0;
 	font-family: Open Sans;
 	font-size: 0.9em;
 	letter-spacing: 4px;
@@ -374,6 +375,7 @@ div#emailScotty form fieldset textarea {
 	display: inline-block;
 	width: 100%;
 	border: none;
+	border-radius: 0;
 	border-bottom: 2px solid black;
 	margin: 10px 0 0;
 
@@ -404,6 +406,17 @@ div#emailScotty button#submitForm {
 	
 	opacity: 0.1;
 	transition: all 0.3s ease-out;
+}
+
+div#emailScotty input,
+div#emailScotty textarea {
+	transition: all 0.3s ease-out;	
+}
+
+div#emailScotty input:focus-visible,
+div#emailScotty textarea:focus-visible {
+	outline: none;
+	background-color: rgba(115, 115, 115, 0.2);
 }
 
 div#emailScotty button#submitForm:hover {
@@ -466,5 +479,11 @@ div#emailScotty button#backToOptions {
 		font-size: 2em;
 		bottom: -120px;
 		margin-left: 15px;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	div#emailScotty {
+		width: 45%;
 	}
 }

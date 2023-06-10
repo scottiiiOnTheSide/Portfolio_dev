@@ -86,7 +86,7 @@ div#landingHeader div#logoWrapper p#tagline {
 
 
 /* End of Section - Section Media Queries */
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 1025px) {
 
 	div#landingHeader div#logoWrapper {
 		flex-direction: row-reverse;
@@ -241,12 +241,12 @@ button#sectionSwitch {
 
 	font-family: 'Avenir';
 	font-weight: 500;    
-	font-size: 1em;
+	font-size: 1.5em;
 	color: white;
 	letter-spacing: 10px;
 
 	position: absolute;
-	bottom: 5%;
+	bottom: 7%;
   left: 50%;
   transform: translateX(-50%);
 
@@ -273,7 +273,7 @@ ul#menu {
 	padding: 0;
 	list-style-type: none;
 	position: absolute;
-  top: 50%;
+  top: 52%;
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
@@ -315,7 +315,7 @@ ul#menu li a span {
 
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1024px) {
 
 	ul#menu {
 		flex-direction: column;
