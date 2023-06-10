@@ -131,7 +131,7 @@ div#gallery {
 
 div#gallery div#heading {
 	display: none;
-	position: fixed;
+	position: absolute;
 	left: 50%;
 	top: 11%;
     transform: translateX(-50%);
@@ -545,12 +545,23 @@ div#imageView div#infoWrapper button#exit {
 		ul#genres li:last-child span {
 			right: 0;
 		}
-}
+
+	div#imageView div#infoWrapper {
+		bottom: 10%;
+	}
+
+
+
+	div#imageView ul#imageSlidesWrapper {
+		width: 90%;
+	}
+
+}	
 
 @media only screen and (min-width: 1023px) {
 
 	div#gallery div#imagesWrapper img {
-		width: 18%;
+		width: 20%;
 		max-height: 320px;
 		padding: 10px;
 		object-fit: cover;

@@ -1,14 +1,21 @@
 
 ## Portfolio Site - Development Version
 
+@06. 10. 2023
+@1300 Need to devise way to redesign imageView, as long vertical images get clipped...
+	 
+	  Next To Do:
+	  About page -> Nav Menu -> Header Logo as link to landing
+	  -> reduce landing carousel images filesize
+
 @06. 09. 2023
 @0705 Adjustment of landing section elements complete.
 
 	  Gallery could actually use abit of work - will need to reorganize
 	  the elements on page so that 
-	  - when whole page is scrolled, everything moves down (the header is fixed?)
+	  - when whole page is scrolled, everything moves down (the header is fixed?) ✔️
 	  - optimized spacing between logo header, section header and images gallery
-	  - and tablet styling ...
+	  - and tablet styling ... ✔️
 
 @06. 09. 2023
 @2145 had issues on iOS concerning buttons being blue and the inputs for the contact
