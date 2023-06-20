@@ -126,13 +126,14 @@ function openImageView(index) {
 		imgs.forEach(img => {
 			let li = document.createElement('li');
 			li.append(img);
+			li.style.backgroundImage = `url('${img.src}')`
 			imagesSlidesWrapper.append(li);
 		});
 
 		imagesControls(Array.from(imageSlidesWrapper.children));
 		imageSlidesWrapper.children[index].style.display = 'block';
 
-		setTimeout(toggleElement(imageView, 500, 'block'), 300);
+		setTimeout(toggleElement(imageView, 500, 'flex'), 300);
 	})
 }
 function closeImageView(index) {

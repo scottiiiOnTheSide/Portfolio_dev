@@ -1,6 +1,27 @@
 
 ## Portfolio Site - Development Version
 
+
+@06. 20. 2023
+@01955 Implemented fix for gallery display and imageView across all devices.
+       Need to englargen imageSlidesWrapper for tablet AND
+       test arrangement on devices
+
+       also, image counter is now having issue - will load correct image number
+       but keeps it when sliding to next . . .
+
+@06. 16. 2023
+@1330 Fix margin for imagesWrapper within div#gallery
+	  still need to do below
+
+
+@06. 12. 2023
+@1425 Fixed issue with vertical images fitting correctly within the li's :D !
+	  Need to do resizings for the Li's for different screen sizes,
+
+	  also need to implement desktop styling, beginning at 1023px W
+
+
 @06. 10. 2023
 @1300 Need to devise way to redesign imageView, as long vertical images get clipped...
 	 
