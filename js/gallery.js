@@ -134,6 +134,10 @@ function openImageView(index) {
 		imageSlidesWrapper.children[index].style.display = 'block';
 
 		setTimeout(toggleElement(imageView, 500, 'flex'), 300);
+		setTimeout(()=> {
+			gallery.style.display = 'none';
+			gallery.style.opacity = 0;
+		}, 350)
 	})
 }
 function closeImageView(index) {
@@ -144,6 +148,10 @@ function closeImageView(index) {
 		element.style.display = "none";
 	})
 
+	
+	gallery.style.display = 'block';
+	gallery.style.opacity = 1;
+	
 	toggleElement(imageView, 500, 'block');
 }
 
@@ -290,7 +298,7 @@ function imagesControls(imagesArray){
 	currentTranslate = 0,
 	prevTranslate = 0,
 	animationID = 0,
-	currentIndex = 0,
+	currentIndex,
 	getPositionX = (event) => {
 		return event.type.includes('mouse') 
 			? event.pageX 
@@ -360,6 +368,7 @@ function imagesControls(imagesArray){
 			event.stopPropagation()
 
 			currentIndex = index;
+
 			// if(window.innerWidth >= 1024) {
 				startPos = getPositionX(event);
 			// 	console.log('X read')
@@ -400,16 +409,17 @@ function imagesControls(imagesArray){
 			if(isDragging == true) {
 				isDragging = false;
 		    	cancelAnimationFrame(animationID);
-		    	let current = structuredClone(currentIndex);
+		    	let current = structuredClone(currentIndex) + 1;
 
 				const movedBy = currentTranslate - prevTranslate;
-				//for mobile
+
 				if(movedBy < -100 && currentIndex < imagesArray.length - 1) {
 					currentIndex += 1;
 					
 					currentImageNum.style.opacity = 0;		
 					setTimeout(()=> {
 						currentImageNum.innerHTML = current + 1;
+						// currentImageNum.innerHTML = currentIndex;
 					}, 350)
 					setTimeout(()=> {
 						currentImageNum.style.opacity = 1;

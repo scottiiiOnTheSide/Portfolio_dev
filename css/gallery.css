@@ -335,8 +335,8 @@ div#comingSoon button#return:hover {
 
 
 div#imageView {
-	width: 100%;
-	height: 100vh;
+	width: 99%;
+	height: 99vh;
 	position: absolute;
     top: 50%;
     left: 50%;
@@ -471,21 +471,25 @@ div#imageView div#infoWrapper button#exit {
 /* when phone in landscape */
 @media only screen and (max-height: 420px) {
 
+	div#imageView {
+		flex-direction: row;
+	}
+
 	div#imageView ul#imageSlidesWrapper {
-    	top: 50%;
-    	transform: translateY(-50%);
+    	top: unset;
+    	transform: unset;
     	left: unset;
-    	margin: 0 0 0 20px;
-    	width: 60%;
+    	margin: 0 0 0 0px;
+    	height: 90vh;
     }
 
 	div#imageView div#infoWrapper {
 		width: 40%;
-	    top: 50%;
-	    right: -2%;
+	    top: unset;
+/*	    right: -2%;*/
 	    left: unset;
 	    bottom: unset;
-	    transform: translateY(-50%);
+	    transform: unset;
 	}
 
 	div#imageView ul#imageSlidesWrapper li {
@@ -493,7 +497,8 @@ div#imageView div#infoWrapper button#exit {
 	}
 }
 
-@media only screen and (max-height: 361px) and (max-width: 741px) {
+/* when smaller phone is in landscape */
+/*@media only screen and (max-height: 361px) and (max-width: 741px) {
 	div#imageView div#infoWrapper {
 		transform: translateY(-50%) scale(0.8);
 	}
@@ -503,7 +508,25 @@ div#imageView div#infoWrapper button#exit {
     	left: -4%;
     	margin: 0 0 0 0px;
 	}
+}*/
+
+
+@media only screen and (min-height: 700px) {
+
+	div#imageView div#infoWrapper {
+		bottom: -4%;
+	}
+
 }
+
+@media only screen and (max-height: 800px) {
+
+	div#imageView div#infoWrapper {
+		bottom: -4%;
+	}
+
+}
+
 
 
 /* for small phones */
@@ -534,13 +557,55 @@ div#imageView div#infoWrapper button#exit {
 	}
 }
 
+/* specifically for larger phones . . . */
+@media only screen and (min-width: 361px) and (max-width: 425px) {
+	div#imageView ul#imageSlidesWrapper {
+		top: -20px;
+	}
+}
 
+
+/* for imageView - mobile */
 @media only screen and (max-width: 420px) {
 
 	div#imageView {
 		flex-direction: column;
 	}
 	
+}
+
+
+/* for tablets 8*/
+@media only screen and (min-width: 1023px) and (max-width: 741px) {
+
+	div#imageView {
+		flex-direction: row-reverse;
+	}
+
+
+	div#gallery div#imagesWrapper img {
+		width: 20%;
+		max-height: 320px;
+		padding: 10px;
+		object-fit: cover;
+	}
+
+	div#gallery div#imagesWrapper img:nth-child(even) {
+		position: relative;
+	    top: 20px;
+	}
+
+
+	div#imageView div#infoWrapper {
+		width: 20%;
+		left: -2%;
+	}
+
+	/*****/
+	div#imageView ul#imageSlidesWrapper {
+		right: -5%;
+		width: 65%;
+	}
 }
 
 
@@ -572,7 +637,7 @@ div#imageView div#infoWrapper button#exit {
 
 	ul#genres li span {
 		text-align: center;
-		padding: 80px 0;
+		padding: 86px 0;
 		right: 1px;
 		border: 2px solid black;
 	}
@@ -606,6 +671,10 @@ div#imageView div#infoWrapper button#exit {
 	}
 }
 
+
+
+
+/* desktop styling */
 @media only screen and (min-width: 1023px) {
 
 	div#imageView {
@@ -631,45 +700,42 @@ div#imageView div#infoWrapper button#exit {
 		left: -2%;
 	}
 
-	/*****/
+	div#imageView div#infoWrapper div#imageCount {
+    	display: flex;
+    	justify-content: center;
+    	flex-direction: column;
+    	flex-wrap: wrap;
+    	align-content: flex-start;
+	}
+
+	div#imageView div#infoWrapper div#imageCount span#divider {
+
+		border-top: 2px solid white;
+    	width: 1.5em;
+    	height: auto;
+    	margin: 20px 0;
+	}
+
+	div#imageView div#infoWrapper p {
+		text-align: left;
+		margin: 30px;
+		margin-left: 0px;
+	}
+
+	div#imageView div#infoWrapper button#exit {
+		margin: 20px;
+		margin-left: -10px;
+
+	}
+
+
 	div#imageView ul#imageSlidesWrapper {
 		right: -5%;
 		width: 65%;
+		height: 85vh;
 	}
 }
 
-/* for tablets 8?
-@media only screen and (min-width: 1023px) (max-width: 741px) {
-
-	div#imageView {
-		flex-direction: row-reverse;
-	}
-
-
-	div#gallery div#imagesWrapper img {
-		width: 20%;
-		max-height: 320px;
-		padding: 10px;
-		object-fit: cover;
-	}
-
-	div#gallery div#imagesWrapper img:nth-child(even) {
-		position: relative;
-	    top: 20px;
-	}
-
-
-	div#imageView div#infoWrapper {
-		width: 20%;
-		left: -2%;
-	}
-
-	/*****/
-	div#imageView ul#imageSlidesWrapper {
-		right: -5%;
-		width: 65%;
-	}
-}
 
 @media only screen and (min-width: 1199px) {
 
@@ -685,12 +751,3 @@ div#imageView div#infoWrapper button#exit {
 	    top: 0px;
 	}
 }
-
-
-/*@media only screen and (min-width: 1024px) {
-	div#gallery div#imagesWrapper {
-		margin-top: 7%;
-	}
-}*/
-
-

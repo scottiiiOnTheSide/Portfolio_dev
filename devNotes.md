@@ -2,6 +2,43 @@
 ## Portfolio Site - Development Version
 
 
+@08. 01. 2023
+@1440 Image count issue fixed d(T-T )
+
+	  begin about page :D
+	  First thing, dev function for 
+	  switching between div sections within wrapper
+	  on scroll
+
+
+@07. 27. 2023
+@0955 Desktop styling added. 
+
+@1033 Mobile landscape styling reAdded 
+
+	  Need to fix counting issue with image counter, imageView... ✔️
+
+
+
+@07. 04. 2023
+@0420 Previous two issues fixed !
+
+	  Image size within imageView needs to be larger for desktop
+	  - restyle info to be left aligned as well ✔️
+
+	  - re-add mobile, horizontal style ✔️
+	  - reduce size of info text on mobile 
+
+@06. 22. 2023
+@0830 
+	Fixes to Implement:
+	- for ipad, portrait mode (height > 800 or so) move infoWrapper down ✔️
+	- have the main gallery display: none while imageView is open.
+	  should prevent scrolling while in landscape ✔️
+
+	Can begin about page ...
+
+
 @06. 20. 2023
 @01955 Implemented fix for gallery display and imageView across all devices.
        Need to englargen imageSlidesWrapper for tablet AND

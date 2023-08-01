@@ -45,6 +45,10 @@ body {
 	width: 100%;
 }
 
+body::-webkit-scrollbar {
+	display: none;
+}
+
 body#landing, body#gallery, body#services {
 	background-color: black;
 }
@@ -91,10 +95,12 @@ header#logo {
  	margin: -18px 0 20px;
  	padding-top: 16px;
  	z-index: 10;
+ 	transform: scale(0.85);
 }
 
-header#logo:hover {
-	transform: scale(1.15);
+header#logo:hover,
+header#logo:focus {
+	transform: scale(1);
 }
 
 header#logo img {
