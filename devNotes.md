@@ -3,6 +3,13 @@
 
 
 @08. 01. 2023
+
+@2235 initial html skeleton added 
+
+@2220 Use object position on background images in about section...
+
+@2145 Added another section of copywriting to the Services page
+
 @1440 Image count issue fixed d(T-T )
 
 	  begin about page :D
