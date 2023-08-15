@@ -11,11 +11,11 @@
 	<link rel="stylesheet" type="text/css" href="css/about.css">
 <head>
 
-<body>
+<body id="about">
 		
-	<!-- Fade in on arrival, 
-		 fade out on page leave -->
-	<script type="text/javascript">
+<!-- Fade in on arrival, 
+	 fade out on page leave -->
+<script type="text/javascript">
 		window.onload = () => {
 			let overlay = document.getElementById("overlay");
 			let overlayState = window.getComputedStyle(overlay).getPropertyValue('opacity');
@@ -28,7 +28,7 @@
 				}, 250)
 			}
 		}
-	</script>
+</script>
 <div id="overlay"></div>
 
 <!-- Beginning of Page Body -->
@@ -39,49 +39,101 @@
 	<p id="brandname" class="glitch">beam<br>me<br>up!</p>
 </header>
 
-<div class="section" id="one">
+
+
+
+
+
+
+<div class="section return" id="one" style="display: none">
 	
 	<ul id="bgImgs">
 		<li>
-			<img src="">
+			<img src="./resources/selfConcept/innaCorner.jpg">
 		</li>
 		<li>
-			<img src="">
+			<img src="./resources/selfConcept/inHisRoom.jpg">
 		</li>
 		<li>
-			<img src="">
+			<img src="./resources/selfConcept/caughtHisEye.jpg">
 		</li>
 	</ul>
 
 	<div class="copywriting">
-		<h2></h2>
-		<p></p>
+		<h2>beammeupscottiii is the tag name under which Jelique Edward publishes his work involving visual, digital art</h2>
+		<p>
+			A simple ephiphany was had. That an artist's title should conjour up particular ideals, certain energies and set a precedent in the mind of those who hear it. To 'beam' up anyone, they with the 'light' must be prepared for the opportunity to do so. They must have the energy available and expertise necessary to guide and adjust the transmission. And of course, the work of this operator must indeed elevate you in some way, shape or form. It's all metaphorical fun - which at it's heart, all great art is. This rhetoric is but a sampling of the perspective that this artist holds when he works and collaborates.
+		</p>
 	</div>
-
 </div>
 
-<div class="section" id="two">
+<div class="section return" id="two" style="display: block">
 	
 	<div class="copywriting">
-		<p></p>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<p></p>
+
+		<p>
+			Born and raised as a youth in Brooklyn, NYC - yet spending much of his young adult life in South FL - these contrasting environments helped to shape the mindset of the artist. Business and Pleasure, Hustle and Flex - where others see means to serve an end, he discovered a passion for the reciprocal nature between them. As art imitates life, and then vice versa, so does art serve life and back again. As this artist crafts, his work and effort further refines him . . .
+		</p>
+
+		<div id="spanWrapper">
+			<span>Photography</span>
+			<span>Videography</span>
+			<span>Retouching</span>
+			<span>Video Editing</span>
+			<span>Story Boarding</span>
+		</div>
+		
+		<p>
+			Using these skills he has developed, the artist intends to stretch his hand further. Through seeking opportunities to grow and complete more meaningful work - either to hustle or flex - shall his competency increase and ability to stretch even further. In time, <b>Digital Marketing</b> and <b>Branding</b> will append this list
+		</p>
 
 		<div id="linkWrapper">
-			<a href="gallery.html">View Gallery</a>
-			<a href="services.html">Work With Me</a>
+			<a href="gallery.html" class="glitch">
+				<span>View Gallery</span>View Gallery
+			</a>
+
+			<a href="services.html" class="glitch">
+				<span>Work With Me</span>Work With Me
+			</a>
 		</div>
 		
 	</div>
+</div>
 
+<div id="scrollCTAWrapper">
+	<img src="./resources/mouseW.svg"/>
+	<p>Scroll Down</p>
 </div>
 
 
 <script type="text/javascript" src="js/about.js"></script>
+<script>
+
+	let links = document.getElementsByTagName('a');
+	for(let link of links) {
+		link.addEventListener('click', (e)=> {
+			e.preventDefault();
+			let dest = link.getAttribute("href");
+
+			setTimeout(()=> {
+				overlay.style.zIndex = 10;
+				overlay.style.opacity = 1;
+			}, 500)
+			
+			setTimeout(()=> {
+				window.location.href = dest;
+	
+				setTimeout(() => {
+					overlay.style.zIndex = 0;
+					overlay.style.opacity = 0;
+				}, 1200)
+			}, 1000)
+		})
+	}
+
+		
+	
+</script>
 
 </body>
 </html>

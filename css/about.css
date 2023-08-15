@@ -4,3 +4,328 @@ header#logo p#brandname {
 	color: black;
 	font-weight: 500;
 }
+
+
+div.overlay {
+	background-color: white;
+}
+
+
+div.section {
+	font-family: "Open Sans";
+
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: inherit;
+
+	transition: all 0.5s ease-in-out;
+}
+
+div.section#one {
+	top: 42%;
+}
+
+div.section#two {
+	top: 50%;
+	display: none;
+}
+
+div.section#one div.copywriting {
+	position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+    max-width: 640px;
+}
+
+div.section#one h2 {
+	font-weight: 500;
+	font-size: 1.25em;
+	text-align: left;
+	letter-spacing: 8px;
+	line-height: 1.5em;
+	color: black;
+}
+
+div.section p {
+	font-weight: 300;
+	font-size: 1.1em;
+	text-align: left;
+	line-height: 1.8em;
+	color: black;
+
+	margin: 30px auto 0;
+}
+
+div.section#one p {
+	font-size: 1.2em;
+}
+
+div.section#two p {
+	font-size: 1.1em;
+}
+
+
+/* section#one images */
+div.section#one ul#bgImgs {
+	margin: 0 auto;
+	padding: 0;
+	list-style-type: none;
+	display: flex;
+
+	width: 75%;
+}
+
+div.section#one ul#bgImgs li {
+	display: block;
+	width: 33.2%;
+
+}
+
+div.section#one ul#bgImgs li img {
+	width: 100%;
+	opacity: 0.2;
+}
+
+
+
+
+
+/* section#Two specific */
+div.section#two div.copywriting {
+	margin: 0 auto;
+	width: 60%;
+}
+
+div.section#two div#spanWrapper {
+	width: 130%;
+	margin: 30px auto;
+	margin-left: -15%;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+div.section#two div.copywriting span {
+	font-weight: 500;
+	font-size: 1.3em;
+	text-align: center;
+	width: 19.5%;
+}
+
+div.section#two div#linkWrapper {
+	margin: 60px auto 0;
+	display: flex;
+	justify-content: space-between;
+}
+
+div.section#two div#linkWrapper a {
+	color: black;
+	text-decoration: none;
+
+	font-family: 'Avenir';
+	font-size: 2em;
+/*	font-weight: 500;*/
+	letter-spacing: 5px;
+	text-transform: uppercase;
+
+	margin: 0 30px;
+	max-width: 336px;
+
+}
+
+div.section#two div#linkWrapper a span {
+	display: inline-block;
+    position: relative;
+    top: 36px;
+    width: unset;
+
+    text-align: left;
+    font-weight: unset;
+    font-size: inherit;
+}
+
+
+
+
+
+div#scrollCTAWrapper {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	bottom: 0%;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+div#scrollCTAWrapper img {
+	transform: scale(0.2);
+}
+
+div#scrollCTAWrapper p {
+	font-family: 'Open Sans';
+	font-size: 0.8em;
+	letter-spacing: 5px;
+	text-transform: uppercase;
+
+	margin-top: -70px;
+} 
+
+
+
+
+
+
+/* section transition animations */
+
+.leave {
+	animation-name: leave;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in-out;
+}
+
+.return {
+	animation-name: return;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in-out;
+}
+
+@keyframes leave {
+	0% {
+		opacity: 1;
+	}
+
+	70% {
+		opacity: 0;
+	}
+
+	100% {
+		top: -20%;
+		opacity: 0;
+	}
+}
+
+@keyframes return {
+	0% {
+		opacity: 0;
+		transform: translate(-50%, -50%) scale(0.5);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translate(-50%, -50%) scale(1);
+	}
+}
+
+
+
+
+
+
+
+/* for mobile styling*/
+@media only screen and (max-width: 440px) {
+
+	body#about {
+		overflow-y: scroll;
+	}
+
+	div.section#one {
+		position: relative;
+/*		top: 12%;*/
+	}
+
+	div.section#one ul#bgImgs {
+		width: 100%;
+		position: absolute;
+		top: -10%;
+		z-index: 1;
+	}
+
+	div.section#one ul#bgImgs li {
+		height: 250px;
+	}
+
+	div.section#one ul#bgImgs li img {
+    	width: 100%;
+    	height: 100%;
+    	object-fit: cover;
+	}	
+
+	div.section#two {
+/*		height: 80dvh;*/
+/*		overflow-y: scroll;*/
+		position: relative;
+		top: 80%;
+	}
+
+	div.section#one div.copywriting {
+		position: relative;
+		width: 80%;
+		top: 20%;
+		z-index: 2;
+	}
+
+	div.section#two div.copywriting {
+		width: 85%;
+	}
+
+	div.section#one div.copywriting p {
+		font-size: 1em;
+	}
+
+	div.section#two div#spanWrapper {
+		flex-direction: column;
+		margin-left: unset;
+	}
+
+	div.section#one div.copywriting p {
+		font-size: 1em;
+	}
+
+	div.section#two div#spanWrapper span {
+		margin: 30px 0;
+		width: fit-content;
+	}
+
+	div.section#two div#spanWrapper span:nth-child(2) {
+		margin-left: 30px;
+	}
+	div.section#two div#spanWrapper span:nth-child(3) {
+		margin-left: 60px;
+	}
+	div.section#two div#spanWrapper span:nth-child(4) {
+		margin-left: 90px;
+	}
+	div.section#two div#spanWrapper span:nth-child(5) {
+		margin-left: 120px;
+	}
+
+
+	div.section#two div#linkWrapper {
+		flex-direction: column;
+		margin: 40px auto;
+	}
+
+	div.section#two div#linkWrapper a {
+		font-size: 1.75em;
+		text-align: center;
+		margin: 20px 0;
+	}
+
+
+
+
+	div#scrollCTAWrapper {
+		margin-top: 60px;
+		padding-bottom: 90px;
+
+		position: relative;
+/*		top: 80%;*/
+		width: fit-content;
+	}
+}

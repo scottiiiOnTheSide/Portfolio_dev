@@ -2,6 +2,70 @@
 ## Portfolio Site - Development Version
 
 
+#08. 15. 2023
+
+@1200 SectionSwitch CTA now positioned well below sections for mobile :D
+	  
+	  Now need to change to an actual button, change text
+	  write JS for onClick
+
+
+@1130 Mobile styling complete for both sections!
+	  Currently having trouble getting the SectionSwitch button
+	  to stay below both sections on page . . .
+	  continues to stick in middle
+
+
+#08. 14. 2023
+@1440 May need to make both sections scrollable, so that there's space for the
+	  menu button at the bottom
+
+@1420 JS function, classes and animation created for section switch
+
+	  have to change CTA to be button,
+	  on click:
+	    - scale up, and fade away -> then sectionSwitch
+	    - text changed (next to prev), fade in and scale down
+
+	  Aaaand then mobile styling !
+
+@1010 Logo & Brand name need a wrapper & cursor: pointer
+
+#08. 12. 2023
+
+@1600 section#Two Desktop Styling complete
+
+	 what if spans for .glitch class were lighter color???
+
+@0930 Menu button to be vertical on desktop, to the left side
+	  Horizontal at bottom center on mobile
+
+#08. 11. 2023
+@1140 Have to add contingency for section#two . . .
+	  onTouch or scroll, 
+	  if bottom of section isn't visible, no switch.
+
+	  scroll CTA removed from sections, 
+	  about 20% up from body's bottom
+
+@08. 10. 2023
+
+@1400 Images and Copy added for sectionOne, 
+	  styling complete for Desktop
+
+	  Next:
+	    - sectionTwo ✔️ done 08.12 
+	    - mobile Styling for both sections
+	    - js function for scrolling / swiping between sections
+
+	  All pages will be complete after these tasks,
+	  then to combine them with navPage and headerLogo
+
+@1331 about page main sections may need to be positioned higher up on viewports
+	less than 800px 
+	Definitely not centered on mobile . . .
+
+
 @08. 01. 2023
 
 @2235 initial html skeleton added 

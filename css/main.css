@@ -53,6 +53,11 @@ body#landing, body#gallery, body#services {
 	background-color: black;
 }
 
+body#about {
+	position: relative;
+	overflow-y: hidden;
+}
+
 
 
 button {
