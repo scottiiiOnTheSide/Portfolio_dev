@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>BEAM ME UP | Artist's Portfolio</title>
+		<meta name="description" content="Professional Photographer specializing in events, music videos and model work">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- For Overall Site Styles, N a v  &  H e a d e r -->
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/landing.css">
+
+	</head>
+
+<body>
+	
+<nav>
+
+	<div id="mainWrapper">
+		<div id="logoWrapper">
+			<p id="tagline">beammeupscottiii is the tag name under which Jelique Edward publishes his work involving to visual, digital media.</p>
+			<img id="logo" src="./resources/logos/Beammeupscottiii-LogoSolo.svg" alt="The beam me up scotty logo"/>
+		</div>
+
+		<ul id="menu">
+			<li><a href="about.html" class="glitch">About</a></li>
+			<li><a href="gallery.html" class="glitch">Gallery</a></li>
+			<li><a href="services.html" class="glitch">Work With Me</a></li>
+			<li><a href="contact.html" class="glitch">Contact</a></li>
+			<li><button id="closeNav">(close)</button></li>
+		</ul>
+	</div>
+	
+
+	<div id="devTag">
+		<span>Built Bespoke</span>
+		<span>"Portfolio Project"</span>
+		<span>V2</span>
+	</div>
+</nav>
+
+<div id="toggleWrapper">
+	<ul id="toggle">
+		<li>
+			<img src="./resources/svgs/M.svg">
+		</li>
+		<li>
+			<img src="./resources/svgs/E.svg">
+		</li>
+		<li>
+			<img src="./resources/svgs/N.svg">
+		</li>
+		<li>
+			<img src="./resources/svgs/U.svg">
+		</li>
+	</ul>
+</div>
+
+
+
+
+
+
+<script type="text/javascript">
+	
+let navPage = document.getElementsByTagName('nav')[0],
+	toggle = document.getElementById('toggle'),
+	closeNav = document.getElementById('closeNav');
+
+toggle.addEventListener('click', ()=> {
+
+	if(window.innerWidth < 440) {
+
+		toggle.classList.add('toggle');
+
+		setTimeout(()=> {
+			navPage.style.display = "block";
+
+			setTimeout(()=> {
+				// dont remove class on mobile
+				// toggle.classList.remove('toggle');
+			}, 500)
+		}, 400)
+
+	} else {
+
+		toggle.classList.add('toggle');
+
+		setTimeout(()=> {
+			navPage.style.display = "block";
+
+			setTimeout(()=> {
+				toggle.classList.remove('toggle');
+			}, 500)
+		}, 400)
+	}
+
+	
+})
+
+closeNav.addEventListener('click', ()=> {
+	setTimeout(()=> {
+		navPage.style.opacity = 0;
+
+		setTimeout(()=> {
+			navPage.style.display = 'none';			
+		}, 600)
+
+		setTimeout(()=> {
+			navPage.style = '';				
+		}, 800)
+
+		if(window.innerWidth < 440) {
+			setTimeout(()=> {
+				toggle.classList.remove('toggle');			
+			}, 1200)
+		}
+	}, 400)
+})
+
+</script>
+
+
+</body>
+
+</html>

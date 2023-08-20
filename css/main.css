@@ -257,311 +257,330 @@ button.default:hover {
 /*
 	N A V I G A T I O N
 */
-nav#main {
-	display: none; 
-	opacity: 0;
-	/* At site launch, is not present*/
-	
-	/*position: absolute;*/
-	position: fixed;
-	top: 50%;
-	transform: translateY(-50%);
-	left: 30px;
-	/*width: 2rem;*/
-	padding: 0;
-	z-index: 20;
-	transition: all 1s ease;
-}
-
-	nav.menu-active span.corner:nth-child(2) {
-		transform: rotate(180deg) scale(1.5);
-	}
-
-nav#main span.corner {
-	display: block;
-	position: relative;
-	margin: 20px 0;
-	width: 1.5em;
-	height: 1.5em;
-	border: 3px solid black;
-	transition: all 1s ease;
-
-}
-
-	nav#main span.menu-active {
-		border-color: black !important;
-		transform: scale(1.5);
-    	margin: 45px 0;
-    	transition: all 1s ease;
-    	/*color: black;*/
-	}
-
-		nav#main span:nth-child(2).menu-active {
-			transform: rotate(180deg) scale(1.5);
-		}
-
-	nav#main span.corner:first-child {
-		border-right: none;
-	}
-
-		nav#main span.corner:first-child span.indicator {
-			right: -35px;
-		}
-
-			nav#main:hover > span.corner:first-child span.indicator {
-				opacity: 1;
-				right: -15px;
-			}
-
-	nav#main span.corner:nth-child(2) {
-		border-left: none;
-	}
-
-		nav#main span.corner:nth-child(2) span.indicator {
-			left: -35px;
-		}
-
-			nav#main:hover > span.corner:nth-child(2) span.indicator {
-				opacity: 1;
-				left: -15px;
-			}
-
-	nav#main span.corner:nth-child(3) {
-		border-right: none;
-	}
-
-		nav#main span.corner:nth-child(3) span.indicator {
-			right: -35px;
-		}
-
-			nav#main:hover > span.corner:nth-child(3) span.indicator {
-				opacity: 1;
-				right: -15px;
-			}
 
 
-nav#main span.corner span.indicator {
-	display: block;
-    position: relative;
-    width: 1.5em;
-    border: 1px solid var(--main-color-green);
-    top: 50%;
-    transform: translateY(-50%);
-    transition: all 0.3s ease;
-    opacity: 0;
-}
-
-
-
-	nav#main span.corner span#active {
-		display: block;
-	}
-
-
-
-
-
-
-
-/*div#navPage {
-	width: 100%;
-	height: 100vh;
-	position: fixed;
-	top: 0;
+nav {
 	display: none;
-	
-	background-color: white;
-	overflow-x: hidden;
-	opacity: 0;
-	transition: all 0.75s ease;
-	z-index: 15;
-}
-
-	div.menu-open {
-		display: block;
-		opacity: 1;
-	}
-
-	div.menu-open ul li button span {
-		opacity: 1 !important;
-	}
-
-div#navPage ul {
-	list-style-type: none;
-	padding: 0px;
-	margin: 0;
-	position: absolute;
+	width: 100%;
+	height: 100dvh;
+	position: fixed;
 	top: 50%;
-	left: -30px;
-	transform: translateY(-50%);
+ 	left: 50%;
+ 	transform: translate(-50%, -50%);
+	z-index: 10;
+	transition: all 0.5s ease-in-out;
+	opacity: 1;
+	background-color: white;
 }
 
-div#navPage ul li {
-	margin: 10px 0 40px;
+nav div#mainWrapper {
+	display: flex;
+	justify-content: center;
+	position: relative;
+	top: 50%;
+ 	left: 50%;
+ 	transform: translate(-50%, -50%);
+}
+
+nav div#logoWrapper {
+	width: fit-content;
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+ 	align-content: center;
+ 	left: -5%;
+
+ 	animation: loadIn_fromLeft 1s ease-in-out forwards;
+}
+
+nav div#logoWrapper img {
+	width: 192px;
+	margin: 10px;
+}
+
+nav div#logoWrapper p {
+	font-family: "Open Sans";
+	font-size: 1em;
+	font-weight: 300;
+	text-align: right;
+	letter-spacing: 6px;
+	line-height: 36px;
+	color: black;
+	text-transform: lowercase;
+	font-style: unset;
+
+	clip-path: none;
+	max-width: 325px;
+	}
+
+nav ul#menu {
 	display: block;
-	transition: all 0.5s ease;
-	opacity: 0;
+	width: fit-content;
+	position: relative;
+ 	opacity: 1;
+
+ 	top: unset;
+  left: -2%;
+  transform: unset;
+
+ 	margin: 0;
+	padding-top: 50px;
+	list-style-type: none;
+
+	animation: loadIn_fromRight 1s ease-in-out forwards;
 }
 
-	div#navPage ul li.appear {
-		margin-left: 60px;
+nav ul#menu li {
+	display: block;
+	text-align: left;
+	margin: 30px 0;
+}
+
+nav ul#menu li a {
+	position: relative;
+
+	font-family: 'Avenir';
+  font-weight: 500;
+	letter-spacing: 10px;
+	color: black;
+	font-size: 2.5em;
+	text-decoration: none;
+ }
+
+nav ul#menu li button {
+	background-color: transparent;
+	border: none;
+
+	font-family: "Open Sans";
+	font-weight: 500;
+	font-size: 1.25em;
+	letter-spacing: 10px;
+
+	transition: all 0.3s ease-in;
+}
+
+nav ul#menu li button:hover {
+	letter-spacing: 15px;
+}
+
+nav div#devTag {
+	position: absolute;
+	bottom: 5%;
+ 	left: 50%;
+ 	transform: translateX(-50%);
+	margin: 0 auto;
+	opacity: 0;
+
+	animation: fadeIn 0.5s ease-in-out 1s forwards;
+}
+
+nav div#devTag span {
+	display: block;
+
+	font-family: "Open Sans";
+	font-size: 1em;
+	font-weight: 300;
+	text-align: left;
+	letter-spacing: 6px;
+	line-height: 28px;
+	color: #6d6d6d6b;
+
+	max-width: 325px;
+}
+
+
+@keyframes loadIn_fromRight {
+	0% {
+		left: 8%;
+		opacity: 0;
+	}
+
+	100% {
+		left: -2%;
 		opacity: 1;
 	}
+}
 
-	div#navPage ul li:first-child {
-		margin-left: 60px;
+@keyframes loadIn_fromLeft {
+	0% {
+		left: -13%;
+		opacity: 0;
 	}
 
-div#navPage ul li button {
+	100% {
+		left: -5%;
+		opacity: 1;
+	}
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+
+
+
+
+
+
+
+
+div#toggleWrapper {
+	width: fit-content;
+	height: 100dvh;
+	position: absolute;
+	top: 0;
+	z-index: 5;
+	background-color: white;
+}
+
+div#toggleWrapper.B {
+	width: fit-content;
+	height: 100dvh;
+	position: absolute;
+	top: 0;
+	z-index: 5;
+	background-color: black;
+}
+
+div#toggleWrapper ul#toggle {
+	width: fit-content;
+	margin: 0 20px;
+	padding: 0;
+	list-style-type: none;
 	display: block;
 	position: relative;
-	font-family: 'Avenir';
-	font-weight: 500;    
-	font-size: 1.75em;
-	text-align: right;
-	letter-spacing: 20px;
-	color: black;
-
-	border: none;
-    background-color: transparent;
-    transition: all 0.75s ease;
+	top: 50%;
+	transform: translateY(-50%);
+	transition: all 0.2s ease-in-out;
 }
 
-	div#navPage ul li button span {
-		letter-spacing: 40px;
-		color: rgba(54, 54, 54, .10);
-		font-size: 2.25em;
-		position: absolute;
-		left: 4%;
-		bottom: -35px;
-		opacity: 0;
-		text-shadow: none;
+div#toggleWrapper ul#toggle:hover {
+	transform: translateY(-50%) scale(1.25);
+}
 
-		animation-name: opacity;
-		animation-delay: 2.5s;
-		animation-fill-mode: forwards;
-		animation-duration: 0.5s;
-		animation-timing-function: ease;
-	}
+div#toggleWrapper ul#toggle li {
+	display: block;
+	margin: 10px 0;
+}
 
-	div#navPage ul li button span:hover {
-		text-shadow: none;
-	}
+div#toggleWrapper ul#toggle li img {}
 
-		@keyframes opacity {
-			0% {opacity: 0;}
-			100%{opacity: 1;}
-		}
-
-	div#navPage ul li:first-child {
-		
-	}
-
-	div#navPage ul li:first-child button {
-		font-size: 1em;
-		text-align: center;
-		margin-bottom: -20px;
-		letter-spacing: 8px;
-	}
-
-	div#navPage ul li button:hover {
-		color:  var(--disabled);
-		text-shadow: 0.07em 0 0 rgb(255 0 0 / 75%), 
-					-0.03em -0.05em 0 rgb(0 255 0 / 75%), 
-					0.025em 0.05em 0.2em rgb(0 0 255 / 75%);
-	}
-
-	div#navPage ul li button.active {
-		color: var(--disabled);
-	}
-
-
-		div#navPage ul li button.active:hover {
-			text-shadow: none;
-		}
-
-
-
-
-@media only screen and (max-width: 1024px) {
-
-	header h1 {
-		font-size: 1.25em;
-		letter-spacing: 4px;
-		margin-top: 20px;
-	}
-
-	nav#main {
-		top: auto;
-		bottom: 0;
-		left: 50%;
-		transform: translateX(-50%);
-		width: 100%;
-		height: 8%;
-		transition: all 1s ease;
-	}
-
-		nav.menu-active {
-			background-color: transparent !important;
-		}
-
-	nav#main div.cornerWrapper {
-
-    	position: absolute;
-    	top: 50%;
-    	left: 50%;
-    	transform: translate(-50%, -50%) scale(0.65);
-	}
-
-	nav#main span.corner {
-		display: inline-block;
-		transform: rotate(270deg);
-		margin: 0 20px;
-		border-width: 4px;
-	}
-
-		nav#main span.menu-active {
-			transform: rotate(360deg) scale(1.5);
-			border-color: black;
-		}
-
-	nav.menu-active span.corner:nth-child(2) {}
-
-	div#navPage ul {
-
-	}
-
-	div#navPage ul li:first-child {
-		transition-delay: 1.5s;
-		transition-property: opacity;
-		transition-timing-function: ease;
-  		transition-duration: 1s;
-
-	}
-
-	div#navPage ul li {
-		margin-left: 60px;
-	}
-
-		div#navPage ul li button {
-			font-size: 1.25em;
-			letter-spacing: 14px;
-		}
-
-		div#navPage ul li button span {
-			font-size: 1.5em;
-			font-weight: 500;
-			letter-spacing: 30px;
-			bottom: -20px;
-		}
-
-	div#navPage ul li.appear {
+@keyframes toggle {
+	0% {
 		opacity: 1;
 	}
-} 
 
-@media only screen and (max-width: 425px) {
-	nav#main div.cornerWrapper {
-		width: 215px;
+	100% {
+		opacity: 0;
+		transform: translateY(-50%) scale(0.5);
 	}
-}*/
+}
+
+@keyframes toggleM {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+		transform: translateX(-50%) scale(0.5);
+	}
+}
+
+ul.toggle {
+	animation: toggle 0.3s ease-in-out forwards;
+}
+
+
+
+
+
+@media screen and (max-width: 440px) {
+
+
+
+	nav div#mainWrapper {
+		flex-direction: column;
+		top: 40%;
+	}
+
+	nav div#logoWrapper {
+		flex-direction: column-reverse;
+		margin-left: 50px;
+		margin-bottom: 40px;
+	}
+
+	nav div#logoWrapper img {
+		width: 100px;
+	}
+
+	nav div#logoWrapper p {
+		font-size: 0.6em;
+		line-height: 20px;
+		max-width: 275px;
+		text-align: left;
+	}
+
+
+	nav ul#menu {
+/*		margin-left: 40px;*/
+		margin-top: -70px;
+	}
+
+	nav ul#menu li a {
+    color: black;
+    font-size: 2em;
+  }
+
+
+
+  nav div#devTag {
+  	left: unset;
+  	transform: unset;
+  	margin-left: 40px;
+  }
+
+  nav div#devTag span {
+  	font-size: 0.6em;
+  }
+
+
+  div#toggleWrapper,
+  div#toggleWrapper.B { 
+  	position: fixed;
+  	width: 100%;
+  	height: fit-content;
+  	top: unset;
+  	bottom: 0%;
+  }
+
+  ul.toggle {
+		animation: toggleM 0.3s ease-in-out forwards;
+	}	
+
+  div#toggleWrapper ul#toggle {
+  	top: unset;
+  	left: 50%;
+  	transform: translateX(-50%);
+  	margin: 15px 0;
+  }
+
+  div#toggleWrapper ul#toggle:hover {
+    transform: translateX(-50%) scale(1.25);
+}
+
+  div#toggleWrapper ul#toggle li {
+  	display: inline-block;
+  	margin: 0 1px;
+  	transform: scale(0.8);
+  }
+}

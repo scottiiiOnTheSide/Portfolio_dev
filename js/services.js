@@ -1,7 +1,5 @@
 
-let body = document.getElementsByTagName('body')[0],
-
-	openRequestForm = Array.from(document.getElementsByClassName('openMessagePrompt')),
+let openRequestForm = Array.from(document.getElementsByClassName('openMessagePrompt')),
 	requestForm = document.getElementById('requestForm'),
 	requestForm_form = document.getElementById('serviceInquiry'),
 	requestForm_inputs = Array.from(requestForm_form.firstElementChild.children),

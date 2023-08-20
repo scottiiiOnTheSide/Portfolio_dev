@@ -9,13 +9,15 @@
 	<!-- For Overall Site Styles and Page Specific -->
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/about.css">
+
+	<!-- <script type="text/javascript" src="js/main.js"></script> -->
 <head>
 
 <body id="about">
 		
 <!-- Fade in on arrival, 
 	 fade out on page leave -->
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 		window.onload = () => {
 			let overlay = document.getElementById("overlay");
 			let overlayState = window.getComputedStyle(overlay).getPropertyValue('opacity');
@@ -28,7 +30,7 @@
 				}, 250)
 			}
 		}
-</script>
+</script> -->
 <div id="overlay"></div>
 
 <!-- Beginning of Page Body -->
@@ -40,12 +42,53 @@
 </header>
 
 
+<!-- Navigation Page and Toggle Bar -->
+<nav>
+
+	<div id="mainWrapper">
+		<div id="logoWrapper">
+			<p id="tagline">beammeupscottiii is the tag name under which Jelique Edward publishes his work involving to visual, digital media.</p>
+			<img id="logo" src="./resources/logos/Beammeupscottiii-LogoSolo.svg" alt="The beam me up scotty logo"/>
+		</div>
+
+		<ul id="menu">
+			<li><a href="about.html" class="glitch">About</a></li>
+			<li><a href="gallery.html" class="glitch">Gallery</a></li>
+			<li><a href="services.html" class="glitch">Work With Me</a></li>
+			<li><a href="contact.html" class="glitch">Contact</a></li>
+			<li><button id="closeNav">(close)</button></li>
+		</ul>
+	</div>
+	
+
+	<div id="devTag">
+		<span>Built Bespoke</span>
+		<span>"Portfolio Project"</span>
+		<span>V2</span>
+	</div>
+</nav>
+
+<div id="toggleWrapper">
+	<ul id="toggle">
+		<li>
+			<img src="./resources/svgs/M.svg">
+		</li>
+		<li>
+			<img src="./resources/svgs/E.svg">
+		</li>
+		<li>
+			<img src="./resources/svgs/N.svg">
+		</li>
+		<li>
+			<img src="./resources/svgs/U.svg">
+		</li>
+	</ul>
+</div>
 
 
 
 
-
-<div class="section return" id="one" style="display: none">
+<div class="section return" id="one" >
 	
 	<ul id="bgImgs">
 		<li>
@@ -60,14 +103,14 @@
 	</ul>
 
 	<div class="copywriting">
-		<h2>beammeupscottiii is the tag name under which Jelique Edward publishes his work involving visual, digital art</h2>
+		<h2>beammeupscottiii is the tag name under which Jelique Edward publishes his work involving visual, digital media</h2>
 		<p>
 			A simple ephiphany was had. That an artist's title should conjour up particular ideals, certain energies and set a precedent in the mind of those who hear it. To 'beam' up anyone, they with the 'light' must be prepared for the opportunity to do so. They must have the energy available and expertise necessary to guide and adjust the transmission. And of course, the work of this operator must indeed elevate you in some way, shape or form. It's all metaphorical fun - which at it's heart, all great art is. This rhetoric is but a sampling of the perspective that this artist holds when he works and collaborates.
 		</p>
 	</div>
 </div>
 
-<div class="section return" id="two" style="display: block">
+<div class="section return" id="two" >
 	
 	<div class="copywriting">
 
@@ -100,13 +143,15 @@
 	</div>
 </div>
 
-<div id="scrollCTAWrapper">
-	<img src="./resources/mouseW.svg"/>
-	<p>Scroll Down</p>
-</div>
+<button id="sectionSwitch">
+	<p>Next Section</p>
+</button>
+<div id="theEnd"></div>
+
 
 
 <script type="text/javascript" src="js/about.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 <script>
 
 	let links = document.getElementsByTagName('a');

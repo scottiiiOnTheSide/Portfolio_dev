@@ -13,9 +13,9 @@
 
 <body id="services">
 		
-	<!-- Fade in on arrival, 
-		 fade out on page leave -->
-	<script type="text/javascript">
+<!-- Fade in on arrival, 
+ fade out on page leave -->
+<!-- <script type="text/javascript">
 		window.onload = () => {
 			let overlay = document.getElementById("overlay");
 			let overlayState = window.getComputedStyle(overlay).getPropertyValue('opacity');
@@ -31,7 +31,7 @@
 				}, 1200)
 			}
 		}
-	</script>
+</script> -->
 <div id="overlay"></div>	
 
 
@@ -47,6 +47,53 @@
 	<p id="brandname" class="glitch">beam<br>me<br>up!</ps>
 </header>
 
+
+
+<!-- Navigation Page and Toggle Bar -->
+<nav>
+
+	<div id="mainWrapper">
+		<div id="logoWrapper">
+			<p id="tagline">beammeupscottiii is the tag name under which Jelique Edward publishes his work involving to visual, digital media.</p>
+			<img id="logo" src="./resources/logos/Beammeupscottiii-LogoSolo.svg" alt="The beam me up scotty logo"/>
+		</div>
+
+		<ul id="menu">
+			<li><a href="about.html" class="glitch">About</a></li>
+			<li><a href="gallery.html" class="glitch">Gallery</a></li>
+			<li><a href="services.html" class="glitch">Work With Me</a></li>
+			<li><a href="contact.html" class="glitch">Contact</a></li>
+			<li><button id="closeNav">(close)</button></li>
+		</ul>
+	</div>
+	
+
+	<div id="devTag">
+		<span>Built Bespoke</span>
+		<span>"Portfolio Project"</span>
+		<span>V2</span>
+	</div>
+</nav>
+
+<div id="toggleWrapper" class="B">
+	<ul id="toggle">
+		<li>
+			<img src="./resources/svgs/M_w.svg">
+		</li>
+		<li>
+			<img src="./resources/svgs/E_w.svg">
+		</li>
+		<li>
+			<img src="./resources/svgs/N_w.svg">
+		</li>
+		<li>
+			<img src="./resources/svgs/U_w.svg">
+		</li>
+	</ul>
+</div>
+
+
+
 <header id="hero">
 	<video playsinline autoplay muted loop id="bgvid">
   		<source src="./img/BeamMeUp_reel-web" type="video/mp4">
@@ -61,7 +108,7 @@
 </header>
 
 <div id="splash">
-	<img src="./resources/mouse.svg"/>
+	<img src="./resources/svgs/mouse.svg"/>
 	<p>Scroll Down</p>
 </div>
 
@@ -260,6 +307,7 @@
 
 </script>
 <script type="text/javascript" src="js/services.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 
 
 </body>

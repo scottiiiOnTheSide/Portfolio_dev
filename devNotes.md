@@ -1,6 +1,52 @@
 
 ## Portfolio Site - Development Version
 
+#08. 20. 2023
+@1355 navPage and menuToggle added to rest of pages!!!
+
+
+#08. 19. 2023
+@1545 navPage and toggle finished !!!
+	  
+	  Next, To Do:
+	    - integration into pages ✔️
+	      - Services & Gallery need to use the white SVGs
+	      - make sure all page layouts have enough space at bottom for menu button 
+
+	    - have logo header be link to landing page
+	    - on contact page, outer border doesnt open completely in mobile...
+
+	    a few other small changes to make here and there.
+
+	    90% complete with V2....
+
+@0950 Why doesnt the toggle disappear while in mobile...?
+
+@0915 SVGs added for menu button
+	  Animations added for navPage groups
+	  JS functionality for opening and closing navPage
+
+	  now, mobile styling...
+
+#08. 18. 2023
+@0900 svg files made for the menuButton parts
+
+#08. 17. 2023
+@1545 HTML Skeleton and Initial CSS for Desktop done.
+
+	  - style and function for close button,
+	  - add js to page for delaying links 
+	  	(actually need to expand current JS to include these links)
+	  - mobile styling
+
+	  - menu button navBar
+
+#08. 16. 2023
+@1200 SectionSwitch button JS added
+
+	  About page COMPLETE !!!
+	  ...but for some reason, mobile styles are computing differently looking at
+	  them on desktop vs an actual mobile device . . .
 
 #08. 15. 2023
 
