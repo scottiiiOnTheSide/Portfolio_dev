@@ -471,13 +471,13 @@ div#emailScotty button#backToOptions {
 	}
 
 	div#emailScotty {
-		top: 54%;
+		top: 50%;
 		width: 90%;
 	}
 
 	div#emailScotty button#submitForm {
 		font-size: 2em;
-		bottom: -120px;
+		bottom: -150px;
 		margin-left: 15px;
 	}
 }

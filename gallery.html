@@ -9,36 +9,25 @@
 	<!-- For Overall Site Styles and Page Specific -->
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/gallery.css">
+
+	<style type="text/css">
+		header#logo a p#brandname {
+			color: white;
+		}
+	</style>
 <head>
 
 <body id="gallery">
 		
-	<!-- Fade in on arrival, 
-		 fade out on page leave -->
-<!-- 	<script type="text/javascript">
-		window.onload = () => {
-			let overlay = document.getElementById("overlay");
-			let overlayState = window.getComputedStyle(overlay).getPropertyValue('opacity');
-
-			if(overlayState == 1) {
-				overlay.style.opacity = 0;
-
-				setTimeout(()=> {
-					overlay.style.zIndex = 0;
-					setTimeout(()=> {
-						overlay.style.display = 'none';
-					}, 200)
-				}, 1200)
-			}
-		}
-	</script> -->
 <div id="overlay"></div>
 
 
 <!-- H E A D E R -->
 <header id="logo">
-	<img id="logo" src="./resources/logos/Beammeupscottiii-LogoSolo-white.svg" alt="The beam me up scotty logo"/>
-	<p id="brandname" class="glitch">beam<br>me<br>up!</ps>
+	<a href="index.html">
+		<img id="logo" src="./resources/logos/Beammeupscottiii-LogoSolo-white.svg" alt="The beam me up scotty logo"/>
+		<p id="brandname" class="glitch">beam<br>me<br>up!</p>
+	</a>
 </header>
 
 
@@ -52,7 +41,7 @@
 			<img id="logo" src="./resources/logos/Beammeupscottiii-LogoSolo.svg" alt="The beam me up scotty logo"/>
 		</div>
 
-		<ul id="menu">
+		<ul id="menu" style="margin-left: 40px;">
 			<li><a href="about.html" class="glitch">About</a></li>
 			<li><a href="gallery.html" class="glitch">Gallery</a></li>
 			<li><a href="services.html" class="glitch">Work With Me</a></li>

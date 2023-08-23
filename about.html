@@ -14,31 +14,17 @@
 <head>
 
 <body id="about">
-		
-<!-- Fade in on arrival, 
-	 fade out on page leave -->
-<!-- <script type="text/javascript">
-		window.onload = () => {
-			let overlay = document.getElementById("overlay");
-			let overlayState = window.getComputedStyle(overlay).getPropertyValue('opacity');
 
-			if(overlayState == 1) {
-				overlay.style.opacity = 0;
-
-				setTimeout(()=> {
-					overlay.style.zIndex = 0;
-				}, 250)
-			}
-		}
-</script> -->
 <div id="overlay"></div>
 
 <!-- Beginning of Page Body -->
 
 
 <header id="logo">
-	<img id="logo" src="./resources/logos/Beammeupscottiii-LogoSolo.svg" alt="The beam me up scotty logo"/>
-	<p id="brandname" class="glitch">beam<br>me<br>up!</p>
+	<a href="index.html">
+		<img id="logo" src="./resources/logos/Beammeupscottiii-LogoSolo.svg" alt="The beam me up! logo"/>
+		<p id="brandname" class="glitch">beam<br>me<br>up!</p>
+	</a>
 </header>
 
 
@@ -152,33 +138,6 @@
 
 <script type="text/javascript" src="js/about.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
-<script>
-
-	let links = document.getElementsByTagName('a');
-	for(let link of links) {
-		link.addEventListener('click', (e)=> {
-			e.preventDefault();
-			let dest = link.getAttribute("href");
-
-			setTimeout(()=> {
-				overlay.style.zIndex = 10;
-				overlay.style.opacity = 1;
-			}, 500)
-			
-			setTimeout(()=> {
-				window.location.href = dest;
-	
-				setTimeout(() => {
-					overlay.style.zIndex = 0;
-					overlay.style.opacity = 0;
-				}, 1200)
-			}, 1000)
-		})
-	}
-
-		
-	
-</script>
 
 </body>
 </html>

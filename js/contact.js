@@ -74,7 +74,7 @@ let closeWrapper = () => {
 	},
 	openWrapper_emailScotty = () => {
 		if(window.innerWidth < 440) {
-			optionsWrapper.style = "width: 50%; height: 50%;";	
+			optionsWrapper.style = "width: 99%; height: 50%;";	
 		} else if (window.innerWidth > 440 && window.innerWidth < 769) {
 			optionsWrapper.style = "width: 70%; height: 50%;";
 		} else if (window.innerWidth > 769) {

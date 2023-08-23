@@ -30,6 +30,31 @@ window.onload = () => {
 
 
 
+let links = document.getElementsByTagName('a');
+	for(let link of links) {
+		link.addEventListener('click', (e)=> {
+			e.preventDefault();
+			let dest = link.getAttribute("href");
+
+			setTimeout(()=> {
+				overlay.style.zIndex = 10;
+				overlay.style.opacity = 1;
+			}, 500)
+			
+			setTimeout(()=> {
+				window.location.href = dest;
+	
+				setTimeout(() => {
+					overlay.style.zIndex = 0;
+					overlay.style.opacity = 0;
+				}, 1200)
+			}, 1000)
+		})
+	}
+
+
+
+
 /* Functions for navPage functionality */
 
 toggle.addEventListener('click', ()=> {

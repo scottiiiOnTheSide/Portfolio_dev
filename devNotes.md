@@ -1,19 +1,51 @@
 
 ## Portfolio Site - Development Version
 
+
+
+#08. 22. 2023
+@1100 having updated all the gallery images to have a smaller file size,
+	  V2 of the portfolio project site is finally
+
+	  C O M P L E T E D :D !!!!
+
+	  Now, to clean up the folder and upload it to le github...
+
+
+	  Current plan for upload:
+	  - create a copy of the current branch, call it prod
+	      - whenever a new production version is ready, the current
+	      	prod branch will be deleted, and a new one created
+	  - have the prod branch have the main beammeupscottiii's github repo as
+	  	the root / source (whatever it's called)
+
+
+
+#08. 21. 2023
+
+@1315 issue with border opening for the contact form and spacing so that the form
+doesnt combine with the logo nor move up to high
+
+@1250 Landing page text changed to reflect being more professional
+
+@1245 clicking beammeup logo header leads back to landing, index.html
+
 #08. 20. 2023
 @1355 navPage and menuToggle added to rest of pages!!!
+
+@1415 Really queer deviance - the nav menu needs to be moved slightly,
+	  but only on the gallery page? (fixed within inline styling)
 
 
 #08. 19. 2023
 @1545 navPage and toggle finished !!!
 	  
 	  Next, To Do:
-	    - integration into pages ✔️
+	    - integration into pages ✔️ 
 	      - Services & Gallery need to use the white SVGs
 	      - make sure all page layouts have enough space at bottom for menu button 
 
-	    - have logo header be link to landing page
+	    - have logo header be link to landing page ✔️
 	    - on contact page, outer border doesnt open completely in mobile...
 
 	    a few other small changes to make here and there.

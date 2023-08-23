@@ -9,29 +9,16 @@
 	<!-- For Overall Site Styles and Page Specific -->
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/services.css">
+
+	<style type="text/css">
+		header#logo a p#brandname {
+			color: white;
+		}
+	</style>
 <head>
 
 <body id="services">
 		
-<!-- Fade in on arrival, 
- fade out on page leave -->
-<!-- <script type="text/javascript">
-		window.onload = () => {
-			let overlay = document.getElementById("overlay");
-			let overlayState = window.getComputedStyle(overlay).getPropertyValue('opacity');
-
-			if(overlayState == 1) {
-				overlay.style.opacity = 0;
-
-				setTimeout(()=> {
-					overlay.style.zIndex = 0;
-					setTimeout(()=> {
-						overlay.style.display = 'none';
-					}, 200)
-				}, 1200)
-			}
-		}
-</script> -->
 <div id="overlay"></div>	
 
 
@@ -43,8 +30,10 @@
 
 <!-- H E A D E R -->
 <header id="logo">
-	<img id="logo" src="./resources/logos/Beammeupscottiii-LogoSolo-white.svg" alt="The beam me up scotty logo"/>
-	<p id="brandname" class="glitch">beam<br>me<br>up!</ps>
+	<a href="./index.html">
+		<img id="logo" src="./resources/logos/Beammeupscottiii-LogoSolo-white.svg" alt="The beam me up scotty logo"/>
+		<p id="brandname" class="glitch">beam<br>me<br>up!</p>
+	</a>
 </header>
 
 
@@ -96,7 +85,7 @@
 
 <header id="hero">
 	<video playsinline autoplay muted loop id="bgvid">
-  		<source src="./img/BeamMeUp_reel-web" type="video/mp4">
+  		<source src="./resources/BeamMeUp_reel-web" type="video/mp4">
 	</video>
 	<div id="cover"></div>
 
@@ -183,7 +172,7 @@
 					successful completion of work. 
 				</li>
 				<li>
-					**Agreement to be signed prior to any work commencing**
+					**Deposit required in order to reserve and confirm shoot**
 				</li>
 			</ul>
 		</div>
@@ -224,6 +213,10 @@
 				</li>
 				<li>
 					Client need only provide detailed description of goals and requirements for project completion - and funding.
+				</li>
+				<li>
+					**Agreement including shoot details & objectives to be signed prior to any work commencing**
+				</li>
 			</ul>
 		</div>
 
